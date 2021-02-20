@@ -7,7 +7,7 @@ git status
 git add .
 
 将代码提交到本地仓库
-git commit -m "此代码功能描述"
+git commit -m "第五天css选择器的初步运用作业"
 
 将代码推送到远程仓库
 git push
