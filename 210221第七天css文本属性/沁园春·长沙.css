@@ -1,0 +1,26 @@
+p{
+    font-weight: 500;
+    font-size: 27px;
+    color: blue;
+}
+div {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 35px;
+    color: rgb(255, 0, 0);
+}
+span {
+    color: rgb(29, 204, 29);
+}
+/* 下面是另外的一种简便写法 */
+/* p {
+    color: blue;
+    font:normal 500 27px 'microsoft yahei'
+}
+div {
+    color: rgb(255, 0, 0);
+    font:normal 500 20px/35px 'microsoft yahei' 
+}
+span {
+    color: green;
+} */

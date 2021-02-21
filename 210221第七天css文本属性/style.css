@@ -1,0 +1,18 @@
+/* 这个css只有样式没有标签 */
+body {
+    font-family: microsoft yahei;
+}
+div {
+    color: orangered;
+
+}
+span {
+    font-size: 25px;
+    font-weight: bold;
+    color: blue;
+}
+p {
+    font-size: 20px;
+    font-weight: 500;
+    color: green;
+}
