@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emmet语法使用</title>
+    <style>
+        .one {
+            /* 一般采取首字母简写形式 */
+            text-align: center;
+            text-indent: 2em;
+            width: 100px;
+            height: 200px;
+            line-height: 28px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 输入标签比如div后直接按tab键 -->
+    <div></div>
+    <table></table>
+    <!-- 多个相同标签是 输入标签(比如div)div*10   按tab键 -->
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- 输入父子标签(比如ul)ul>li   按tab键 -->
+    <ul>
+        <li></li>
+    </ul>
+    <!-- 输入一父多子标签(比如dl)dl>dt+dd  按tab键 -->
+    <dl>
+        <dt></dt>
+        <dd></dd>
+    </dl>
+    <!-- 输入兄弟标签(比如span,p)span+p 按tab键 -->
+    <span></span>
+    <p></p>
+    <!-- 输入类名标签(默认div) .nav 按tab键 -->
+    <div class="nav"></div>
+    <!-- 输入id名标签(默认div) #nav 按tab键 -->
+    <div id="nav"></div>
+    <!-- 输入除div以外的类名标签(如：p, span等) p.one 按tab键 -->
+    <p class="one"></p>
+    <!-- id亦是如此   span#(此处可以加类名或者不加)  按tab键 -->
+    <span id=""></span>
+    <span class=""></span>
+
+    <!-- 输入父子关系标签(如：ul) ul>li.two或者#two 按tab键 -->
+    <ul>
+        <li class="two"></li>
+    </ul>
+    <ul>
+        <li id="two"></li>
+    </ul>
+
+    <!-- 以排序方式输入同一类名5个标签(默认div) .demo$*5 按tab键 -->
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <div class="demo4"></div>
+    <div class="demo5"></div>
+
+    <!-- 输入包含标签内文本的标签  div{我是中国人} 按tab键 -->
+    <div>我是中国人</div>
+    输入包含同一内容的5个相同标签 div{我是个爷们儿}*5 按tab键
+    <div>我是个爷们儿</div>
+    <div>我是个爷们儿</div>
+    <div>我是个爷们儿</div>
+    <div>我是个爷们儿</div>
+    <div>我是个爷们儿</div>
+    <!-- 输入数字序号内容的5个相同标签 div{$}*5 按tab键 -->
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <!-- 输入5个带顺序的同样文本内容的相同标签 span{我是帅哥肌肉男$}*5 按tab键 -->
+    <span>我是帅哥肌肉男1</span>
+    <span>我是帅哥肌肉男2</span>
+    <span>我是帅哥肌肉男3</span>
+    <span>我是帅哥肌肉男4</span>
+    <span>我是帅哥肌肉男5</span>
+
+</body>
+
+</html>

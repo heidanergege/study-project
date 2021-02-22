@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子选择器</title>
+</head>
+<style>
+    /* 子选择器用>表示，例如下面，只对亲子一级目录指定元素有效 */
+    div>.nav>a {
+        color: yellow;
+    }
+</style>
+
+<body>
+    <div>
+        <span>
+            <a href="">我是亲儿子的儿子</a>
+        </span>
+        <p class="nav">
+            <a href="">我是孙子</a>
+        </p>
+    </div>
+</body>
+
+</html>

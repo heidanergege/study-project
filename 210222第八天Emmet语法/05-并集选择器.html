@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>并集选择器</title>
+    <style>
+        /* 并集选择器可以选择多组标签，为他们定义同一同样式 */
+        /* 元素之间用,分割连接而成，任何形式的选择器都可以作为其中一个元素 */
+        p,
+        span,
+        ul>.pig {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>光头强</div>
+    <p>熊大</p>
+    <span>熊二</span>
+    <ul>
+        <li class="pig">小猪1</li>
+        <li class="pig">小猪2</li>
+        <li>小猪3</li>
+    </ul>
+</body>
+
+</html>
