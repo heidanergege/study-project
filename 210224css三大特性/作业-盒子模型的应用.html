@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>盒子模型的基本应用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 475px;
+            height: 348px;
+            background-color: #fff;
+            border-top: 4px solid #f0eff0;
+            margin: 10px auto;
+
+        }
+
+        span {
+            display: block;
+            background-color: #377d22;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 2px;
+            border: 1px solid blue;
+        }
+
+        .header,
+        .footer {
+            width: 440px;
+            height: 56px;
+        }
+
+        .main {
+            width: 440px;
+            height: 220px;
+            background-color: #9368a6;
+            margin: 4px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="header">头部</span>
+        <span class="main">主体</span>
+        <span class="footer">底部</span>
+    </div>
+</body>
+
+</html>
