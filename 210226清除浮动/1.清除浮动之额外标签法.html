@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        .first {
+
+            width: 900px;
+            background-color: blue;
+        }
+
+        .second {
+            width: 1000px;
+            height: 200px;
+            background-color: rgb(221, 40, 167);
+        }
+
+        .yi {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .er {
+            float: left;
+            width: 400px;
+            height: 250px;
+            background-color: green;
+        }
+
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">
+        <div class="yi">老大</div>
+        <div class="er">老二</div>
+        <div class="yi">老大</div>
+        <div class="er">老二</div>
+        <br class="clear">
+    </div>
+    <div class="second"></div>
+</body>
+
+</html>

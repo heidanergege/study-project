@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>多列布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 988px;
+            height: 520px;
+            /* background-color: pink; */
+            margin: 0 auto;
+        }
+
+        .box .left {
+            float: left;
+            width: 280px;
+            height: 520px;
+            margin-right: 8px;
+            background-color: #5e6e7e;
+            text-align: center;
+        }
+
+        .logo {
+            font: bolder 100px '宋体';
+            color: #fff;
+        }
+
+        .left ul {
+            margin-top: 60px;
+        }
+
+        .left ul li {
+            list-style: none;
+            font-size: 20px;
+            line-height: 30px;
+            margin-top: 20px;
+            margin-left: -40px;
+        }
+
+        .box .right {
+            float: left;
+            width: 700px;
+            height: 520px;
+        }
+
+        .right .banner {
+            width: 700px;
+            height: 255px;
+        }
+
+        .right h3 {
+            height: 30px;
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: normal;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .right .meinv {
+            float: left;
+            width: 200px;
+            /* height: 132px; */
+            margin: 8px;
+            margin-left: 0;
+        }
+
+        .right p {
+            font-size: 12px;
+            line-height: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            <div class="logo">logo</div>
+            <p style="color: #cccccc;">某某摄影专辑</p>
+            <ul>
+                <li>网站首页</li>
+                <li>咨询中心</li>
+                <li>产品展示</li>
+                <li>关于我们</li>
+                <li>练习我们</li>
+            </ul>
+        </div>
+        <div class="right">
+            <img class="banner" src="banner.jpg" alt="">
+            <h3>当前位置：首页 > 关于我们</h3>
+            <p>
+                <img class="meinv" src="01.jpg" alt="">
+                水墨（风格）摄影和传统的水墨画一样，现市面上出现的水墨摄影作品，按题材，可以分为风景和花鸟，对应国画中的山水画和花鸟画；按手法和意境，可以分为抽象和具象，对应国画中的写意和工笔。
+                水墨风格的摄影照片虽然免不了使用Photoshop等软件的后期加工，但是这并不意味着可以任意扭曲原照片。全息摄影是指一种记录被摄物体反射波的振幅和位相等全部信息的新型摄影技术。普通摄影是记录物体
+                面上的光强分布，它不能记录物体反射光的位相信息，因而失去了立体感。全息摄影采用激光作为照明光源，并将光源发出的光分为两束，一束直接射向感光片，另一束经被摄物的反射后再射向感光片。人眼直接去看这种感光的底片，只能看到像指纹一样的干涉条纹，但如果用激光去照射它，人眼透过底片就能看到原来被拍摄物体完全相同的三维立体像。一张全息摄影图片即使只剩下一小部分，依然可以重现全部景物。全息摄影可应用于工业上进行无损探伤，超声全息，全息显微镜，全息摄影存储器,全息电影和电视等许多方面。
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
