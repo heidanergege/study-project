@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图的综合应用</title>
+    <style>
+        .box {
+            width: 420px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid #000;
+        }
+
+        .box span {
+            position: relative;
+            float: left;
+            width: 64px;
+            height: 64px;
+            margin: 35px 35px;
+            border-radius: 50%;
+            border: 1px solid #cccccc;
+            background: url(images/jinglingtu.png) no-repeat;
+
+        }
+
+        .box div {
+            position: absolute;
+            display: none;
+            left: -2px;
+            top: -2px;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 3px solid #ccc;
+        }
+
+        .box span:hover div {
+            display: block;
+        }
+
+
+        .box .tu1 {
+            /* background: url(images/jinglingtu.png) no-repeat; */
+            background-position: 0 0;
+        }
+
+        .box .tu2 {
+            background-position: -200px 0;
+        }
+
+        .box .tu3 {
+            background-position: -134px 0;
+        }
+
+        .box .tu4 {
+            background-position: -68px 0;
+        }
+
+        .box .tu5 {
+            background-position: -1px -73px;
+        }
+
+        .box .tu6 {
+            background-position: -200px -73px;
+        }
+
+        .box .tu7 {
+            background-position: -134px -73px;
+        }
+
+        .box .tu8 {
+            background-position: -68px -73px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span class="tu1">
+            <div></div>
+        </span>
+        <span class="tu2">
+            <div></div>
+        </span>
+        <span class="tu3">
+            <div></div>
+        </span>
+        <span class="tu4">
+            <div></div>
+        </span>
+        <span class="tu5">
+            <div></div>
+        </span>
+        <span class="tu6">
+            <div></div>
+        </span>
+        <span class="tu7">
+            <div></div>
+        </span>
+        <span class="tu8">
+            <div></div>
+        </span>
+        <span class="tu9">
+            <div></div>
+        </span>
+    </div>
+</body>
+
+</html>

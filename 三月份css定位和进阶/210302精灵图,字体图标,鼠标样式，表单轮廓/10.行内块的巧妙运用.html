@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行内块的巧妙运用</title>
+    <style>
+        * {
+            margin: 0;
+            height: 0;
+        }
+
+        .box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .box a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #e2e0e2;
+            background: #eeecee;
+            text-align: center;
+            line-height: 38px;
+            text-decoration: none;
+            color: #707173;
+            font-size: 14px;
+        }
+
+        .box .prev,
+        .box .next {
+            width: 85px;
+        }
+
+        .box .current,
+        .box .elp {
+            border: none;
+            background-color: transparent;
+        }
+
+        .box input {
+            width: 40px;
+            height: 23px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .box button {
+            width: 50px;
+            height: 36px;
+            outline: none;
+            border: 1px solid #e2e0e2;
+            background: #eeecee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <a href="#" class="prev">&lt;&lt; 上一页</a>
+        <a href="#" class="current">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#" class="elp">...</a>
+        <a href="#" class="next">下一页 &gt;&gt;</a>
+        到第 <input type="text"> 页
+        <button>确定</button>
+</body>
+
+</html>
