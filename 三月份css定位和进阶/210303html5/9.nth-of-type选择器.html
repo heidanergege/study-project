@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth-of-type选择器</title>
+    <style>
+        /* ul li:first-of-type {
+            background-color: pink;
+        }
+
+        ul li:last-of-type {
+            background-color: pink;
+        } */
+
+        ul li:nth-of-type(1) {
+            background-color: pink;
+        }
+
+        /* <!-- nth-of-type和nth-child 的区别 --> */
+        /* nth-child 是先数父元素的孩子，再验证孩子姓名 */
+        section div:nth-child(2) {
+            background-color: pink;
+        }
+
+        /* :nth-of-type()是先验证父元素里孩子的姓名，再根据姓名数第几个孩子 */
+        section div:nth-of-type(2) {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是老张家的第1个孩子</li>
+        <li>我是老张家的第2个孩子</li>
+        <li>我是老张家的第3个孩子</li>
+        <li>我是老张家的第4个孩子</li>
+        <li>我是老张家的第5个孩子</li>
+        <li>我是老张家的第6个孩子</li>
+        <li>我是老张家的第7个孩子</li>
+        <li>我是老张家的第8个孩子</li>
+    </ul>
+    <!-- nth-of-type和nth-child 的区别 -->
+    <section>
+        <p>光头强</p>
+        <div>熊大</div>
+        <div>熊二</div>
+    </section>
+</body>
+
+</html>

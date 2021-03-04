@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    width: 270px;
+    height: 233px;
+    margin: 100px auto;
+    border: 2px solid #58abff;
+}
+
+ul li {
+    list-style: none;
+    float: left;
+    width: 35px;
+    height: 35px;
+    margin-left: 2px;
+    border: 2px solid transparent;
+}
+
+header li {
+    font-size: 15px;
+    line-height: 31px;
+}
+
+ul {
+    width: 100%;
+    height: 36px;
+    line-height: 32px;
+    text-align: center;
+    margin-left: -1px;
+    border-bottom: 1px solid #c8cacc;
+}
+
+li:first-child,
+li:last-child {
+    color: #e069ad;
+}
+
+.week-1 li:first-child,
+.week-5 li:nth-child(n+5) {
+    color: #bfc5d6;
+}
+
+.week-1 li:nth-child(5) {
+    background-color: #ffbb00;
+    color: #fff;
+}
+
+main ul li:hover {
+    border: 2px solid #ffbb00;
+}

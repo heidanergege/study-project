@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3新增属性选择器</title>
+    <style>
+        /* 必须是input，但是必须同时有value的属性，中括号表示 */
+        input[value] {
+            color: pink;
+        }
+
+        /* <!-- 2.属性选择器还可以选择属性=值的某些元素 --> */
+        input[type="text"] {
+            color: skyblue;
+        }
+
+        /* <!-- 3.属性选择器可以选择属性值开头的某些元素 --> */
+        div[class^=icon] {
+            color: red;
+        }
+
+        section[class$=data] {
+            color: blue;
+        }
+
+        /* 类选择器和属性选择器 伪类选择器的权重为10 */
+    </style>
+</head>
+
+<body>
+    <!-- 1.利用属性选择器就可以不用借助于类或者ID选择器 -->
+    <input type="text" value="请输入用户名">
+    <input type="text">
+    <!-- 2.属性选择器还可以选择属性=值的某些元素 -->
+    <input type="text" name="" id="">
+    <input type="password" name="" id="">
+    <!-- 3.属性选择器可以选择属性值开头的某些元素 -->
+    <div class="icon1">我是小图标</div>
+    <div class="icon2">我是小图标</div>
+    <div class="icon3">我是小图标</div>
+    <div class="icon4">我是小图标</div>
+    <div>我是打酱油的</div>
+    <!-- 4.属性选择器可以选择属性值结尾的某些元素 -->
+    <section class="icon1-data">我是大人物</section>
+    <section class="icon2-data">我是小人物</section>
+    <section class="icon3-ico">我是打酱油的</section>
+</body>
+
+</html>

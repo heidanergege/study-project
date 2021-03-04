@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3盒子模型</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            padding: 10px;
+            box-sizing: content-box;
+        }
+
+        p {
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        小胖儿锦灏
+    </div>
+    <p>
+        大灏
+    </p>
+</body>
+
+</html>

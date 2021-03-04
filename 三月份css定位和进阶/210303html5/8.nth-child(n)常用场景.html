@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth-child(n)的常用使用场景</title>
+    <style>
+        /* 1.把所以的偶数的元素选出来 */
+        ul li:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        /* 2.把所以的奇数的元素选出来 */
+        ul li:nth-child(odd) {
+            background-color: rgb(245, 172, 172);
+        }
+
+        /* 3.括号里是n的话，是默认选择了所有的元素 */
+        ol li:nth-child(n+3) {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>我是第1个娃儿</li>
+        <li>我是第2个娃儿</li>
+        <li>我是第3个娃儿</li>
+        <li>我是第4个娃儿</li>
+        <li>我是第5个娃儿</li>
+        <li>我是第6个娃儿</li>
+        <li>我是第7个娃儿</li>
+        <li>我是第8个娃儿</li>
+    </ul>
+    <ol>
+        <li>我是第1个娃儿</li>
+        <li>我是第2个娃儿</li>
+        <li>我是第3个娃儿</li>
+        <li>我是第4个娃儿</li>
+        <li>我是第5个娃儿</li>
+        <li>我是第6个娃儿</li>
+        <li>我是第7个娃儿</li>
+        <li>我是第8个娃儿</li>
+    </ol>
+</body>
+
+</html>
