@@ -1,0 +1,131 @@
+/* sk nav 模块 start  */
+.sk {
+    position: absolute;
+    left: 188px;
+    top: 41px;
+    border-left: 1px solid #b3181c;
+    padding-left: 14px;
+}
+
+.sk_list {
+    float: left;
+}
+
+.sk_list ul li {
+    float: left;
+}
+
+.sk_list ul li a {
+    display: block;
+    padding: 0 28px;
+    font-size: 16px;
+    line-height: 47px;
+    font-weight: 700;
+    color: #000;
+}
+
+.sk_con {
+    float: left;
+}
+
+.sk_con ul li {
+    float: left;
+    padding-top: 15px;
+}
+
+.sk_con ul li a {
+    display: block;
+    /* line-height: 47px; */
+    font-size: 14px;
+    padding: 0 23px;
+}
+
+.sk_con ul li:last-child a::after {
+    content: '\e906';
+    font-family: 'icomoon';
+}
+
+/* sk main 模块 start */
+.sk_bd ul {
+    margin-top: 25px;
+}
+
+.sk_bd ul li {
+    float: left;
+    width: 290px;
+    height: 460px;
+    margin-right: 13px;
+    margin-bottom: 14px;
+    border: 1px solid transparent;
+}
+
+.sk_bd ul li:hover {
+    border: 1px solid #b2191b;
+}
+
+.sk_bd ul li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.sk_bd ul li a p {
+    padding-top: 4px;
+    margin: 0 15px;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.sk_bd ul li a>span {
+    display: block;
+    padding-top: 6px;
+    margin: 0 15px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #e1001b;
+}
+
+.sk_bd ul li a>span i {
+    font-size: 14px;
+    color: #a5a5a5;
+    text-decoration: line-through;
+}
+
+.sk_bd ul li a .jindu .total {
+    display: block;
+    width: 132px;
+    height: 12px;
+    border: 1px solid #e1001b;
+    border-radius: 6px;
+}
+
+.sk_bd ul li a .jindu .total .sold {
+
+    height: 100%;
+    width: 85%;
+    background-color: #e1001b;
+}
+
+.jindu span,
+.jindu .total {
+    float: left;
+    margin-left: 10px;
+}
+
+.jindu .total {
+    margin-top: 5px;
+}
+
+.jindu span {
+    font-size: 14px;
+}
+
+.rob {
+    width: 290px;
+    height: 50px;
+    margin-top: 11px;
+    margin-left: -1px;
+    background-color: #b2191b;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    color: #fff;
+}
