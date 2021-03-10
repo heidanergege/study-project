@@ -1,0 +1,220 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?uq434m');
+    src: url('../fonts/icomoon.eot?uq434m#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?uq434m') format('truetype'),
+        url('../fonts/icomoon.woff?uq434m') format('woff'),
+        url('../fonts/icomoon.svg?uq434m#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.w {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/* top 模块 */
+.top {
+    height: 31px;
+    background-color: #f7f7f7;
+}
+
+.top div h5 {
+    line-height: 31px;
+    color: #999999;
+    font-weight: 400;
+}
+
+/* header 模块 */
+.header {
+    height: 76px;
+}
+
+.logo {
+    position: relative;
+}
+
+.logo h1 a {
+    position: absolute;
+    top: 19px;
+    width: 255px;
+    height: 38px;
+    background: url(../images/logo.png) no-repeat;
+    font-size: 0;
+}
+
+.header .fr li {
+    float: left;
+    margin-left: 20px;
+    margin-top: 28px;
+}
+
+/* <!-- shortcut 模块 start --> */
+.shortcut {
+    height: 42px;
+}
+
+.dropdown {
+    /* overflow: hidden; */
+    width: 230px;
+    height: 42px;
+}
+
+.dropdown dt {
+    width: 230px;
+    height: 42px;
+    background-color: #3492fd;
+    border-radius: 8px 8px 0 0;
+    font-size: 16px;
+    color: #000;
+    line-height: 42px;
+    text-align: center;
+}
+
+.dropdown dd {
+    width: 230px;
+    height: 430px;
+    padding-top: 20px;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 0 0 10px 10px;
+}
+
+.dropdown dd ul li {
+    width: 230px;
+    height: 39px;
+    padding: 0 80px 0 0;
+}
+
+.dropdown dd ul li a {
+    color: #fff;
+}
+
+.dropdown dd ul li a::after {
+    float: right;
+    padding-top: 2px;
+    font-family: 'icomoon';
+    content: '\e904';
+}
+
+/* 快捷导航 模块  */
+.shortcut .fl li {
+    float: left;
+    margin-left: 40px;
+    line-height: 42px;
+    font-size: 16px;
+}
+
+.shortcut .fl .down::after {
+    font-family: 'icomoon';
+    content: '\e906';
+}
+
+.shortcut {
+    position: relative;
+}
+
+/* 搜索框 模块 */
+.shortcut .search input {
+    width: 170px;
+    height: 32px;
+    margin-top: 5px;
+    margin-left: 53px;
+    text-indent: 1em;
+    border-radius: 16px 0 0 16px;
+    border: 1px solid #eeeeee;
+    border-right: 0;
+}
+
+.shortcut .search button {
+    position: absolute;
+    top: 5px;
+    width: 72px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #fff;
+    border: 1px solid #eeeeee;
+    border-radius: 0 16px 16px 0;
+    border-left: 0;
+    cursor: pointer;
+}
+
+.shortcut .search button::before {
+    position: absolute;
+    left: 0;
+    content: '|';
+    color: #eee;
+}
+
+/* <!-- footer 模块 start -->  */
+footer {
+    height: 294px;
+    background-color: #333;
+}
+
+.mod_service {
+    height: 210px;
+    padding-top: 51px;
+    border-bottom: 1px solid #595c62;
+}
+
+.mod_service dl {
+    float: left;
+    color: #ccc;
+}
+
+.mod_service_l {
+    width: 425px;
+}
+
+.mod_service dt {
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.mod_service_c {
+    width: 120px;
+    margin: 0 60px 0 50px;
+}
+
+.mod_service_r {
+    width: 500px;
+}
+
+.mod_service_r dd {
+    margin-top: -10px;
+}
+
+.mod_service_r dd a {
+    padding-right: 26px;
+    line-height: 36px;
+    color: #ccc;
+}
+
+.mod_copyright {
+    padding-top: 25px;
+    text-align: center;
+    color: #ccc;
+}
+
+.mod_copyright a {
+    padding: 0 12px;
+    color: #ccc;
+    text-align: center;
+}
+
+.mod_copyright p {
+    padding-top: 13px;
+}
+
+/* <!-- footer 模块 end -->  */

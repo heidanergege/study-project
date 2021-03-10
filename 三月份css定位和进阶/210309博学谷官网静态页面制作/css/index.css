@@ -1,0 +1,236 @@
+body {
+    background-color: #f0f0f0;
+}
+
+/* focus 模块 */
+.focus {
+    height: 322px;
+    margin-bottom: 5px;
+    text-align: center;
+    background-color: #383f8f;
+}
+
+/* coupon 模块 */
+.coupon {
+    height: 101px;
+}
+
+.coupon .coupon_main {
+    width: 952px;
+    height: 101px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.coupon .coupon_main li {
+    float: left;
+}
+
+.coupon .coupon_main li a {
+    display: inline-block;
+    width: 238px;
+    height: 101px;
+    padding-left: 25px;
+    line-height: 101px;
+}
+
+.coupon_main li a p {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 30px;
+}
+
+/* main 模块 */
+.main {
+    margin-top: 30px;
+}
+
+.hot_course {
+    position: relative;
+    width: 693px;
+    height: 256px;
+    padding: 20px 50px 6px;
+    background-color: #fefefe;
+    border-radius: 6px;
+}
+
+.hot_course .right {
+    position: absolute;
+    top: 115px;
+    right: 0;
+    width: 30px;
+    height: 60px;
+}
+
+.hot_course .left {
+    position: absolute;
+    top: 115px;
+    left: 0;
+    width: 30px;
+    height: 60px;
+}
+
+.hot_course h3 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.hot_course ul li {
+    overflow: hidden;
+    width: 284px;
+    height: 196px;
+    margin-top: 9px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .1);
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.hot_course ul li img {
+    width: 284px;
+    height: 120px;
+}
+
+.hot_course ul li a p {
+    width: 265px;
+
+    padding: 13px 0px 0px 18px;
+}
+
+.hot_course ul li a .time {
+    font-size: 12px;
+}
+
+.hot_course ul li a .time img {
+    margin-left: 50px;
+    width: 14px;
+    height: 14px;
+}
+
+.hot_course ul li a .course_name::after {
+    float: right;
+    font-family: 'icomoon';
+    content: '讲师：xxx';
+}
+
+.hot_course ul li a .time::after {
+    float: right;
+    font-family: 'icomoon';
+    content: '直播未开始';
+}
+
+.news {
+    width: 490px;
+    height: 256px;
+    padding-top: 22px;
+    padding-left: 50px;
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+
+.news dl {
+    float: left;
+}
+
+.news dl dt {
+    font-size: 18px;
+    padding-bottom: 7px;
+}
+
+.news .news_fr {
+    padding-left: 36px;
+    line-height: 26px;
+}
+
+.news .news_fr dt {
+    color: #3492fd;
+    text-decoration: underline;
+}
+
+.news .news_fr dd::before {
+    font-family: 'icomoon';
+    content: '•  ';
+    font-size: 18px;
+    color: #3492FD;
+}
+
+.news .news_fr dl dd:last-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* goods 模块 */
+.goods {
+    width: 1192px;
+    height: 290px;
+    margin-top: 23px;
+    margin-bottom: 20px;
+}
+
+.goods dl {
+    height: 36px;
+}
+
+.goods dl dt,
+.goods dl dd {
+    float: left;
+    padding-right: 20px;
+    line-height: 36px;
+}
+
+.goods dl dt {
+    font-size: 18px;
+}
+
+.goods ul li {
+    overflow: hidden;
+    float: left;
+    width: 290px;
+    height: 254px;
+    margin-right: 8px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.goods ul li img {
+    width: 290px;
+    height: 160px;
+}
+
+.goods ul li h3 {
+    padding-left: 8px;
+    padding-top: 12px;
+    font-weight: 400;
+}
+
+.goods ul li p {
+    padding-left: 11px;
+    padding-top: 6px;
+}
+
+.goods ul li .price i {
+    padding-left: 24px;
+    font-size: 10px;
+    color: #000;
+    text-decoration: line-through;
+}
+
+.goods ul li .price {
+    padding: 4px 0 0 12px;
+    font-size: 14px;
+    color: #ff0000;
+    text-decoration: none;
+}
+
+.goods ul li .price img {
+    width: 11px;
+    height: 14px;
+    margin-left: 90px;
+    margin-right: 10px;
+}
+
+.goods ul li .price::after {
+    font-family: 'icommon';
+    content: '149';
+    color: #000;
+}
