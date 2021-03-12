@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缩放案例动态效果图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        section {
+            width: 860px;
+            height: 450px;
+            margin: 80px auto;
+            padding: 20px 20px 15px 0;
+            background-color: #5a5a5a;
+        }
+
+        section ul li {
+            float: left;
+            width: 255px;
+            height: 195px;
+            margin-left: 25px;
+            transition: all 1s;
+        }
+
+        section ul li:hover {
+            transform: scale(.5);
+        }
+
+        section ul li a {
+            position: relative;
+            display: block;
+            width: 255px;
+            height: 195px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        section ul li a img {
+            display: block;
+            width: 255px;
+            height: 195px;
+        }
+
+        section ul li a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+            transition: all 1s;
+        }
+
+        section ul li a:hover::before {
+            background-color: transparent;
+
+        }
+
+        section ul li:nth-child(-n+3) {
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <ul>
+            <li><a href="#" target="_blank"><img src="images/1.jpg" alt=""></a></li>
+            <li><a href="#" target="_blank"><img src="images/2.jpg" alt=""></a></li>
+            <li><a href="#" target="_blank"><img src="images/3.jpg" alt=""></a></li>
+            <li><a href="#" target="_blank"><img src="images/4.jpg" alt=""></a></li>
+            <li><a href="#" target="_blank"><img src="images/5.jpg" alt=""></a></li>
+            <li><a href="#" target="_blank"><img src="images/6.jpg" alt=""></a></li>
+        </ul>
+    </section>
+</body>
+
+</html>

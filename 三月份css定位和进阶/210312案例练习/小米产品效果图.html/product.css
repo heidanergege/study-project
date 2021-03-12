@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.product {
+    width: 234px;
+    height: 300px;
+    margin-top: 100px;
+    margin-left: 114px;
+    background-color: #fff;
+    text-align: center;
+    transition: all .4s;
+
+}
+
+.product a {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    margin-top: 34px;
+}
+
+.product h3 {
+    margin-top: 14px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 400;
+}
+
+.product a .summary {
+    font-size: 12px;
+    color: #c2c2c2;
+}
+
+.product a .price {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #ff6752;
+}
+
+.product a .del {
+    color: #b7b0b7;
+    text-decoration: line-through;
+}
+
+.product a .remark {
+    position: absolute;
+    bottom: -76px;
+    left: 0;
+    width: 234px;
+    height: 76px;
+    padding-top: 5px;
+    line-height: 22px;
+    text-align: left;
+    padding-left: 30px;
+    background-color: #ff6700;
+    font-size: 12px;
+    color: #fff;
+    opacity: 0;
+    transition: all .4s;
+}
+
+.product a .remark i {
+    font-style: normal;
+}
+
+.product a .remark p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.product a:hover .remark {
+    transform: translate(0, -76px);
+    opacity: 1;
+}
+
+.product:hover {
+    transform: translate(0, -2px);
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, .1);
+}

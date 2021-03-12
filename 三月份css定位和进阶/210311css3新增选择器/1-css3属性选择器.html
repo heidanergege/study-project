@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3属性选择器</title>
+    <style>
+        button:hover {
+            cursor: pointer;
+        }
+
+        /* 属性选择器的语法 */
+        /* 选择属性为 disabled 的标签 */
+        button[disabled] {
+            cursor: default;
+        }
+
+        /* 选择type属性且属性值为 search 的标签 */
+        input[type="search"] {
+            background-color: pink;
+        }
+
+        /* 选择 class 属性下 属性值且以icon 开头的标签 */
+        div[class^="icon"] {
+            color: red;
+        }
+
+        /* 选择 class 属性下 属性值且icon 结尾的标签 */
+
+        div[class$="icon"] {
+            color: greenyellow;
+        }
+
+        /* 选择 class 属性下 属性值只要含有 iicon的标签 */
+        div[class*="iicon"] {
+            color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 例子一 -->
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <!-- disabled 是禁用按钮 -->
+    <button disabled="disabled">按钮</button>
+    <button>按钮</button>
+    <!-- 例子二 -->
+    <input type="text" name="" id="" value="文本框">
+    <input type="text" name="" id="" value="文本框">
+    <input type="text" name="" id="" value="文本框">
+    <input type="search" name="" id="" value="搜索框">
+    <input type="search" name="" id="" value="搜索框">
+    <input type="search" name="" id="" value="搜索框">
+
+    <!-- 例子三 -->
+    <div class="icon1">图标1</div>
+    <div class="icon2">图标2</div>
+    <div class="icon3">图标3</div>
+    <div class="iiicon3">图标4</div>
+    <div class="ABCicon">图标5</div>
+</body>
+
+</html>

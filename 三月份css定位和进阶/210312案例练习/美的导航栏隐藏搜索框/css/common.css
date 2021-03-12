@@ -1,0 +1,121 @@
+/* 顶部区域、 */
+.top {
+    height: 44px;
+    background-color: #0092d8;
+}
+
+/* logo区域 */
+.logo {
+    float: left;
+}
+
+.logo h1 a {
+    display: block;
+    width: 120px;
+    height: 44px;
+    background: url(../images/index_service_sprite@2x.png) no-repeat -80px -0px;
+    background-size: 200px 80px;
+}
+
+.logo h1 {
+    overflow: hidden;
+    text-indent: -9999em;
+}
+
+/* 快捷导航栏区域、 */
+.shortcut ul li {
+    float: left;
+    margin: 0 30px;
+    text-align: center;
+    line-height: 44px;
+}
+
+.shortcut ul li a {
+    color: #a3c3e6;
+}
+
+.shortcut ul li a:hover {
+    color: #fff;
+}
+
+/* 右边区域 */
+.top .right_info {
+    float: right;
+}
+
+.right_info ul li .search_bt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.right_info ul li .search_bt:hover {
+    width: 250px;
+    opacity: 1;
+}
+
+.right_info ul li .search_bt button {
+    float: left;
+    width: 10%;
+    height: 100%;
+    background-color: #fff;
+    background: url(../images/index_sprite.png) no-repeat -60px -202px;
+    cursor: pointer;
+}
+
+.right_info ul li .search_bt input {
+    float: right;
+    width: 90%;
+    height: 100%;
+}
+
+.right_info ul li {
+    position: relative;
+    float: left;
+    padding: 10px 22px 11px;
+}
+
+.right_info ul li i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+
+.right_info ul li .login {
+    vertical-align: top;
+    background: url(../images/index_sprite.png) no-repeat -36px -215px;
+
+}
+
+.right_info ul li span {
+    color: #fff;
+}
+
+.right_info ul li .shopcar {
+    background: url(../images/index_sprite.png) no-repeat -146px -213px;
+}
+
+.right_info ul li .mobile {
+    background: url(../images/index_sprite.png) no-repeat -124px -213px;
+}
+
+.right_info ul li .search {
+    background: url(../images/index_sprite.png) no-repeat -97px -213px;
+}
+
+/* news  模块 */
+.news {
+    height: 24px;
+    background-color: #003b66;
+}
+
+.news .w {
+    padding-left: 20px;
+    line-height: 24px;
+    color: #fff;
+}

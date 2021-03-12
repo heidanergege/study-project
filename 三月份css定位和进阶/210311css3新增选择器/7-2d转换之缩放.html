@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D转换之缩放</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+
+        }
+
+        div:hover {
+            /* 里面的数字不跟单位，就是倍数的意思 */
+            transform: scale(x, y);
+            /* 宽度和高度不变 */
+            transform: scale(1, 1);
+            /* 宽度和高度是原来的2倍 */
+            transform: scale(2, 2);
+            /* 宽度是原来的3倍，高度不变 */
+            transform: scale(3, 1);
+            /* 等比例缩放，同时修改宽度和高度，简单的写法 ，宽度和高度同时增加2倍*/
+            transform: scale(2);
+            /* 缩小1倍 */
+            transform: scale(.5);
+            /* scale 优势之处，不会影响其他的盒子 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

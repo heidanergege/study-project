@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频标签</title>
+</head>
+
+<body>
+    <!-- 谷歌把autoplay功能禁用了 -->
+    <!-- <audio src="media/snow.mp3" controls="controls" autoplay="autoplay" loop="loop"></audio> -->
+    <!-- 因为不同浏览器支持不同的格式，我们采取的解决方案是 要为这个音频准备多个格式，语法如下 -->
+    <audio controls="controls">
+        <source src="media/snow.mp3" type="audio/mpeg">
+        <source src="media/snow.ogg" type="audio/ogg">
+        <!-- 你的浏览器版本过低，不支持audio播放 -->
+    </audio>
+</body>
+
+</html>

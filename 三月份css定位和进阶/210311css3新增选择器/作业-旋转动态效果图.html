@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转动态效果图</title>
+    <style>
+        body {
+            background-color: #e8e8e8;
+        }
+
+        section {
+            width: 1060px;
+            margin: 50px auto;
+        }
+
+        section div {
+            /* overflow: hidden; */
+            float: left;
+            width: 230px;
+            height: 230px;
+            margin-right: 10px;
+            border: 10px solid #f4f4f4;
+            background-color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            transition: all 1s;
+        }
+
+        section div a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+
+        div img {
+            width: 70px;
+            height: 70px;
+            margin-top: 40px;
+        }
+
+        div p {
+            font-size: 20px;
+            font-weight: 700;
+            color: #8e8e8e;
+        }
+
+        div:hover {
+            transform: rotate(360deg);
+            background-color: #eeedeb;
+            border-color: #fff;
+        }
+
+        div:hover img {
+            transform: scale(1.5);
+        }
+
+        div:hover p {
+            transform: scale(1.3);
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="tu1">
+            <a href="#" target="_block">
+                <img src="images/1.png" alt="">
+                <p>讲师介绍</p>
+            </a>
+        </div>
+        <div class="tu2">
+            <a href="#" target="_block">
+                <img src="images/2.png" alt="">
+                <p>修改作业</p>
+            </a>
+        </div>
+        <div class="tu3">
+            <a href="#" target="_block">
+                <img src="images/3.png" alt="">
+                <p>通过考试</p>
+            </a>
+        </div>
+        <div class="tu4">
+            <a href="#" target="_block">
+                <img src="images/4.png" alt="">
+                <p>领取证书</p>
+            </a>
+        </div>
+    </section>
+</body>
+
+</html>
