@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会旋转太极图案</title>
+    <style>
+        body {
+            background-color: #87ceeb;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+            border: 200px solid #000;
+            border-bottom: 200px solid #fff;
+            border-right: 200px solid #fff;
+            border-radius: 50%;
+            background-color: #fff;
+            transform: rotate(-45deg);
+            transition: all .5s linear;
+        }
+
+        .box:hover {
+            transform: rotate(315deg);
+        }
+
+        .box .black {
+            position: absolute;
+            left: -29px;
+            bottom: -30px;
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            border: 75px solid #000;
+            border-radius: 50%;
+        }
+
+        .box .white {
+            position: absolute;
+            right: -29px;
+            top: -29px;
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            border: 75px solid #fff;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="black"></div>
+        <div class="white"></div>
+    </div>
+</body>
+
+</html>

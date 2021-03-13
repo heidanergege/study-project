@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            overflow: hidden;
+            position: relative;
+            width: 101px;
+            height: 29px;
+            margin: 51px 0 0 51px;
+            text-align: center;
+            line-height: 33px;
+            border: 2px solid #d6d6d6;
+            border-radius: 16px;
+        }
+
+        div a {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #1e1e1e;
+            text-decoration: none;
+            z-index: 1;
+        }
+
+        div::after {
+            content: '';
+            position: absolute;
+            display: block;
+            bottom: -35px;
+            right: -2px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #d6d6d6;
+            background-color: #d6d6d6;
+            border-radius: 16px;
+            transition: all .3s;
+        }
+
+        div:hover::after {
+            bottom: -2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="#" target="_blank">
+            探索
+        </a>
+    </div>
+</body>
+
+</html>

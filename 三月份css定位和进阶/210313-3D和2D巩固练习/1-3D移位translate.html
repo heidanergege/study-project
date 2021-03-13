@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d移位</title>
+    <style>
+        /* 透视写在被观察元素的父元素身上 */
+        body {
+            perspective: 200px;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: pink;
+            /* transform: translateX(100px) translateY(100px) translateZ(100px); */
+            /* 3d 移位的简写方法 */
+            transform: translate3d(100px, 100px, 100px);
+            /* 5.xyz 不能省略，如果没有就写0 */
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
