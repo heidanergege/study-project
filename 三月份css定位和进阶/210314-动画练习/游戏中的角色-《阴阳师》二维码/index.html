@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏中的角色-《阴阳师》二维码</title>
+    <meta name="description" content="网站的说明/简介">
+    <meta name="keywords" content="关键字">
+    <link rel="shortcut icon" href="小图标.ico">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .box {
+            position: relative;
+            width: 145px;
+            height: 287px;
+            margin: 50px;
+            background: url(images/index_z_71df05e.png) no-repeat 0 0;
+        }
+
+        .box .erweima {
+            position: absolute;
+            top: 45px;
+            left: 19px;
+            width: 107px;
+            height: 107px;
+        }
+
+        .erweima img:first-child {
+            width: 107px;
+            height: 107px;
+        }
+
+        .erweima img:last-child {
+            position: absolute;
+            left: -6px;
+            bottom: 0px;
+            animation-name: move;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            /* 或者简写语法 */
+            /* firefox私有属性 */
+            -moz-animation: move 4s linear infinite;
+            /* IE 浏览器私有属性 */
+            -ms-animation: move 4s linear infinite;
+            /* safari、chrome 私有属性 */
+            -webkit-animation: move 4s linear infinite;
+            /* Opera 浏览器私有属性 */
+            -o-animation: move 4s linear infinite;
+            animation: move 4s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(0, -102px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+
+<body>
+    <div class="box">
+        <div class="erweima">
+            <img src="images/57b280b496dee47507111c56NRN73rVj.png" alt="">
+            <img src="images/line_dd0b705.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

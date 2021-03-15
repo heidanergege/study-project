@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚动的新闻</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .w {
+            width: 640px;
+            height: 100%;
+            margin: 0 auto;
+            padding-top: 80px;
+            background-color: #f8f8f8;
+        }
+
+        .news {
+            width: 100%;
+            height: 40px;
+        }
+
+        .news .news_l {
+            float: left;
+            width: 100px;
+            height: 100%;
+            background-color: #f4a460;
+            z-index: 10;
+        }
+
+        .news .news_r {
+            position: relative;
+            float: left;
+            overflow: hidden;
+            width: 540px;
+            height: 40px;
+            line-height: 40px;
+
+        }
+
+        .news_r p {
+            position: absolute;
+            float: left;
+            top: 0;
+            left: 540px;
+            white-space: nowrap;
+            animation: news 10s linear infinite;
+        }
+
+        @keyframes news {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-200%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w">
+        <div class="news">
+            <div class="news_l"></div>
+            <div class="news_r">
+                <p>海外网3月9日电
+                    英国路透社周一（8日）报道称，根据巴西一项研究的初步数据，中国科兴的新冠疫苗对巴西发现的P1变异新冠病毒有效。）</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
