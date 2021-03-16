@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特殊样式</title>
+    <style>
+        a {
+            /* 去除a标签的高亮背景 */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* 在ISO中去掉默认的按钮光亮效果 */
+        input {
+            -wedkit-appearance: none;
+        }
+
+        /* 禁用长按页面时弹出菜单 */
+        img,
+        a {
+            -webkit-touch-callout: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">中国</a>
+    <input type="button" value="按钮">
+</body>
+
+</html>

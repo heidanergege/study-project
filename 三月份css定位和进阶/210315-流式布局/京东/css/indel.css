@@ -1,0 +1,186 @@
+body {
+    width: 100%;
+    min-width: 320px;
+    max-width: 1080px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-family: -apple-system, helvetica, sans-serif;
+    color: #666;
+    background-color: #f6f6f6;
+    line-height: 1.5;
+    height: 2000px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+}
+
+/* 顶部 */
+.app {
+    height: 50px;
+}
+
+.app ul li {
+    float: left;
+    height: 50px;
+    background-color: #333333;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+}
+
+.app ul li:nth-child(1) {
+    width: 8%;
+}
+
+.app ul li:nth-child(1) img {
+    width: 16px;
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(2) {
+    width: 10%;
+}
+
+.app ul li:nth-child(2) img {
+    width: 30px;
+    vertical-align: middle;
+}
+
+.app ul li:nth-child(3) {
+    width: 57%;
+}
+
+.app ul li:nth-child(4) {
+    width: 25%;
+    background-color: #f63515;
+}
+
+/* 搜索 */
+.search_wrap {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    height: 44px;
+    width: 100%;
+    max-width: 1080px;
+    min-width: 320px;
+    background-color: #c82519;
+}
+
+.search_wrap .search_btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 44px;
+}
+
+.search_btn::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 18px;
+    margin: 14px 0 0 15px;
+    background: url(../images/下载.png) no-repeat;
+    background-size: 20px 18px;
+}
+
+.search {
+    position: relative;
+    overflow: hidden;
+    height: 30px;
+    margin: 0 50px;
+    margin-top: 7px;
+    background-color: #f7f7f7;
+    border-radius: 15px;
+}
+
+.search .jd_icon {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    margin: 8px 0 0 15px;
+    background: url(../images/icon.png) no-repeat;
+    background-size: 20px 15px;
+}
+
+.search .jd_icon::after {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    content: "";
+    display: block;
+    width: 1px;
+    height: 15px;
+    background: #ddd;
+}
+
+.search_login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+}
+
+.search .magnifier {
+    position: absolute;
+    top: 9px;
+    left: 52px;
+    width: 18px;
+    height: 15px;
+    background: url(../images/sprites.png) no-repeat -81px 0;
+    background-size: 200px;
+}
+
+.search input {
+    margin: 7px 0 0 76px;
+    outline-style: none;
+    border: 0;
+    background-color: #f7f7f7;
+}
+
+/* 滑块图 */
+.main .slider img {
+    width: 100%;
+}
+
+/* 活动事件 */
+.main .events a img {
+    width: 100%;
+    height: auto;
+}
+
+/* nav */
+.nav {
+    margin-top: 4px;
+}
+
+.nav a {
+    float: left;
+    width: 20%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.nav a img {
+    width: 40px;
+}
+
+.nav a span {
+    display: block;
+}
