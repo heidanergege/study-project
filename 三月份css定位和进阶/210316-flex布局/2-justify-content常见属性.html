@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justify-content常见属性</title>
+    <style>
+        div {
+            display: flex;
+            width: 1000px;
+            height: 500px;
+            background-color: pink;
+            /* 默认的主轴  为  x轴 并从左往右 */
+            flex-direction: row;
+            /* 默认的  根据  主轴    从左往右排列 */
+            /* justify-content: flex-start; */
+            /* 从右往左  排列 */
+            /* justify-content: flex-end; */
+            /* 居中排列 */
+            /* justify-content: center; */
+            /* 平分排列 */
+            /* justify-content: space-around; */
+            /* 先两边贴边  中间的平均分配剩余空间 */
+            /* justify-content: space-between; */
+            /* 平分剩余空间 */
+            /* justify-content: space-evenly; */
+            /* 设置子元素是否换行  默认的不换行*/
+            flex-wrap: nowrap;
+            /* 换行 */
+            flex-wrap: wrap;
+            /* 元素从父元素底部（右部）沿着主轴向上或左换行 */
+            flex-wrap: wrap-reverse;
+        }
+
+        span {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+    </div>
+</body>
+
+</html>
