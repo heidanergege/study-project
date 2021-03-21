@@ -1,0 +1,22 @@
+@basefont: 50px;
+
+html {
+    font-size: @basefont;
+}
+
+@border: (5px + 10px) * 2;
+
+div {
+    width: 200px - 50;
+    height: 209px * 2;
+    border: @border solid #000;
+    background-color: #999 - #222;
+
+    img {
+        width: 80rem / @basefont;
+        height: 82rem / @basefont;
+    }
+}
+
+
+// 运算符左右两侧必须敲一个空格

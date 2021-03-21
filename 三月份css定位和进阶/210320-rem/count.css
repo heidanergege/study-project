@@ -1,0 +1,13 @@
+html {
+  font-size: 50px;
+}
+div {
+  width: 150px;
+  height: 418px;
+  border: 30px solid #000;
+  background-color: #777777;
+}
+div img {
+  width: 80rem / 50px;
+  height: 82rem / 50px;
+}

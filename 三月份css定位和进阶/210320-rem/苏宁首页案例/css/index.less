@@ -1,0 +1,122 @@
+// @import 是导入的意思 可以把一个样式文件导入另一个样式文件
+@import "common";
+
+body {
+    min-width: 320px;
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f2f2;
+}
+
+// top_search start 
+@basefont: 50;
+
+.top_search {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: (88rem / @basefont);
+    background-color: #ffdb47;
+
+    .classify {
+        width: (36rem / @basefont);
+        height: (60rem / @basefont);
+        margin: (14rem / @basefont) (20rem / @basefont) (14rem / @basefont) (34rem / @basefont);
+        background: url(../images/classify.png) no-repeat;
+        background-size: (36rem / @basefont) (60rem / @basefont);
+    }
+
+    .search {
+        position: relative;
+        flex: 1;
+
+        input {
+            width: (522rem / @basefont);
+            height: (64rem / @basefont);
+            border-radius: (32rem / @basefont);
+            margin: (12rem / @basefont) (25rem / @basefont);
+            padding-left: (65rem / @basefont);
+            font-size: (25rem / @basefont);
+            color: #757575;
+        }
+
+        button {
+            position: absolute;
+            top: (25rem / @basefont);
+            left: (50rem / @basefont);
+            width: (36rem / @basefont);
+            height: (36rem / @basefont);
+            background: url(../images/下载.png) no-repeat;
+            background-size: (36rem / @basefont) (36rem / @basefont);
+            cursor: pointer;
+        }
+    }
+
+    .login {
+        width: (36rem / @basefont);
+        height: (60rem / @basefont);
+        margin: (14rem / @basefont) (34rem / @basefont) (14rem / @basefont) (20rem / @basefont);
+        background: url(../images/login.png) no-repeat;
+        background-size: (36rem / @basefont) (60rem / @basefont);
+    }
+
+}
+
+// banner start 
+.banner {
+    width: (750rem / @basefont);
+    height: (368rem / @basefont);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// banner end
+// activity start 
+.activity {
+    display: flex;
+
+    a {
+        flex: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// activity end
+// nav start 
+nav {
+    width: (750rem / @basefont);
+
+    a {
+        float: left;
+        width: (150rem / @basefont);
+        height: (142rem / @basefont);
+        text-align: center;
+
+        img {
+            display: block;
+            margin: (24rem / @basefont) auto 0;
+            width: (84rem / @basefont);
+            height: (84rem / @basefont);
+        }
+
+        span {
+            display: block;
+            font-size: (25rem / @basefont);
+            color: #666666;
+
+        }
+    }
+}
+
+// nav end 

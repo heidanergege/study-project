@@ -1,0 +1,147 @@
+body {
+    min-width: 320px;
+    max-width: 750px;
+    /* flexible 给我们划分了 10 等份 */
+    width: 10rem;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: Arial, Helvetica;
+    background: #f2f2f2;
+}
+
+input,
+button {
+    outline: none;
+    border: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    font-size: .333333rem;
+    text-decoration: none;
+    color: #666;
+}
+
+/* 如果屏幕宽度超过750px 那么我们就要按照 750px 来显示，不能超过750px */
+@media screen and (min-width:750px) {
+    html {
+        font-size: 75px !important;
+    }
+}
+
+/* 这个插件默认的HTML 字体大小 cssroot 是16px */
+/* top_search start  */
+.top_search {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: 1.173333rem;
+    background-color: #ffdb47;
+
+}
+
+.classify {
+    width: .48rem;
+    height: .8rem;
+    background: url(../images/classify.png) no-repeat;
+    background-size: .48rem;
+    margin: .186667rem .333333rem;
+}
+
+.search {
+    position: relative;
+    flex: 1;
+
+}
+
+.search form .search_icon {
+    position: absolute;
+    top: .346667rem;
+    left: .666667rem;
+    width: .48rem;
+    height: .48rem;
+    background: url(../images/下载.png) no-repeat;
+    background-size: .48rem .48rem;
+    cursor: pointer;
+}
+
+.search form input {
+    width: 6.96rem;
+    height: .853333rem;
+    margin: .16rem .373333rem;
+    padding-left: .933333rem;
+    border-radius: .426667rem;
+    font-size: .333333rem;
+    color: #757575;
+}
+
+.login {
+    width: .48rem;
+    height: .8rem;
+    background: url(../images/login.png) no-repeat;
+    background-size: .48rem;
+    margin: .186667rem .333333rem;
+}
+
+/* <!-- banner start  --> */
+.banner {
+    width: 10rem;
+    height: 4.906667rem;
+
+}
+
+.banner a img {
+    width: 100%;
+}
+
+/* activity start  */
+.activity {
+    display: flex;
+}
+
+.activity a img {
+    width: 100%;
+}
+
+/* nav start  */
+nav {
+    display: flex;
+    width: 10rem;
+}
+
+nav ul {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+nav ul li {
+    width: 20%;
+    height: 1.866667rem;
+}
+
+nav ul li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 1.866667rem;
+}
+
+nav ul li a img {
+    display: block;
+    width: 1.12rem;
+    height: 1.12rem;
+    padding: .32rem .44rem 0;
+}

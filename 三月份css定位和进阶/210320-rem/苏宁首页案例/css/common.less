@@ -1,0 +1,103 @@
+// 设置常见的屏幕尺寸 修改里面的HTML 文字大小
+input,
+button {
+    outline: none;
+    border: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+html {
+    font-size: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+// 我们此次划分的份数为15份
+@number: 15;
+
+//1. 320px
+@media screen and (min-width: 320px) {
+    html {
+        font-size: (320px / @number);
+    }
+}
+
+// 2.360px
+@media screen and (min-width: 360px) {
+    html {
+        font-size: (360px / @number);
+    }
+}
+
+// 3.375px 
+@media screen and (min-width: 375px) {
+    html {
+        font-size: (375px / @number);
+    }
+}
+
+// 4.384px
+@media screen and (min-width: 384px) {
+    html {
+        font-size: (384px / @number);
+    }
+}
+
+// 5.400px
+@media screen and (min-width: 400px) {
+    html {
+        font-size: (400px / @number);
+    }
+}
+
+// 6.414px
+@media screen and (min-width: 414px) {
+    html {
+        font-size: (414px / @number);
+    }
+}
+
+// 7.424px
+@media screen and (min-width: 424px) {
+    html {
+        font-size: (424px / @number);
+    }
+}
+
+// 8.480px
+@media screen and (min-width:480px) {
+    html {
+        font-size: (480px / @number);
+    }
+}
+
+// 9.540px
+@media screen and (min-width: 540px) {
+    html {
+        font-size: (540px / @number);
+    }
+}
+
+// 10.720px
+@media screen and (min-width: 720px) {
+    html {
+        font-size: (720px / @number);
+    }
+}
+
+// 11.750px
+@media screen and (min-width:750px) {
+    html {
+        font-size: (750px / @number);
+    }
+}
