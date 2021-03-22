@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- [if lt IE 9]> -->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <!-- <![endif] -->
+    <!-- 引入bootstrap的样式文件 -->
+    <link rel="stylesheet" href="bootstrap的使用/bootstrap/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        .container .row div[class^="col"] {
+            height: 30px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">左边</div>
+            <div class="col-lg-4 col-lg-offset-4">右边</div>
+        </div>
+        <!-- 中间一个盒子 -->
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">中间</div>
+
+        </div>
+    </div>
+</body>
+
+</html>
