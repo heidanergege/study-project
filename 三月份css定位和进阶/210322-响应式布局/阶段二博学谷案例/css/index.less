@@ -1,0 +1,148 @@
+// 初始化部分
+body {
+    height: 2000px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+// top-nav :start
+
+.top-nav {
+    max-width: 1170px;
+    margin: 0 auto;
+
+
+    .container {
+        position: fixed;
+        top: 0;
+    }
+
+    .logo {
+        float: left;
+        width: 165px;
+        height: 100%;
+
+        a {
+            display: block;
+
+            h1 {
+                font-size: 0;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    ul {
+        float: right;
+        height: 100%;
+
+        li {
+            float: left;
+            height: 100%;
+            line-height: 112px;
+
+            a {
+                padding: 0 25px;
+                font-size: 16px;
+                color: #333;
+            }
+
+            &:nth-child(1) a {
+                color: #000;
+                font-weight: bolder;
+            }
+        }
+
+    }
+}
+
+// top-nav end 
+// banner start
+.banner {
+    width: 100%;
+    margin-top: 112px;
+
+    img {
+        width: 100%;
+        max-height: 578px;
+
+    }
+}
+
+// banner end
+// course start
+.course {
+    .row {
+        margin-top: 95px;
+        text-align: center;
+
+        h1 {
+            font-weight: 700;
+            color: #333;
+        }
+
+        h5 {
+            font-weight: 600;
+            color: #2a270d;
+        }
+
+    }
+
+    ul {
+        li {
+            margin-top: 55px;
+            height: 350px;
+
+            a {
+                display: block;
+                text-align: center;
+
+                h2 {
+
+                    color: #333;
+                }
+
+                p {
+                    padding-top: 8px;
+                    font-weight: 600;
+                    font-size: 16px;
+                    color: #b4b4b4;
+                }
+
+                span {
+                    display: block;
+                    margin: 24px auto 0;
+                    width: 70%;
+                    height: 1px;
+                    background-color: #ededef;
+                }
+
+                .explain {
+                    margin-top: 32px;
+                    color: #333;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+// course end

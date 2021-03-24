@@ -1,0 +1,193 @@
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+@media screen and (max-width:767px) {
+  .top-nav .container {
+    height: 56px;
+  }
+
+  .top-nav .container ul {
+    margin-left: 20px;
+  }
+
+  .top-nav .container ul li {
+    height: 56px;
+    line-height: 56px;
+  }
+
+  .top-nav .container ul li a {
+    padding: 0 7.5px;
+  }
+
+  .banner {
+    margin-top: 56px !important;
+  }
+}
+
+.top-nav {
+
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.top-nav .container {
+  position: fixed;
+  top: 0;
+  height: 112px;
+}
+
+.top-nav .logo {
+  float: left;
+  width: 165px;
+  height: 100%;
+}
+
+.top-nav .logo a {
+  display: block;
+}
+
+.top-nav .logo a h1 {
+  font-size: 0;
+}
+
+.top-nav .logo a img {
+  width: 100%;
+}
+
+.top-nav ul {
+  float: right;
+  height: 100%;
+}
+
+.top-nav ul li {
+  float: left;
+  height: 100%;
+  line-height: 112px;
+}
+
+.top-nav ul li a {
+  padding: 0 25px;
+  font-size: 16px;
+  color: #333;
+}
+
+.top-nav ul li:nth-child(1) a {
+  color: #000;
+  font-weight: bolder;
+}
+
+.banner {
+  width: 100%;
+  margin-top: 112px;
+}
+
+.banner img {
+  width: 100%;
+  max-height: 578px;
+}
+
+.course .row {
+  margin-top: 95px;
+  text-align: center;
+}
+
+.course .row h1 {
+  font-weight: 700;
+  color: #333;
+}
+
+.course .row h5 {
+  font-weight: 600;
+  color: #2a270d;
+}
+
+.course ul li {
+  margin-top: 55px;
+  height: 350px;
+}
+
+@media screen and (max-width:767px) {
+  .banner {
+    width: 100%;
+  }
+
+  .banner img {
+    width: 100%;
+  }
+
+  .course .row {
+    margin-top: 95px;
+    text-align: center;
+  }
+
+  .course .row h1 {
+    font-size: 24px !important;
+  }
+
+  .course .row h5 {
+    font-size: 12px;
+  }
+
+  .course ul li {
+    height: 270px !important;
+  }
+
+  .course .gengduo {
+    padding-top: 58px;
+    font-size: 16px !important;
+    color: #54bcb2;
+  }
+}
+
+.course ul li a {
+  display: block;
+  text-align: center;
+}
+
+.course ul li a h2 {
+  color: #333;
+}
+
+.course ul li a p {
+  padding-top: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #b4b4b4;
+}
+
+.course ul li a span {
+  display: block;
+  margin: 24px auto 0;
+  width: 70%;
+  height: 1px;
+  background-color: #ededef;
+}
+
+.course ul li a .explain {
+  margin-top: 32px;
+  color: #333;
+  font-weight: 400;
+}
+
+.course {
+  text-align: center;
+}
+
+.course .gengduo {
+  font-size: 28px;
+  color: #54bcb2;
+}
