@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var age = prompt('请输入年龄');
+        // 1.parseInt(变量) 可以把 字符型的 转换为数字型的  但是取整数
+        // console.log(parseInt(age));
+        console.log(parseInt('120px')); //会去掉px 单位
+        console.log(parseInt('rem120px')); // NaN
+        // 2.parseFloat(变量) 可以把 字符型转换为数字型 但可以是小数 浮点
+        console.log(parseFloat('3.1415926'));
+        console.log(parseFloat('120px')); //会去掉px 单位
+        console.log(parseFloat('rem120px')); // NaN
+        // 3.利用 Number(变量)
+        var str = '123';
+        console.log(Number(str));
+        console.log(Number('345'));
+        // 4.利用算数运算 - * / 隐式转换
+        console.log('14' - 0);
+        console.log('123' - '120');
+        console.log('123' * 1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
