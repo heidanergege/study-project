@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.用我们的布尔值参与的逻辑运算 true && false ==false
+        //2.逻辑与的短路运算   123 && 456  或者 表达式1 && 表达式2 参与运算
+        //如果表达式1 结果为 真  则返回表达式2   如果表达式1为假 则返回表达式1 后面的则不再参与运算
+        console.log(123 && 456); //结果是 456
+        console.log(0 && 456); // 结果是 0
+        console.log(0 && 456 && 1 + 2 && 'pink'); // 0
+        console.log('' && 4 * 7 && 45678); //''
+
+
+
+        //3.逻辑或的短路运算  表达式1 || 表达式2
+        // 如果表达式1为真 则返回 表达式1
+        // 如果表达式1为假 则返回 表达式2
+        console.log(123 || 456); //结果是 123
+        console.log('' || 345); // 345
+        console.log(123 || 345 || 567); //123
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

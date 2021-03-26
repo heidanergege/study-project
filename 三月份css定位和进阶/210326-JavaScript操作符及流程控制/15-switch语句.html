@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //    1.switch 语句 也是多分支语句 也可以实现 多选一
+        //    2.语法结构 switch  转换 开关 的意思  case 小例子 选项的意思  语法如下：
+        // 我们一般把key 写成变量  但是  key必须全等于 value     key === value
+        //   var key = 3
+        /*         switch (key) {
+                    case value1:
+                        执行语句1
+                        break;
+                    case value2:
+                        执行语句2
+                        break;
+                    case value3:
+                        执行语句3
+                        break;
+                    case value4:
+                        执行语句4
+                        break;
+                        ...
+                    default:
+                        执行最后的语句
+                        break;
+                } */
+        /*  3.执行思路  利用我们的key 的值  和 case 后面的选项值相匹配 如果 匹配 就执行该 case 里面的语句 执行完后 并 break 退出 如果 都匹配不上 就  执行 最后的 default 里面的语句 后 退出  如下： */
+        var num = 3
+        switch (num) {
+            case 1:
+                console.log('这是个1');
+                break;
+            case 2:
+                console.log('这是个2');
+                break;
+            case 3:
+                console.log('这是个3');
+                break;
+            default:
+                console.log('这不是个数字');
+                break;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

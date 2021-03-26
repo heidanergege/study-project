@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断时间段</title>
+    <script>
+        // 伪代码 
+        /*         要求： 比如：用户输入 12点 弹出 中午好 
+                               用户输入18点 弹出 傍晚好等等... */
+        var shijian = prompt('请输入您要查询的时间');
+        if (shijian > 24) {
+            alert('请输入正确的时间')
+        } else if (shijian >= 22) {
+            alert('现在是深夜' + shijian + '点钟，赶紧睡觉吧！');
+        } else if (shijian >= 20) {
+            alert('现在是晚上' + shijian + '点钟，早点休息！');
+        } else if (shijian >= 18) {
+            alert('现在是傍晚' + shijian + '点钟，傍晚好！');
+        } else if (shijian >= 14) {
+            alert('现在是下午' + shijian + '点钟，下午好！');
+        } else if (shijian >= 11) {
+            alert('现在是中午' + shijian + '点钟，中午好！');
+        } else if (shijian >= 8) {
+            alert('现在是上午' + shijian + '点钟，上午好！');
+        } else if (shijian >= 6) {
+            alert('现在是早上' + shijian + '点钟，早上好！');
+        } else if (shijian >= 0) {
+            alert('现在是凌晨' + shijian + '点钟，做个好梦！');
+        } else {
+            alert('请输入正确的时间');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
