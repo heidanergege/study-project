@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = '';
+        for (var row = 1; row <= 5; row++) {
+
+            for (var i = 1; i <= 5; i++) {
+                str = str + '★';
+            }
+            str = str + '\n'
+        }
+        console.log(str);
+
+
+        /*         例二：
+                我们可以让用户输入 几行 几列 */
+        var rows = prompt('请您输入您想要的行数');
+        var cols = prompt('请输入您想要的列数');
+        var str = '';
+        for (var i = 1; i <= rows; i++) {
+            for (var j = 1; j <= cols; j++) {
+                str = str + '★';
+            }
+            str = str + '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

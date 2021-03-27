@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*     案例要求：
+    1.先弹出输入框让用户输入班级总人数
+    2.再根据输入的人数 确定 弹出 多少 输入 学生 成绩的 输入框 让用户 输入每个 学生的成绩
+    3.最后再 弹出 一个 平均成绩的 输出 框 显示 平均成绩  */
+        var num = prompt('请输入班级总人数');
+        var sum = 0;
+        var average = 0;
+        for (var i = 1; i <= num; i++) {
+            var fraction = prompt('请输入第' + i + '个学生的成绩');
+            sum = sum + parseFloat(fraction);
+        }
+        alert('咱班的学生总分数为：' + sum);
+        average = sum / num;
+        alert('咱班学生的平均分数为：' + average);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

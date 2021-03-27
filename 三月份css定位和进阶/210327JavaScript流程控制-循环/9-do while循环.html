@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.do while 循环其实是while 的一个变体，区别是 会先执行一次 代码 ，然后才对条件表达式进行判断，如果结果为真 true ，就会重复执行 循环体  ，否则就退出循环体。
+        // 2. do ... while 的语法结构如下：
+        // do {
+        //     执行语句
+        //     加限定条件否则死循环
+        // } while (条件表达式) ;
+        // 3.执行思路：
+        //   先执行一次循环体代码
+        //   再去执行条件表达式，如果结果为 true 则继续执行 ，如果为false 则退出循环体 ，执行后续代码。
+        //   总结：先执行，再判断 ，至少会执行一次循环体代码。
+        //   比如：
+        var num = 1;
+        do {
+            console.log('how are you ? baby');
+            num++;
+        } while (num <= 10);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 先弹出对话框 让用户 选择
+        // 2. 选择 1 就 执行1 选2 就执行 2....  由于值比较固定 用 switch 语句
+        // 3.
+
+        var now = 100;
+        var select = prompt('请输入您要的操作：\n 1.存钱\n 2.取钱\n 3.显示余额\n 4.退出');
+        switch (select) {
+            case '1':
+                var deposit = prompt('请您输入存的钱数：');
+                now += parseFloat(deposit);
+                alert('您现在的钱数是：' + now);
+                // break;
+
+            case '2':
+                var withdraw = prompt('请您输入要取得钱数：');
+                break;
+
+            case '3':
+                var balance = prompt('您卡上的余额为：');
+                break;
+
+            case '4':
+                var sign_out = prompt('正在退出，请稍等...');
+                break;
+
+            default:
+                alert('您的输入有误，请重新输入');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

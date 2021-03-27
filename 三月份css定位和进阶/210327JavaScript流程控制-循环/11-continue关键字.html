@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for (var i = 1; i <= 5; i++) {
+            if (i == 3) {
+                continue; // 只要遇见 continue 就直接退出 本次 循环 直接跳回 i++ 去执行下次循环
+            }
+            console.log('我吃了' + i + '个包子');
+        }
+
+        // 使用场景2 ：
+        // 1. 求1~100 之间 ， 除了能被7 整除之外 的整数和
+
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 7 == 0) {
+                continue;
+            }
+            sum += i;
+        }
+        console.log(sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
