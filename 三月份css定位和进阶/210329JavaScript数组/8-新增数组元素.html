@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //    两个办法
+        // 1. 修改length 长度来新增数组元素
+        var arr = ['red', 'green', 'blue'];
+        console.log(arr.length);
+        arr.length = 7;
+        console.log(arr);
+        console.log(arr[4]);
+        console.log(arr[5]);
+        // 2.添加索引号 来新增数组元素
+        var arr1 = ['red', 'green', 'blue'];
+        console.log(arr1.length);
+        arr1[3] = 'pink';
+        console.log(arr1);
+        arr1[4] = 'hotpink';
+        arr1[1] = 'yellow';
+        console.log(arr1);
+        arr1 = '有点意思'; //不要给数组名赋值，否则会覆盖原来的所有数据
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：对下列数组中的元素值 从大到小 的顺序排列 。 并且求 平均值
+        var average = 0;
+        var sum = 0;
+        var arr = [20, 18, 30, 21, 23, 26, 20, 32, 40];
+        for (var i = 0; i < arr.length; i++) {
+            for (var j = 0; j <= arr.length - i - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        console.log(arr);
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+
+        }
+        console.log(sum);
+        average = sum / arr.length;
+
+        console.log(parseInt(average));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
