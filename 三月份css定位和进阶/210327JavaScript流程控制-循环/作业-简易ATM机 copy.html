@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1. 先弹出对话框 让用户 选择  此处 要有循环的效果  我打算用 while 循环
+        // 2. 选择 1 就 执行1 选2 就执行 2....  由于值比较固定 用 switch 语句
+        // 代码如下：
+        // 卡上的初始余额额为 100 元 我们 用 balance 表示  余额可变化 用变量
+        var balance = 100;
+
+        //    整个系统就是个大循环  用while   
+        while (true) {
+            // 弹出用户选择界面 对话框 select
+            var select = prompt('请选择您要办理的业务：\n 1.存款\n 2.取款\n 3.查询余额\n 4.退出');
+            switch (select) {
+                case '1':
+                    var deposit = prompt('您当前的可用为：' + balance + '\n请输入您要存的钱数：');
+                    balance += parseFloat(deposit);
+                    alert('您现在的可用余额为：' + balance);
+                    break;
+
+                case '2':
+                    var withdraw = prompt('您当前的可用余额为：' + balance + '\n请输入您要取得钱数：');
+                    if (withdraw <= balance) {
+                        balance -= parseFloat(withdraw);
+                        alert('您现在的可用余额为：' + balance);
+                    } else {
+                        alert('sorry ! 您的可用余额不足! 请输入' + balance + '以内的钱数');
+                    }
+                    break;
+
+                case '3':
+                    alert('你当前的可用余额为：' + balance);
+                    break;
+
+                case '4':
+                    alert('已退出');
+                    break;
+
+                default:
+                    alert('您的输入有误，请重新输入！');
+                    break;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

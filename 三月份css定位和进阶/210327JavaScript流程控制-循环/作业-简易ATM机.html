@@ -12,28 +12,38 @@
         // 3.
 
         var now = 100;
-        var select = prompt('请输入您要的操作：\n 1.存钱\n 2.取钱\n 3.显示余额\n 4.退出');
-        switch (select) {
-            case '1':
-                var deposit = prompt('请您输入存的钱数：');
-                now += parseFloat(deposit);
-                alert('您现在的钱数是：' + now);
-                // break;
+        while (true) {
+            var select = prompt('请输入您要的操作：\n 1.存钱\n 2.取钱\n 3.显示余额\n 4.退出');
+            switch (select) {
+                case '1':
+                    var deposit = prompt('请您输入存的钱数：');
+                    now += parseFloat(deposit);
+                    alert('您现在的余额是：' + now);
+                    break;
 
-            case '2':
-                var withdraw = prompt('请您输入要取得钱数：');
-                break;
+                case '2':
+                    var withdraw = prompt('请您输入要取得钱数：');
+                    if (withdraw <= now) {
+                        now -= parseFloat(withdraw);
+                        alert('请收好钱款！现在您卡上的余额为：' + now);
+                    } else {
+                        alert('sorry ! 您的可用余额不足！请输入' + now + '以内的金额！');
+                    }
+                    break;
 
-            case '3':
-                var balance = prompt('您卡上的余额为：');
-                break;
+                case '3':
+                    alert('您卡上的余额为：' + now);
+                    break;
 
-            case '4':
-                var sign_out = prompt('正在退出，请稍等...');
-                break;
+                case '4':
+                    alert('正在退出，请稍等...');
+                    alert('已经退出，若要继续 请点击 确定');
+                    break;
 
-            default:
-                alert('您的输入有误，请重新输入');
+                default:
+                    alert('您的输入有误，请重新输入');
+            }
+
         }
     </script>
 </head>
