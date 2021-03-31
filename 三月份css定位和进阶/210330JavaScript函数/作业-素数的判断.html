@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：用户输入一个数字来判断是否是素数 并弹出结果
+        var num = prompt('请输入您要查询的数字：');
+
+        function isPrimeNum(num) {
+            if (parseFloat(num) == 2) {
+                return alert(num + '是素数');
+            }
+            if (parseFloat(num) > 1) {
+                for (var i = 2; i < parseFloat(num); i++) {
+                    if (parseFloat(num) % i == 0) {
+                        return alert(num + '不是素数');
+                    }
+                }
+
+            } else {
+                return alert('输入有误，请重新输入');
+            }
+            return alert(num + '是素数');
+
+        }
+        isPrimeNum(num);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

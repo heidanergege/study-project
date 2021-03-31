@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        while (true) {
+            var select = prompt('欢迎使用简易计算器：\n 1.加法运算；\n 2.减法运算；\n 3.乘法运算 \n 4.除法运算；\n 5.退出 \n 请输入您的选项：');
+            switch (select) {
+                case '1':
+                    var num1 = prompt('请输入第一个数值：');
+                    var num2 = prompt('请输入第二个数值：');
+                    var result = parseFloat(num1) + parseFloat(num2);
+                    alert(num1 + '+' + num2 + '的和为：' + sum);
+                    break;
+                case '2':
+                    var num1 = prompt('请输入第一个数值：');
+                    var num2 = prompt('请输入第二个数值：');
+                    var result = parseFloat(num1) - parseFloat(num2);
+                    alert(num1 + '-' + num2 + '的差为：' + result);
+                    break;
+                case '3':
+                    var num1 = prompt('请输入第一个数值：');
+                    var num2 = prompt('请输入第二个数值：');
+                    var result = parseFloat(num1) * parseFloat(num2);
+                    alert(num1 + '*' + num2 + '的积为：' + result);
+                    break;
+                case '4':
+                    var num1 = prompt('请输入第一个数值：');
+                    var num2 = prompt('请输入第二个数值：');
+                    var result = parseFloat(num1) / parseFloat(num2);
+                    alert(num1 + '/' + num2 + '的商为：' + result);
+                    break;
+                case '5':
+                    break;
+                default:
+                    alert('输入错误，请重新输入')
+                    break;
+            }
+            if (select == 5) {
+                alert('退出...')
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

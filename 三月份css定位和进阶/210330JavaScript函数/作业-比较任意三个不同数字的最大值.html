@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：用户输入任意三个数字 比较最大值 并 弹出 运算后的结果
+        var num1 = prompt('请输入第一个数：')
+        var num2 = prompt('请输入第二个数：')
+        var num3 = prompt('请输入第三个数：')
+
+        function getMax(num1, num2, num3) {
+            var max = num1;
+            if (parseFloat(num1) > parseFloat(num2)) {
+                max = parseFloat(num1);
+            } else {
+                max = parseFloat(num2);
+            }
+            max > parseFloat(num3) ? alert('经过比较 ' + max + '大') : alert('经过比较 ' + num3 + '大')
+        }
+        getMax(num1, num2, num3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
