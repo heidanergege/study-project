@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function backDay() {
+            var year = prompt('请输入年份：')
+            // 调用判断是否闰年的函数
+            if (isRunYear(year)) {
+                alert(year + '是闰年，二月份有29天！');
+            } else {
+                alert(year + '是平年，二月份有28天');
+            }
+        }
+        backDay();
+        // 判断 年份是否 是闰年 的已经封装的 函数
+        function isRunYear(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 !== 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
