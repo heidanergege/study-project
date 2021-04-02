@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：利用new Object 创建一个按钮对象
+        //    该对象中需要包含 宽 高 背景颜色 和 点击行为
+        var button = new Object();
+        button.width = 18 + 'px';
+        button.height = 23 + 'px';
+        button.background = 'red';
+        button.click = function () {
+            console.log('打印');
+        }
+        console.log(button.width);
+        console.log(button['height']);
+        console.log(button.background);
+        button.click();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：利用 字面量 创建一个车的对象
+        // 该对象要有 牌子 颜色 重量 ，可以 拉人 拉货 和 耕田
+        var myCar = {
+            brand: '奥迪',
+            color: 'red',
+            weight: 2.3 + 'T',
+            canDo: function () {
+                console.log('载人');
+                console.log('拉货');
+                console.log('耕田');
+            }
+        }
+        console.log(myCar.brand);
+        console.log(myCar['color']);
+        console.log(myCar['weight']);
+        myCar.canDo();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

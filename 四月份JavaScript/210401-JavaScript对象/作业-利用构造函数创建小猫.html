@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：利用构造函数创建一只 名字 叫tom，毛是蓝色的，会捉老鼠jerry 的小猫咪，
+        function Cat(name, skin) {
+            this.name = name;
+            this.skin = skin;
+            this.catch = function () {
+                console.log(this.name + '会捉老鼠Jerry');
+            }
+        }
+        var tom = new Cat('tom', '蓝色');
+        console.log(tom);
+        // console.log(tom.name);
+        // console.log(tom['color']);
+        tom.catch();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //利用构造函数来创建对象
+        //下面我们来创建 四大天王的对象的 构造函数
+        //  相同的属性 ：姓名、年龄、性别 
+        //  相同的方法 ： 唱歌
+
+        // 构造函数的语法格式：
+        // function 构造函数名() {
+        //     this.属性 = 值;
+        //     this.方法 = function() {}
+        // }
+        // new 构造函数名();
+
+        // 1.构造函数名的首字母 要大写
+        // 2.构造函数不需要 return 就可以返回结果
+        // 3.调用构造函数 必须 要用new
+        // 4.我们只要new Star() 调用这个构造函数 就相当于 创建了一个对象
+        // 5.我们的构造函数里面 属性和方法前面 必须 添加 this
+        function Star(uname, age, sex) {
+            this.name = uname;
+            this.age = age;
+            this.sex = sex;
+            this.sing = function (sang) {
+                console.log(sang);
+            }
+
+        }
+        var ldh = new Star('刘德华', 18, '男');
+        console.log(typeof ldh);
+        console.log(ldh.name);
+        console.log(ldh.age);
+        console.log(ldh.sex);
+        ldh.sing('冰雨');
+
+        var zxy = new Star('张学友', 19, '女');
+        console.log(zxy.name);
+        console.log(zxy['sex']);
+        console.log(zxy['age']);
+        zxy.sing('李兰香');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

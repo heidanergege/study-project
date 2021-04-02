@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function GameCharacter(gname, type, blood) {
+            this.name = gname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = function (attck) {
+                console.log(attck);
+            }
+        }
+        var lianpo = new GameCharacter('廉颇', '力量型', 500 + '血量');
+        console.log(lianpo.name);
+        console.log(lianpo['type']);
+        console.log(lianpo.blood);
+        lianpo.attack('攻击：近战');
+
+        var houyi = new GameCharacter('后羿', '射手型', 100 + '血量');
+        console.log(houyi.name);
+        console.log(houyi.type);
+        console.log(houyi['blood']);
+        houyi.attack('攻击：远战');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

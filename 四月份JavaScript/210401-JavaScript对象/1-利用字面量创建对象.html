@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.利用字面量创建对象 {}
+        // var obj = {}; // 创建了一个空的对象
+        //简单的对象 例子 如下：
+        var obj = {
+            youname: '张三疯',
+            age: 18,
+            sex: '男',
+            sayHi: function () {
+                console.log('hi~!');
+            }
+        }
+        // 里面的属性或者方法我们采取键值对的形式  键 就是 属性名 加 冒号 加 值 就是 属性值
+        // 多个属性 或者 方法 中间用逗号隔开
+        // 方法的冒号后面跟的是一个匿名函数
+        //    2. 使用对象
+        //      （1） 调用对象的属性的办法1：对象名.属性名  如：
+        console.log(obj.youname);
+        // （2）调用属性的办法2： 对象名['age'];  如：
+        console.log(obj['age']);
+        //（3） 调用对象方法的办法： 对象名.方法名()  如：
+        obj.sayHi();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

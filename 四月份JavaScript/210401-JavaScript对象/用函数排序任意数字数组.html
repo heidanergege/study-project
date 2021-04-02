@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：写一个函数，实现对任意数字数组的排序
+        function sort(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = 0; j < arr.length - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        console.log(sort([22, 41, 999, 32, 68, 1, 4, 7, 5]));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

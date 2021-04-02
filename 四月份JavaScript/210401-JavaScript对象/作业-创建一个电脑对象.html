@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：用构造函数方式创建一个电脑对象，该对象要有 颜色、重量、品牌、型号，可以看电影、听音乐、敲代码。
+        function Computer(brand, model, color, weight) {
+            this.brand = brand;
+            this.model = model;
+            this.color = color;
+            this.weight = weight;
+            this.canDo = function () {
+                console.log('可以看电影');
+                console.log('可以听音乐');
+                console.log('可以玩游戏');
+                console.log('可以敲代码');
+
+            }
+        }
+        var mycomputer = new Computer('联想', 'A-853', 'red', '7kg');
+        console.log(mycomputer.brand);
+        console.log(mycomputer.model);
+        console.log(mycomputer.color);
+        console.log(mycomputer.weight);
+        mycomputer.canDo();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：利用new Object创建对象
+        var obj = new Object();
+        obj.youname = '鸣人';
+        obj.sex = '男';
+        obj.age = '19岁';
+        obj.getSkill = function () {
+            console.log('影分身术');
+        }
+        console.log(obj.youname);
+        console.log(obj['sex']);
+        console.log(obj.age);
+        obj.getSkill();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
