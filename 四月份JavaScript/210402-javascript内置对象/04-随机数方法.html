@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Math对象 随机数的 方法 random() 返回一个随机的小数 0 <= x < 1    [0-1)
+        // 这个方法不跟参数
+        console.log(Math.random());
+        // 得到一个两数之间的随机整数，包括两个数在内  公式如下：
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+        }
+        console.log(getRandom(1, 10));
+        // 随机点名
+        var arr = ['张三', '王五', '李二', '赵四', '马六', '小胖儿'];
+        console.log(arr[getRandom(0, arr.length - 1)]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

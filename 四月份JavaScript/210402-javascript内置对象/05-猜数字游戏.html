@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 生成一个1~10之间随机数  
+        // 让用户输入一个1~10之间的整数  来猜   如 猜大了 或小了就提示   猜对了就提示并退出
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getRandom(1, 10);
+        while (true) {
+            var num = prompt('请输入你心中的1~10之间的整数');
+            if (num > random) {
+                alert('您猜大了')
+            } else if (num < random) {
+                alert('您猜小了');
+            } else {
+                alert('您太聪明了，猜的太准确了');
+                break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
