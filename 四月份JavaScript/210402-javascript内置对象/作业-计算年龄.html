@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求：用户在弹出的输入框输入出生年份 系统 计算出 年龄 并 弹出
+        // 实现原理：1.本地当前年份 - 用户输入的年份 得出 年份
+        var year = prompt('请输入您的出生年份');
+        var date = new Date();
+        var nowYear = date.getFullYear();
+        var age = nowYear - year;
+        alert('您现在的年龄是' + age + '岁');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
