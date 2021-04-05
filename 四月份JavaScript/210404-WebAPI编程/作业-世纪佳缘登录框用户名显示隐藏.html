@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        input,
+        button {
+            outline: none;
+            border: 0;
+        }
+
+        .box {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .box input {
+            width: 136px;
+            height: 25px;
+            margin-right: 3px;
+            padding-left: 10px;
+            border: 1px solid #d9d9d9;
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        .box button {
+            width: 67px;
+            height: 25px;
+            background-color: #0098c2;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 要求：世纪佳缘登录框
+    1.获得焦点 value 值 隐藏，边框变色，
+    2.失去焦点 默认value显示，边框颜色变回，
+    3.失去焦点 如果用户有输入 字体颜色变为黑色 -->
+
+    <!-- 1.建立HTML 骨架 -->
+    <div class="box">
+        <input type="text" value="邮箱/ID/手机号" class="idname">
+        <input type="text" name="" id="" value="密码" class="idpass">
+        <button>登录</button>
+    </div>
+    <script>
+        // 1.获得元素
+        var inputid = document.querySelector('.idname');
+        var inputpass = document.querySelector('.idpass');
+
+        // 2.注册事件  处理程序
+        // 获得焦点  onfocus
+        inputid.onfocus = function () {
+            if (inputid.value == '邮箱/ID/手机号') {
+                inputid.value = '';
+            }
+            inputid.style.borderColor = '#ffd6db';
+            inputid.style.color = '#aaa';
+
+        }
+        inputpass.onfocus = function () {
+            if (inputpass.value == '密码') {
+                inputpass.value = '';
+            }
+            inputpass.style.borderColor = '#ffd6db';
+            inputpass.type = 'password';
+            inputpass.style.color = '#aaa';
+
+        }
+        // 失去焦点  onblur
+        inputid.onblur = function () {
+            if (inputid.value == '') {
+                inputid.value = '邮箱/ID/手机号';
+            } else {
+                inputid.style.color = '#333';
+            }
+            inputid.style.borderColor = '#d9d9d9';
+        }
+        inputpass.onblur = function () {
+            if (inputpass.value == '') {
+                inputpass.type = 'text';
+                inputpass.value = '密码';
+            } else {
+                inputpass.style.color = '#333';
+            }
+            inputpass.style.borderColor = '#d9d9d9';
+
+        }
+    </script>
+</body>
+
+</html>

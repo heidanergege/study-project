@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        div,
+        p {
+            /* width: 100px; */
+            margin-top: 50px;
+            background-color: pink;
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示当前的系统时间</button>
+    <div>显示当前时间</div>
+    <p></p>
+
+    <script>
+        // 要求：当我们点击了按钮，div 里面显示为 当前系统时间
+        // 1.先获取元素
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        // 2.注册事件
+        btn.onclick = function () {
+            div.innerText = getDate();
+        }
+        // 3.获取当前时间   格式为 我们中国习惯的 时间日期
+        var date = new Date();
+
+        function getDate() {
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var date1 = date.getDate();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var day = date.getDay();
+            return '今天是' + year + '年' + month + '月' + date1 + '日' + arr[day];
+        }
+        // 4.我们元素可以不用添加事件
+        var p = document.querySelector('p');
+        p.innerText = getDate();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div1></div1>
+    <p>
+        我是文字
+        <span>123</span>
+    </p>
+    <script>
+        // innerText 和 innerHTML 的区别
+        // 1.innerText 是非标准的 不识别HTML 标签  会自动去除空格和换行
+        var div = document.querySelector('div');
+        div.innerText = '<strong>今年是：</strong> 2021年';
+
+        // 2.innerHTML 可以识别HTML 标签  是W3C 标准
+        var div1 = document.querySelector('div1');
+        div1.innerHTML = '<strong>今年是：</strong> 2021年';
+
+        //这两个属性是可读写的 可以获取元素里面的内容
+        var p = document.querySelector('p ');
+        console.log(p.innerText);
+        console.log(p.innerHTML);
+    </script>
+</body>
+
+</html>

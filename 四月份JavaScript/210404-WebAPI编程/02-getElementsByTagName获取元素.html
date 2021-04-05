@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>知否知否，应是绿肥红廋</li>
+        <li>知否知否，应是绿肥红廋</li>
+        <li>知否知否，应是绿肥红廋</li>
+        <li>知否知否，应是绿肥红廋</li>
+        <li>知否知否，应是绿肥红廋</li>
+    </ul>
+
+    <ul id="jingse">
+        <li>春暖花开</li>
+        <li>春暖花开</li>
+        <li>春暖花开</li>
+        <li>春暖花开</li>
+        <li>春暖花开</li>
+    </ul>
+    <script>
+        //1.返回的是 获取 过来的元素对象 的集合 以伪数组的形式储存的
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        console.log(lis[0]);
+
+        // 2.我们需要依次打印里面的对象可以采取遍历的方法
+        for (var i = 0; i < lis.length; i++) {
+            console.log(lis[i]);
+        }
+
+        // 3.element.getElementsByTagName();是我们可以得到这个元素里面的某些标签
+        // 如：我想要获得这个document里面第二个ul 的 li 里面的元素
+        //   (1).可以先给第二个ul 起个 id  先获得 这个id 元素
+        document.getElementById('jingse');
+        // (2) 赋值于一个变量 以便于我们好查看
+        var jing = document.getElementById('jingse');
+        var jingses = jing.getElementsByTagName('li');
+        console.log(jingses);
+    </script>
+</body>
+
+</html>

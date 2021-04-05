@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            margin: 100px auto;
+            padding-top: 5px;
+            width: 76px;
+            height: 85px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .box p {
+            font-size: 12px;
+            color: red;
+            line-height: 1.5;
+        }
+
+        .box img {
+            width: 62px;
+        }
+
+        .box i {
+            position: absolute;
+            top: -1px;
+            left: -16px;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #eee;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 14px;
+            color: #eee;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>去领红包</p>
+        <img src="images/下载.png" alt="">
+        <i class="close-btn">×</i>
+    </div>
+    <script>
+        // 1.获取对象
+        var btn = document.querySelector('.close-btn');
+        var boxs = document.querySelector('.box');
+        // 2. 注册事件  处理程序
+        btn.onclick = function () {
+            boxs.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
