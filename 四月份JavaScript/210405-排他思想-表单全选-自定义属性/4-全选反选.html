@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 50px auto;
+        }
+
+
+        table tr td,
+        table tr th {
+            border: 1px solid #ccc;
+            padding: 8px 20px;
+            background-color: #e6e7e6;
+        }
+
+        table tr th {
+            color: #fff;
+            background-color: #0093c5;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="j_cbAll"></th>
+                <th>商品</th>
+                <th>价钱</th>
+            </tr>
+        </thead>
+        <tbody id="tbs">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPhone 8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPad Pro</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>iPad Air</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Apple Watch</td>
+                <td>1500</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // 1.全选和取消全选做法：让下面所有复选框的checked属性（选中的状态）跟随 全选按钮即可
+        // 获取元素
+        var j_cbAll = document.getElementById('j_cbAll');
+        var tbs = document.getElementById('tbs').getElementsByTagName('input');
+        //注册事件
+        j_cbAll.onclick = function () {
+            console.log(this.checked);
+            for (var i = 0; i < tbs.length; i++) {
+                tbs[i].checked = this.checked;
+            }
+        }
+        // 2.下面的复选框需要全部选中，上面全选按钮才能选中的做法：
+        // 给下面的所有的复选框绑定点击事件，每次点击，都要循环查看下面的复选框的状态是否为选定状态
+        for (var i = 0; i < tbs.length; i++) {
+            tbs[i].onclick = function () {
+                var flag = true;
+                for (var i = 0; i < tbs.length; i++) {
+                    if (!tbs[i].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+
+</html>

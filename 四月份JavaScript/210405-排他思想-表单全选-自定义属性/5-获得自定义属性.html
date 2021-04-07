@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo" index="1"></div>
+    <script>
+        // 1.获取元素的属性值
+        // 方法一： element.属性
+        var div = document.querySelector('div');
+        console.log(div.id);
+
+        // 方法二：element.getAttribute('属性'); 可以获得我们程序员自己添加的属性 标准的 常用的
+        console.log(div.getAttribute('id'));
+        console.log(div.getAttribute('index'));
+    </script>
+</body>
+
+</html>

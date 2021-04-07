@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        table tr th {
+            padding: 5px 10px;
+            border-bottom: 2px solid #d8d9d9;
+        }
+
+        table tr td {
+            padding: 5px 15px;
+            border-bottom: 2px solid #d8d9d9;
+
+        }
+
+        table tr th,
+        table tr td:nth-child(1),
+        table tr td:nth-child(2) {
+            color: #4b91c7;
+        }
+
+        table tr th:nth-child(2) {
+            color: #000;
+        }
+
+        table tr:nth-child(1) td:nth-child(n+3),
+        table tr:nth-child(4) td:nth-child(n+3) {
+            color: red;
+        }
+
+        table tr:nth-child(3) td:nth-child(n+3) {
+            color: #0cf510;
+        }
+
+        table tr td:last-child {
+            color: #000 !important;
+        }
+
+        .bg {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0" ;>
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新公布净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+                <th>公布日期</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>003526</td>
+                <td>农银金穗3个月定期开放债券</td>
+                <td>1.075</td>
+                <td>1.079</td>
+                <td>1.074</td>
+                <td>+0.047%</td>
+                <td>2019-01-11</td>
+            </tr>
+            <tr>
+                <td>270047</td>
+                <td>广发理财30天债券B</td>
+                <td>0.903</td>
+                <td>3.386</td>
+                <td>0.000</td>
+                <td>0.000%</td>
+                <td>2019-01-16</td>
+            </tr>
+            <tr>
+                <td>163417</td>
+                <td>兴全合宜混合A</td>
+                <td>0.860</td>
+                <td>0.860</td>
+                <td>0.863</td>
+                <td>-0.382%</td>
+                <td>2019-01-16</td>
+            </tr>
+            <tr>
+                <td>003929</td>
+                <td>中银证券安进债券A</td>
+                <td>1.034</td>
+                <td>1.088</td>
+                <td>1.034</td>
+                <td>+0.077%</td>
+                <td>2019-01-16</td>
+            </tr>
+            <tr>
+                <td>360020</td>
+                <td>光大添天盈月度理财债券B</td>
+                <td>0.950</td>
+                <td>3.557</td>
+                <td>0.000</td>
+                <td>0.000%</td>
+                <td>2019-01-16</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //1.获取元素 获取的是tbody 里面所有的行
+        var trs = document.querySelector('tbody').querySelectorAll('tr');
+        // 2.利用循环绑定注册事件
+        for (var i = 0; i < trs.length; i++) {
+            // 3.鼠标经过事件 onmouseover
+            trs[i].onmouseover = function () {
+                this.className = 'bg';
+            }
+            // 4.鼠标离开事件 onmouseout
+            trs[i].onmouseout = function () {
+                this.className = '';
+            }
+        }
+    </script>
+</body>
+
+</html>

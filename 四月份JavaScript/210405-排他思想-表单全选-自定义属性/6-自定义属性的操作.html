@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 设置元素属性值 -->
+    <div id="demo" index="2" class="nav"></div>
+    <script>
+        var div = document.querySelector('div');
+        console.log(div.id);
+        console.log(div.getAttribute('id'));
+        console.log(div.getAttribute('index'));
+        // 方法一： element.属性  =  '值'
+        div.id = 'text';
+        div.className = 'navs';
+        // 方法二： element.setAttribute('属性','值');  主要针对自定义属性
+        div.setAttribute('index', '4');
+        div.setAttribute('class', 'footer'); //class比较特殊 这里面用的是 class 不是 classname
+
+
+
+        // 移除元素的属性值  element.removeAttribute（属性）；
+
+        div.removeAttribute('index');
+    </script>
+</body>
+
+</html>
