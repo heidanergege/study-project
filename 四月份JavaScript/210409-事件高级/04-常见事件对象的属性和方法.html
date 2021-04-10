@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,
+        li {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 1. e.target 返回的是触发事件（点击）的对象（ 元素）
+        // this 返回的是绑定事件的对象（ 元素）
+        //  在下面的div 元素里看似没有什么区别
+        var div = document.querySelector('div');
+        div.addEventListener('click', function (e) {
+            console.log(e.target);
+            console.log(this);
+        });
+        // 但是 在下面的ul 的 li 就可以看出区别
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function (e) {
+            // 这里我们给ul绑定了 事件  所以 this 就返回 ul 
+            console.log(this);
+            console.log(e.currentTarget);
+            //    e.target就指向 我们点击的对象 谁触发了这个事件就指向谁 点击 li 就指向li
+            console.log(e.target);
+
+        });
+        // 兼容性的处理
+        div.onclick = function (e) {
+            e = e || window.event;
+            var target = e.target || e.srcElement;
+            console.log(target);
+        }
+    </script>
+
+</body>
+
+</html>

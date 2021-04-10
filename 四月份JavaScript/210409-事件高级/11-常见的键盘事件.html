@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 常见的键盘事件  注意：执行顺序是 先执行 down press 后执行up 不管书写顺序
+        // 1. keyup 按键弹起时触发
+        document.onkeyup = function () {
+            console.log('我弹起了');
+        }
+        document.addEventListener('keyup', function () {
+            console.log('弹起');
+        })
+        // 2.keydown 按键按下时触发
+        document.addEventListener('keydown', function () {
+            console.log('按下了');
+        })
+        // 3.keypress 按键按下时触发 不能识别功能键
+        document.addEventListener('keypress', function () {
+            console.log('按下');
+        })
+    </script>
+</body>
+
+</html>
