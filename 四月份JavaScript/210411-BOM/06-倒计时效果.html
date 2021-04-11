@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div {
+            width: 325px;
+            height: 100px;
+            margin: 100px auto;
+        }
+
+        div span {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin-right: 5px;
+            background-color: #000;
+            font-size: 46px;
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="second"></span>
+    </div>
+    <script>
+        // 1.获取元素
+        var hour = document.querySelector('.hour')
+        var minute = document.querySelector('.minute')
+        var second = document.querySelector('.second')
+        var inputTime = +new Date('2021-4-11 20:40:00'); //用户输入时间总的毫秒数
+        countDown(); //为防止第一次刷新页面有空白 我们先调用一次这个函数
+        // 2.开启定时器
+        setInterval(countDown, 1000);
+        // 3.封装倒计时函数 
+        function countDown() {
+            var nowTime = +new Date(); // 当前时间总的毫秒数
+            var times = (inputTime - nowTime) / 1000; //得到剩余时间总秒数
+            var h = parseInt(times / 60 / 60 % 24); //小时
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60); //分钟
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+        }
+    </script>
+</body>
+
+</html>
