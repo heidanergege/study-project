@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="go_index">点击去博学谷官网</button>
+    <button id="go_list">点击查看博学谷前端就业班课程专题</button>
+
+    <script>
+        var go_index = document.querySelector('#go_index');
+        var go_list = document.querySelector('#go_list');
+        go_index.addEventListener('click', function () {
+            location.assign('http://www.boxuegu.com');
+        })
+        go_list.addEventListener('click', function () {
+            location.replace('http://www.boxuegu.com/subject/web-01.html?utm_source=jyk_list');
+        })
+    </script>
+</body>
+
+</html>

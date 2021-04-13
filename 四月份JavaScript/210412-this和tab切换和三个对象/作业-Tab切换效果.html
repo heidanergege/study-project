@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 405px;
+            height: 133px;
+            border: 1px solid #ccc;
+            margin: 20px auto;
+            margin-left: 459px;
+            font-size: 14px;
+
+        }
+
+        .tab_list li {
+            list-style: none;
+            float: left;
+            width: 25%;
+            height: 25%;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            line-height: 29px;
+            /* background: #fefefe;
+            background: -moz-linear-gradient(top, #fefefe, #ededed);
+            background: -o-linear-gradient(left top, left bottom, from(#fefefe), to(#ededed)); */
+            background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#ededed));
+            cursor: pointer;
+        }
+
+        .tab_list .current {
+            background: #fff;
+            border-bottom: none;
+        }
+
+        .tab_list li:last-child {
+            border-right: 0;
+        }
+
+
+        .tab_con {
+            width: 100%;
+            height: 75%;
+            padding-left: 10px;
+        }
+
+        .tab_con div {
+            display: none;
+            width: 100%;
+            height: 75%;
+            padding-top: 41px;
+        }
+
+        .tab_con a {
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="tab_list">
+            <ul>
+                <li class="current">国际新闻</li>
+                <li>国内新闻</li>
+                <li>体育新闻</li>
+                <li>娱乐新闻</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div style="display: block;">
+                <a href="#">1.习近平100个金句 读懂这五年 治国理政 砥砺奋进</a><br>
+                <a href="#">2.深刻理解“新的发展阶段”重大判断</a><br>
+                <a href="#">3.中国慰安妇生下的日本后人:这坏名声我背得好苦</a>
+
+            </div>
+            <div>
+                <a href="#">3.四部门：铲除以“招聘介绍工作”为名传销组织</a><br>
+                <a href="#">4.最高检介入京昆高速36死事故 隧道断头路设计引争议</a>
+
+            </div>
+            <div>
+                <a href="#">5.尼泊尔媒体热议中印对峙 尼专家:我们该说实话</a><br>
+                <a href="#">6.中国又一工程震撼世界:长城有座世界最深高铁站</a>
+
+            </div>
+            <div>
+                <a href="#">7.年轻地级市迎来第二任书记:经多层级多岗位锻炼</a><br>
+                <a href="#">8.商务部:8月15日全面禁止自朝鲜进口煤铁等产品</a><br>
+                <a href="#">9.越南欲在南海采油</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tab_list = document.querySelector('.tab_list');
+        var lis = tab_list.querySelectorAll('li');
+        var tab_con = document.querySelector('.tab_con')
+        var divs = tab_con.querySelectorAll('div');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('data-index', i);
+            lis[i].addEventListener('mouseover', function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                    divs[i].style.display = 'none';
+                }
+                this.className = 'current';
+                var index = this.getAttribute('data-index');
+                divs[index].style.display = 'block';
+            })
+        }
+    </script>
+</body>
+
+</html>
