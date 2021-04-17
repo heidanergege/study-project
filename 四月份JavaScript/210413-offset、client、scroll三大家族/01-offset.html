@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 150px;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin-left: 45px;
+        }
+
+        .w {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="w"></div>
+    <script>
+        //offset 系列
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        //1.可以得到元素的偏移位置 返回的值 不带 单位
+        console.log(father.offsetTop);
+        console.log(father.offsetLeft);
+        //它以带有定位的父元素为准，否则以body为准
+        console.log(son.offsetLeft);
+
+
+        // 2.可以得到元素的大小 宽度和高度  包含border padding 
+        var w = document.querySelector('.w');
+        console.log(w.offsetWidth);
+        console.log(w.offsetHeight);
+        // 3. 返回带有定位的父元素，否则返回body
+        console.log(son.offsetParent);
+        //   返回最近一级的父元素 不管是否有定位
+        console.log(son.parentNode);
+    </script>
+</body>
+
+</html>
