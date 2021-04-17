@@ -6,7 +6,8 @@ window.addEventListener('load', function () {
         mask.style.display = 'block';
         tab_content_big1.style.display = 'block';
     })
-    tab_content.addEventListener('mouseout',function() {
+    // https://developer.mozilla.org/zh-CN/docs/Web/API/Element/mouseleave_event
+    tab_content.addEventListener('mouseleave',function() {
         mask.style.display = 'none';
         tab_content_big1.style.display = 'none';
     })
