@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+            overflow: auto;
+
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            var div = document.querySelector('div');
+            console.log(div.scrollHeight); //实际内容的大小包含内容超出的部分
+            // 注册事件 滚动事件  当滚动条滚动就会触发的事件
+            div.addEventListener('scroll', function () {
+                console.log(div.scrollTop); // 盒子上面超出部分的高度
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+        123我是内容
+
+    </div>
+</body>
+
+</html>
