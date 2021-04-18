@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            margin-top: 5px;
+            width: 400px;
+            height: 500px;
+            border: 1px solid red;
+        }
+
+        img {
+            position: absolute;
+            width: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <button>跳动</button>
+    <button>停止跳动</button>
+    <div>
+        <img src="timg.jpeg" alt="">
+    </div>
+    <script>
+        var btns = document.querySelectorAll('button');
+        var timer = null;
+        var img = document.querySelector('img');
+        btns[0].addEventListener('click', function () {
+            timer = setInterval(fn, 200);
+
+            function fn() {
+                var x = Math.random() * 300;
+                var y = Math.random() * 400;
+                img.style.top = y + 'px';
+                img.style.left = x + 'px';
+            }
+        });
+        btns[1].addEventListener('click', function () {
+            clearInterval(timer);
+        })
+    </script>
+</body>
+
+</html>

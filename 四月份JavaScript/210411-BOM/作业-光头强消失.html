@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #f6f6f6;
+        }
+
+        div {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+            color: red;
+        }
+
+        img {
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>1123456789</p>
+        <img src="光头强.jpeg" alt="">
+
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        var p = document.querySelector('p');
+        var img = document.querySelector('img');
+        var timer = 5;
+        countDown();
+        var daojishi = setInterval(countDown, 1000);
+
+        function countDown() {
+            p.innerHTML = timer + '秒后消失';
+            timer--;
+            if (timer == 0) {
+                clearInterval(daojishi);
+                p.innerHTML = '已经消失';
+
+                img.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
