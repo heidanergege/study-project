@@ -1,0 +1,143 @@
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    height: 83px;
+    padding-top: 20px;
+    border-bottom: 2px solid #c61a2a;
+}
+
+.registerarea {
+    height: 522px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.registerarea h3 {
+    height: 42px;
+    padding: 0 10px;
+    background-color: #ececec;
+    line-height: 42px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.registerarea .login {
+    float: right;
+    font-size: 14px;
+}
+
+.registerarea .login a {
+    color: #c61a2a;
+}
+
+.reg_form {
+    width: 550px;
+    height: 368px;
+    margin: 50px auto 0;
+}
+
+.reg_form ul li {
+    margin-bottom: 20px;
+}
+
+.reg_form ul li label {
+    display: inline-block;
+    width: 86px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.reg_form ul li .inp {
+    width: 241px;
+    height: 36px;
+    border: 1px solid #969696;
+    text-indent: 1em;
+}
+
+.reg_form .error,
+.success {
+    font-size: 12px;
+    margin-left: 10px;
+    color: #c61a2a;
+}
+
+.error .error_ico,
+.success .success_ico {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background: url(../images/error.png) no-repeat;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.success {
+    color: green;
+}
+
+.success .success_ico {
+    background: url(../images/success.png) no-repeat;
+}
+
+.safe {
+    margin-left: 155px;
+    margin-top: -12px;
+}
+
+.safe em {
+    padding: 0 12px;
+    margin: 0 2px;
+    color: #fff;
+}
+
+.safe .ruo {
+    background-color: #db1111;
+}
+
+.safe .zhong {
+    background-color: #42b33d;
+}
+
+.safe .qiang {
+    background-color: #f79100;
+}
+
+.reg_form .agree {
+    margin-left: 88px;
+    margin-top: 40px;
+}
+
+.agree a {
+    color: #12a1e5;
+}
+
+.agree input {
+    vertical-align: middle;
+}
+
+.btn {
+    width: 200px;
+    height: 34px;
+    margin-left: 90px;
+    margin-top: 30px;
+    background-color: #c81622;
+    font-size: 16px;
+    color: #fff;
+}
+
+.mod_copyright {
+    text-align: center;
+}
+
+.mod_copyright .links ul {
+    height: 58px;
+    line-height: 58px;
+}
+
+.mod_copyright .links ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
