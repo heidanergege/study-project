@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            top: 240px;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击后紫色盒子再走</button>
+    <div></div>
+    <span></span>
+    <script>
+        // 简单动画函数封装 obj(目标对象), target(目标位置)
+        // 优化一下我们封装的动画函数
+        // 给不同的元素指定不同的定时器  方法如下：
+        function animate(obj, target, speed) {
+            //bug ：当我们不断的点击按钮，相当于开启了太多的定时器，这个元素的速度会越来越快
+            // 解决方法：先清除以前的定时器，让元素只有一个定时器执行 如下：
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    clearInterval(obj.timer);
+                }
+                obj.style.left = obj.offsetLeft + 1 + 'px';
+            }, speed)
+        }
+
+        // 谁调用这个动画函数  先 获取 元素
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn = document.querySelector('button');
+        animate(div, 300, 30);
+        btn.addEventListener('click', function () {
+            animate(span, 500, 10);
+
+        })
+    </script>
+</body>
+
+</html>

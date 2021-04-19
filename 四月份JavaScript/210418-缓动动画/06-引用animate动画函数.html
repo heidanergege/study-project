@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider {
+            position: fixed;
+            right: 0;
+            bottom: 200px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            color: #fff;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 40px;
+            background-color: purple;
+            z-index: -1;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div class="slider">
+        <span>←</span>
+        <div class="content">寄件反馈</div>
+    </div>
+    <script>
+        // 1.获取元素
+        var slider = document.querySelector('.slider');
+        var con = document.querySelector('.content');
+        // 2.注册鼠标经过事件
+        slider.addEventListener('mouseenter', function () {
+            animate(con, -160, function () {
+                //当动画执行完毕 就把 slider 的内容改为 →
+                slider.children[0].innerHTML = '→';
+            });
+        })
+        slider.addEventListener('mouseleave', function () {
+            animate(con, 0, function () {
+                slider.children[0].innerHTML = '←';
+            });
+        })
+    </script>
+</body>
+
+</html>

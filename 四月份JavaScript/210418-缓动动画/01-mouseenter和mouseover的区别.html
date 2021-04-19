@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        // 1. 鼠标 经过 mouseover 和 mouseenter 的区别
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        // mouseover 会冒泡 当鼠标经过 father是 会触发事件 经过 son 是 还会再次 触发
+        father.addEventListener('mouseover', function () {
+            // console.log(123);
+        })
+        // mouseenter 不会冒泡 当鼠标经过时只会触发一次事件
+        father.addEventListener('mouseenter', function () {
+            // console.log(456);
+        })
+
+        // 2. 鼠标离开 mouseout（会冒泡） 和 mouseleave（不会冒泡） 
+
+        // 给父元素监听事件 当离开子元素时也会触发事件 在父子元素之间切换也会触发事件
+        father.addEventListener('mouseout', function () {
+            console.log(111);
+        })
+
+        father.addEventListener('mouseleave', function () {
+            console.log(222);
+        })
+    </script>
+</body>
+
+</html>

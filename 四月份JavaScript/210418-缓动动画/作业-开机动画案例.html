@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: fixed;
+
+            right: 0;
+            bottom: 0;
+        }
+
+        #closeButton {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 0;
+            right: 9px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <span id="closeButton"></span>
+        <div id="headPart">
+            <img src="images/t.jpg" alt="">
+        </div>
+        <div id="footPart">
+            <img src="images/b.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        var span = document.querySelector('#closeButton');
+        // 获得
+        var boxTop = window.innerHeight - 345;
+
+        span.onclick = function () {
+            animateTop(box, boxTop + 101, function () {
+                // alert('kaishi');
+                animate(box, window.innerWidth, function () {
+                    // 去除这个盒子
+                    document.body.removeChild(box);
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
