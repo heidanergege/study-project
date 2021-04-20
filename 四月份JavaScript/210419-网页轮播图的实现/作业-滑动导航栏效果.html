@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 1024px;
+            height: 320px;
+            background-color: #000;
+            margin: 100px auto;
+            padding-top: 90px;
+            padding-left: 40px;
+        }
+
+        .boxson {
+            position: relative;
+            width: 900px;
+            height: 42px;
+            background-color: #fff;
+            border-radius: 5px;
+
+        }
+
+        ul {
+            position: absolute;
+            width: 900px;
+            height: 42px;
+            line-height: 42px;
+
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            width: 80px;
+            height: 42px;
+            text-align: center;
+        }
+
+        .current {
+            color: red;
+
+        }
+
+        .black {
+            position: absolute;
+            width: 80px;
+            height: 42px;
+            background-color: #000;
+
+        }
+
+        ul li:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="boxson">
+            <div class="black"></div>
+            <ul>
+                <li class="current">好</li>
+                <li>好</li>
+                <li>学</li>
+                <li>习</li>
+                <li>天</li>
+                <li>天</li>
+                <li>向</li>
+                <li>上</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // 要求：当鼠标经过每个汉字黑色背景以动画的效果替换当前背景
+        // 1.获取元素
+        var boxson = document.querySelector('.boxson');
+        var black = boxson.querySelector('.black');
+        var lis = boxson.querySelectorAll('li');
+        var current = 0;
+        // 2.注册事件
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].addEventListener('mouseenter', function () {
+                animate(black, this.offsetLeft);
+            });
+            lis[i].addEventListener('mouseleave', function () {
+                animate(black, current);
+            })
+            // 当鼠标点击 black 的盒子就定格在那个li上
+            lis[i].onclick = function () {
+                current = this.offsetLeft
+                // 用排他思想把字体颜色换为默认的红色
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current';
+            }
+        }
+
+        // 3. 缓动动画函数
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function () {
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                    callback && callback();
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+            }, 15)
+        }
+    </script>
+</body>
+
+</html>

@@ -25,6 +25,10 @@
             background-color: #fff;
         }
 
+        ul {
+            position: absolute;
+        }
+
         ul li {
             list-style: none;
             float: left;
@@ -58,15 +62,25 @@
             var nav = document.querySelector('nav');
             var cloud = document.querySelector('.cloud');
             var lis = nav.querySelectorAll('li');
+            var current = 0;
             // 2.注册鼠标经过li 事件
             for (var i = 0; i < lis.length; i++) {
+                // 当鼠标经过某个li时 云 就跑当前li 的位置
                 lis[i].addEventListener('mouseenter', function () {
                     animate(cloud, this.offsetLeft);
-                    console.log(this.offsetLeft);
+                    this.style.color = '#fff';
                 });
+                // 当鼠标离开当前 li 时 云 就回到起始位置
                 lis[i].addEventListener('mouseleave', function () {
-                    animate(cloud, 0);
+                    animate(cloud, current);
+                    this.style.color = '#000';
                 });
+                // 当鼠标点击某个小li 时  云 就定格在这个小li上
+                lis[i].addEventListener('click', function () {
+                    current = this.offsetLeft;
+
+                })
+
             };
 
         })
