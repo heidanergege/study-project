@@ -6,10 +6,7 @@ window.addEventListener('load', function () {
         mask.style.display = 'block';
         tab_content_big1.style.display = 'block';
     })
-<<<<<<< HEAD
-=======
-    // https://developer.mozilla.org/zh-CN/docs/Web/API/Element/mouseleave_event
->>>>>>> dd8bfb179ce7170a53d09d74e9f98bf45d3763b8
+
     tab_content.addEventListener('mouseleave',function() {
         mask.style.display = 'none';
         tab_content_big1.style.display = 'none';

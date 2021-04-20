@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: #fff;
+            text-align: center;
+        }
+
+        div {
+            margin: 5px auto;
+            width: 90%;
+        }
+
+        .header {
+            height: 200px;
+            background-color: purple;
+        }
+
+        .banner {
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1600px;
+            background-color: #93c42f;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: #aaa;
+        }
+
+        .aside {
+            position: absolute;
+            top: 50%;
+            left: 95%;
+            width: 5%;
+            height: 150px;
+            background-color: pink;
+        }
+
+        .goback {
+            display: none;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function () {
+            // 1.获取元素
+            var aside = document.querySelector('.aside');
+            var banner = document.querySelector('.banner');
+            var main = document.querySelector('.main');
+            var goBack = document.querySelector('.goback');
+            var mainTop = main.offsetTop;
+
+            var bannerTop = banner.offsetTop;
+            //asidetop是将改为固定定位之后top值
+            var asideTop = aside.offsetTop - bannerTop;
+            document.addEventListener('scroll', function () {
+                // window.pageYOffset //页面上面被卷去的高度
+                // window.pageXOffset //页面左边被卷去的宽度
+                // console.log(window.pageYOffset);
+                if (window.pageYOffset >= bannerTop) {
+                    aside.style.position = 'fixed';
+                    aside.style.top = asideTop + 'px';
+                } else {
+                    aside.style.position = 'absolute';
+                    aside.style.top = '50%';
+
+                }
+                // 当页面滚动到main盒子时 goback 盒子 显示
+                console.log(mainTop);
+                if (window.pageYOffset >= mainTop) {
+                    goBack.style.display = 'block';
+                } else {
+                    goBack.style.display = 'none';
+                }
+            })
+            // 点击了返回顶部模块，就让窗口滚动到页面的最上方
+            goBack.addEventListener('click', function () {
+                animate(window, 0);
+            })
+
+            // 缓动动画函数
+            function animate(obj, target, callback) {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function () {
+                    var step = (target - window.pageYOffset) / 10;
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    if (window.pageYOffset == target) {
+                        clearInterval(obj.timer);
+                        callback && callback();
+                    }
+                    window.scroll(0, window.pageYOffset + step);
+                }, 15)
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="header">头部区域</div>
+    <div class="banner">banner区域</div>
+    <div class="main">主体区域</div>
+    <div class="footer">底部区域</div>
+    <div class="aside">侧边栏
+        <span class="goback"><a href="javascript:;">返回顶部</a></span>
+    </div>
+</body>
+
+</html>

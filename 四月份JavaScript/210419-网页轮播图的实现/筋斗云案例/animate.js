@@ -18,9 +18,11 @@
                     //停止动画 本质是停止定时器
                     clearInterval(obj.timer);
                     // 如果callback 为 true 则调用名为 callback 的这个函数
-                    if (callback) {
-                        callback();
-                    }
+                    // if (callback) {
+                    //     callback();
+                    // }
+                    // 写法二：
+                    callback && callback();
                 }
                 obj.style.left = obj.offsetLeft + step + 'px';
             }, 15)

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #292d3e;
+        }
+
+        nav {
+            position: relative;
+            width: 80%;
+            height: 42px;
+            margin: 100px auto;
+            background-color: #fff;
+        }
+
+        ul li {
+            list-style: none;
+            float: left;
+            padding: 0 10px;
+            line-height: 42px;
+            cursor: pointer;
+        }
+
+        .cloud {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 83px;
+            height: 42px;
+            background: url(images/cloud.gif) no-repeat;
+        }
+
+        span {
+            float: right;
+            height: 42px;
+        }
+
+        span img {
+            height: 42px;
+        }
+    </style>
+    <script src="animate.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            // 1.获取元素
+            var nav = document.querySelector('nav');
+            var cloud = document.querySelector('.cloud');
+            var lis = nav.querySelectorAll('li');
+            // 2.注册鼠标经过li 事件
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseenter', function () {
+                    animate(cloud, this.offsetLeft);
+                    console.log(this.offsetLeft);
+                });
+                lis[i].addEventListener('mouseleave', function () {
+                    animate(cloud, 0);
+                });
+            };
+
+        })
+    </script>
+</head>
+
+<body>
+    <nav>
+        <span class="cloud"></span>
+        <ul>
+            <li>首页新闻</li>
+            <li>产品介绍</li>
+            <li>生产中心</li>
+            <li>公司概括</li>
+            <li>成功案例</li>
+            <li>加盟中心</li>
+            <li>联系方法</li>
+            <li>公司地址</li>
+        </ul>
+        <span><img src="images/rss.png" alt=""></span>
+    </nav>
+</body>
+
+</html>

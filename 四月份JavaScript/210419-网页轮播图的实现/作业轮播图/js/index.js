@@ -60,47 +60,59 @@ window.addEventListener('load', function () {
     // 8.点击右侧按钮，滚动轮播图一张
     var num = 0;
     var circle = 0;
+    // 节流阀
+    var flag = true;
     arrow_r.addEventListener('click', function () {
-        if (num == ul.children.length - 1) {
-            ul.style.left = 0;
-            num = 0;
+        if (flag) {
+            flag = false;
+            if (num == ul.children.length - 1) {
+                ul.style.left = 0;
+                num = 0;
+            }
+            num++;
+            animate(ul, -num * focusWidth, function () {
+                flag = true;
+            });
+        // 9.点击右侧按钮，小圆圈跟随一起变化，需要先声明一个变量控制小圆圈的播放
+            circle++;
+            // 如果circle == 4 说明走到最后一张克隆的图片了 就需要复原 
+            if (circle == ol.children.length) {
+                circle = 0;
+            }
+            // 先清除其余小圆圈的类名 排他思想
+            for (var i = 0; i < ol.children.length; i++) {
+                ol.children[i].className = '';
+            }
+            // 留下当前小圆圈的current 类名
+            ol.children[circle].className = 'current';
         }
-        num++;
-        animate(ul, -num * focusWidth);
-    // 9.点击右侧按钮，小圆圈跟随一起变化，需要先声明一个变量控制小圆圈的播放
-        circle++;
-        // 如果circle == 4 说明走到最后一张克隆的图片了 就需要复原 
-        if (circle == ol.children.length) {
-            circle = 0;
-        }
-        // 先清除其余小圆圈的类名 排他思想
-        for (var i = 0; i < ol.children.length; i++) {
-            ol.children[i].className = '';
-        }
-        // 留下当前小圆圈的current 类名
-        ol.children[circle].className = 'current';
     })
     
     // 10.左侧按钮的做法
     arrow_l.addEventListener('click', function () {
-        if (num == 0) {
-            ul.style.left = -(ul.children.length - 1) * focusWidth + 'px';
-            num = ul.children.length - 1;
+        if (flag) {
+            flag = false;
+            if (num == 0) {
+                ul.style.left = -(ul.children.length - 1) * focusWidth + 'px';
+                num = ul.children.length - 1;
+            }
+            num--;
+            animate(ul, -num * focusWidth, function () {
+                flag = true;
+            });
+        // 9.点击左侧按钮，小圆圈跟随一起变化，需要先声明一个变量控制小圆圈的播放
+            circle--;
+            // 如果circle < 0 说明走到第一张图片了 小圆圈就需要改为 第四个
+            if (circle < 0) {
+                circle = ol.children.length - 1;
+            }
+            // 先清除其余小圆圈的类名 排他思想
+            for (var i = 0; i < ol.children.length; i++) {
+                ol.children[i].className = '';
+            }
+            // 留下当前小圆圈的current 类名
+            ol.children[circle].className = 'current';
         }
-        num--;
-        animate(ul, -num * focusWidth);
-    // 9.点击左侧按钮，小圆圈跟随一起变化，需要先声明一个变量控制小圆圈的播放
-        circle--;
-        // 如果circle < 0 说明走到第一张图片了 小圆圈就需要改为 第四个
-        if (circle < 0) {
-            circle = ol.children.length - 1;
-        }
-        // 先清除其余小圆圈的类名 排他思想
-        for (var i = 0; i < ol.children.length; i++) {
-            ol.children[i].className = '';
-        }
-        // 留下当前小圆圈的current 类名
-        ol.children[circle].className = 'current';
     })
     // // 10.自动播放轮播图功能  此功能写到鼠标经过，离开的事件里面
     // var timer = setInterval(function () {
