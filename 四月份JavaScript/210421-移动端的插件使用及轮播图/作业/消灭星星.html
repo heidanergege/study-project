@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        /* 原理： 1.利用定时器不停的创建星星（img）
+              2.星星的大小和位置随机
+              3.当鼠标点击某个星星时删除这个星星  */
+        //   需要设定星星的最大值 和最小值 还有 星星出现的范围
+
+        //1. 创建定时器 当window 窗口 加载完毕 就启用定时器
+
+        window.addEventListener('load', function () {
+            // 创建一个产生星星计数器
+            var counter = document.createElement('div');
+            var index = 0;
+            document.body.appendChild(counter);
+            counter.style.color = '#fff';
+            // 创建一个删除星星计数器
+            var counter1 = document.createElement('div1');
+            var index1 = 0;
+            document.body.appendChild(counter1);
+            counter1.style.color = '#fff';
+
+            //  创建定时器
+            setInterval(function () {
+                var img = document.createElement('img'); //创建img元素
+                document.body.appendChild(img); //把创建的img追加到body的父元素下面
+                img.setAttribute('src', 'images/xingxing.gif'); //给img添加src属性以显示图片
+                // 给img添加 随机的width 属性 
+                img.setAttribute('width', getRandom(img_minWidth, img_maxWidth));
+                //给img 添加 随机的位置 属性
+                var x = getRandom(0, max_x);
+                var y = getRandom(0, max_y);
+                img.setAttribute('style', 'position:absolute;left:' + x + 'px;top:' + y + 'px');
+
+                index++;
+
+                counter.innerHTML = '已产生' + index + '个小星星啦！';
+
+                img.onclick = function () {
+                    document.body.removeChild(this);
+                    index1++;
+                }
+                counter1.innerHTML = '已删除' + index1 + '个小星星啦！';
+            }, 1000);
+
+        });
+
+        // 当点击img时 就删除这个 img 
+
+
+        // 2.  设置星星的大小和位置随机
+        var img_minWidth = 20; //允许星星的最小宽度
+        var img_maxWidth = 100; //允许星星的最大宽度
+        var max_x = window.innerWidth - img_maxWidth; //图片x轴允许的最大坐标值
+        var max_y = window.innerHeight - img_maxWidth; //图片y轴允许的最大坐标值
+        // 随机数的函数 取整
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+    </script>
+</body>
+
+</html>

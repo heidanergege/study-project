@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul></ul>
+    <button>点击添加</button>
+
+    <script>
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            var li = document.createElement('li');
+            li.innerHTML = '我是新添加的小li元素';
+
+            ul.appendChild(li);
+        })
+        ul.addEventListener('click', function (e) {
+            var lis = document.querySelectorAll('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].index = i
+            }
+            var tag = e.target;
+            if (tag.nodeName.toLowerCase() == 'li') {
+                if (tag.style.background == 'purple') {
+                    tag.style.background = '';
+                } else {
+                    tag.style.background = 'purple';
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

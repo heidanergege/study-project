@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title> Document </title>
+</head>
+
+<body>
+    <ul>
+    </ul>
+    <button>点击增加</button>
+    <script>
+        var ul = document.querySelector('ul');
+        var btn = document.querySelector('button');
+        //动态添加元素
+        btn.addEventListener('click', function () {
+            var li = document.createElement('li');
+            li.innerHTML = '我是新添加的li元素';
+            ul.appendChild(li);
+        })
+        //事件委托添加背景色
+        ul.addEventListener('click', function (e) {
+            var lis = document.querySelectorAll('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].index = i
+            }
+            var tag = e.target; //获取当前点击的元素节点
+            if (tag.nodeName.toLowerCase() == 'li') { //使用元素节点的nodeName属性获得元素的名称，并转换为小写，判断是不是我们想要的
+
+                if (tag.style.background == "purple") { //如果是,改变背景颜色
+                    tag.style.background = "";
+                } else {
+                    tag.style.background = "purple";
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
