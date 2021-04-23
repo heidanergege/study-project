@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">儿子</div>
+    </div>
+    <div class="nav">
+        <p>叔叔p</p>
+        <div>
+            <p>侄子p</p>
+        </div>
+    </div>
+
+    <ul>
+        <li>我是第1个小li</li>
+        <li>我是第2个小li</li>
+        <li>我是第3个小li</li>
+        <li class="current">我是第4个小li</li>
+        <li>我是第5个小li</li>
+        <li>我是第6个小li</li>
+    </ul>
+
+    <ol>
+        <li>我是ol里第1个小li</li>
+        <li>我是ol里第2个小li</li>
+        <li>我是ol里第3个小li</li>
+        <li>我是ol里第4个小li</li>
+        <li>我是ol里第5个小li</li>
+        <li>我是ol里第6个小li</li>
+    </ol>
+    <script>
+        //注意： 都是方法 带括号
+        $(function () {
+            // 1.父亲 parent(); 返回的是亲爸爸 和爷爷没有关系
+            console.log($('.son').parent());
+
+            // 2.儿子
+            // (1).亲儿子 children() 类似于子代选择器div > p
+            $(".nav").children("p").css("color", "red");
+            // (2).  find();可以选择所有的后代 ，包括孙子， 类似于后代选择器 div空格p
+            $(".nav").find("p").css("font-size", "28px");
+
+            // 3.siblings()查找所有兄弟，不包括 本身
+            //siblings("li")查找所有名li兄弟，不包括 本身
+            $("ul li:first").siblings().css("color", "blue");
+
+            // 4.nextAll([expr]) 查找当前元素之后的所有同辈元素 不包括本身
+            $("ol li:eq(2)").nextAll().css("color", "pink");
+
+            // 5.prevAll([expr]) 查找当前元素之前的所有同辈元素 不包括本身
+            $("ol li").eq(2).prevAll().css("color", "skyblue");
+
+            // 6.hasClass("class") 检查当前元素是否有这个类名 如果有 返回 true 
+            console.log($("ul li").eq(3).hasClass("current")); //true
+            console.log($("ul li").eq(0).hasClass("current")); //false
+
+            $("ul li:eq(3)"); //等价于  
+            $("ul li").eq(3);
+        })
+    </script>
+</body>
+
+</html>

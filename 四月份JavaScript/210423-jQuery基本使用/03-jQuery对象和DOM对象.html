@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+    <script>
+        // 1. DOM对象： 用原声js获取过来的对象就是DOM对象
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        console.dir(div);
+        // 2.jQuery对象：用jQuery方式获取过来的对象是jQuery对象
+        $('div');
+        $('span');
+        console.dir($('div'));
+        // 3.jQuery对象只能使用jQuery方法，DOM对象则只能使用原生的javaScript属性和方法
+        div.style.display = 'none';
+        $('span').hide(); //这个$('div')是一个jQuery对象 不能使用原生js的属性和方法
+    </script>
+</body>
+
+</html>

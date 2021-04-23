@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程表</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 align="center">课程表</h1>
+    <table align="center" border="1" bordercolor="red" width="800" height="200" cellpadding="15">
+        <tr>
+            <td align="center">项目</td>
+            <td colspan="5" align="center">上课</td>
+
+            <td colspan="2" align="center">休息</td>
+
+        </tr>
+        <tr>
+            <td align="center">星期</td>
+            <td align="center">星期一</td>
+            <td align="center">星期二</td>
+            <td align="center">星期三</td>
+            <td align="center">星期四</td>
+            <td align="center">星期五</td>
+            <td align="center">星期六</td>
+            <td align="center">星期日</td>
+        </tr>
+        <tr>
+            <td rowspan="4" align="center">上午</td>
+            <td align="center">语文</td>
+            <td align="center">数学</td>
+            <td align="center">英语</td>
+            <td align="center">英语</td>
+            <td align="center">物理</td>
+            <td align="center">计算机</td>
+            <td rowspan="4" align="center">休息</td>
+        </tr>
+        <tr>
+
+            <td align="center">数学</td>
+            <td align="center">数学</td>
+            <td align="center">地理</td>
+            <td align="center">历史</td>
+            <td align="center">化学</td>
+            <td align="center">计算机</td>
+
+        </tr>
+        <tr>
+
+            <td align="center">化学</td>
+            <td align="center">语文</td>
+            <td align="center">体育</td>
+            <td align="center">计算机</td>
+            <td align="center">英语</td>
+            <td align="center">计算机</td>
+
+        </tr>
+        <tr>
+
+            <td align="center">政治</td>
+            <td align="center">英语</td>
+            <td align="center">体育</td>
+            <td align="center">历史</td>
+            <td align="center">英语</td>
+            <td align="center">计算机</td>
+
+        </tr>
+        <tr>
+            <td rowspan="2" align="center">下午</td>
+            <td align="center">语文</td>
+            <td align="center">数学</td>
+            <td align="center">英语</td>
+            <td align="center">物理</td>
+            <td align="center">计算机</td>
+            <td align="center">英语</td>
+            <td rowspan="2" align="center">休息</td>
+        </tr>
+        <tr>
+
+            <td align="center">数学</td>
+            <td align="center">数学</td>
+            <td align="center">地理</td>
+            <td align="center">历史</td>
+            <td align="center">化学</td>
+            <td align="center">计算机</td>
+
+        </tr>
+    </table>
+    <script>
+        $(function () {
+            $("table tr td").mouseover(function () {
+                $(this).css("color", "red");
+
+            })
+            $("table tr td").mouseout(function () {
+                $(this).css("color", "");
+
+            })
+        })
+    </script>
+</body>
+
+</html>

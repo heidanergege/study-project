@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>我是第1个div</div>
+    <div>我是第2个div</div>
+    <div>我是第3个div</div>
+    <div>我是第4个div</div>
+    <div>我是第5个div</div>
+    <div>我是第6个div</div>
+    <ul>
+        <li>我是第1个小li</li>
+        <li>我是第2个小li</li>
+        <li>我是第3个小li</li>
+        <li>我是第4个小li</li>
+        <li>我是第5个小li</li>
+        <li>我是第6个小li</li>
+    </ul>
+    <script>
+        $(function () {
+            // 1.选择div 里面的第一个 div 
+            $("div:first").css("color", "pink");
+
+            // 2.选择ul 的 li 里面的最后一个 li
+            $("ul li:last").css("background", "pink");
+
+            // 3.选择ul 里面 的第四个小li
+            $("ul li:eq(3)").css("background", "pink");
+
+            // 4.获取到的li元素中，选择索引号为偶数的元素
+            $("ul li:even").css("background", "skyblue");
+
+            // 5.获取到的div元素中 选择索引号为奇数的div元素
+            $("div:odd").css("color", "yellow");
+        });
+    </script>
+</body>
+
+</html>

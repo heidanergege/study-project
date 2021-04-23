@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>点击1</button>
+    <button>点击2</button>
+    <button>点击3</button>
+    <button>点击4</button>
+    <button>点击5</button>
+    <button>点击6</button>
+    <script>
+        $(function () {
+            // 1.因为有隐式迭代 所以 这里是给所有的button都绑定了点击事件
+            $("button").click(function () {
+                // 2.$(this) jQuery 中 当前元素的意思    给当前元素添加背景颜色
+                $(this).css("background", "pink");
+                // 3.其余的兄弟去掉背景颜色
+                $(this).siblings("button").css("background", "");
+            })
+        })
+    </script>
+</body>
+
+</html>

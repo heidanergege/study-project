@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div>我们是相同的div1</div>
+    <div>我们是相同的div2</div>
+    <div>我们是相同的div3</div>
+    <div>我们是相同的div4</div>
+    <ul>
+        <li>相同的li1</li>
+        <li>相同的li2</li>
+        <li>相同的li3</li>
+    </ul>
+    <script>
+        // 1.获取四个div元素
+        // console.log($("div"));
+        // 2.给四个div设置背景颜色为粉色
+        $("div").css("background", "pink");
+        // 3.隐式迭代就是把匹配的所有元素内部进行了遍历循环，给每一个元素添加相同的方法
+        $("ul li").css("color", "red");
+    </script>
+</body>
+
+</html>
