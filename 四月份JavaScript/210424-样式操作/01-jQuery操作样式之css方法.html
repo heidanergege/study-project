@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        //操作样式之css 的方法
+        $(function () {
+            // css("属性名") 是获取属性值 
+            console.log($("div").css("width"));
+            // css("属性名","属性值") 是改变属性值
+            $("div").css("width", "300px");
+            // 属性值 为 数字时 可以不加引号 和单位
+            $("div").css("width", 400);
+
+            // 同时修改多个css样式时 采取对象的语法书写，如果是复合属性则必须采取驼峰命名法，如果值不是数字，则必须加引号
+            $("div").css({
+                width: 400,
+                height: "400px",
+                backgroundColor: "red"
+            })
+
+        })
+    </script>
+</body>
+
+</html>
