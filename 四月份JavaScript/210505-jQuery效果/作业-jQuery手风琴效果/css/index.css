@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+.box {
+    width: 1038px;
+    height: 405px;
+    margin: 100px auto;
+    overflow: hidden;
+}
+
+.box ul {
+    width: 110%;
+    height: 100%;
+    background-color: #000;
+}
+
+.box ul li {
+    float: left;
+    width: 173px;
+    overflow: hidden;
+    opacity: .5;
+}

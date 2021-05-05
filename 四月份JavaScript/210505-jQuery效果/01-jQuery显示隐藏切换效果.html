@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 300px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div></div>
+    <script>
+        $(function () {
+
+            // 元素显示、隐藏、切换 语法规范:
+            // 过渡速度 运动方式 回调函数
+            // show([speed,[easing],[fn]])
+            //  // 过渡速度 运动方式 回调函数
+            //  hide([speed,[easing],[fn]])            
+            //  // 过渡速度 运动方式 回调函数
+            //  toggle([speed,[easing],[fn]])            
+            $("button").eq(1).click(function () {
+                $("div").hide("fast");
+            })
+            $("button").eq(0).click(function () {
+                $("div").show("slow");
+            })
+
+            // 显示与隐藏之 切换
+            $("button").eq(2).click(function () {
+                $("div").toggle(1000, function () {
+                    alert(1);
+                });
+            })
+
+        });
+    </script>
+</body>
+
+</html>
