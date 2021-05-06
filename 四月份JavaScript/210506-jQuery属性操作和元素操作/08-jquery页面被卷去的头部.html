@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 80%;
+            height: 3000px;
+            margin: 200px auto;
+            background-color: skyblue;
+        }
+
+        span {
+            display: none;
+            position: fixed;
+            left: 90%;
+            bottom: 10%;
+            width: 100px;
+            height: 150px;
+            background-color: pink;
+            font-size: 22px;
+            line-height: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span>返回顶部</span>
+    <script>
+        $(function () {
+            //页面被卷去的头部
+            // $(document).scrollTop()
+            //设置页面被卷去的头部
+            // $(document).scrollTop(100);
+            var divTop = $("div").offset().top; // div 距离文档头部的距离
+            // 页面滚动事件
+            $(window).scroll(function () {
+                console.log($(document).scrollTop()); // 打印页面滚动时被卷去头部距离的值
+                if ($(document).scrollTop() >= divTop) {
+                    $("span").fadeIn(500); // 返回顶部标签 淡入
+                } else {
+                    $("span").fadeOut(500); // 返回顶部标签 淡出
+                }
+
+            });
+
+            // 带有动画的返回顶部
+            $("span").click(function () {
+                // 不能是文档 而是 HTML 和 body 做动画
+                $("body,html").stop().animate({
+                    scrollTop: 0
+                });
+            })
+        })
+    </script>
+</body>
+
+</html>

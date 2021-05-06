@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="one">
+        <div class="two">
+            <div class="three">
+                <div class="four">我不容易啊</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 用four选择one 的原始写法：
+        console.log($(".four").parent().parent().parent());
+
+        // 选择指定祖先元素的语法  parents("元素名")
+        console.log($(".four").parents(".one"));
+    </script>
+</body>
+
+</html>

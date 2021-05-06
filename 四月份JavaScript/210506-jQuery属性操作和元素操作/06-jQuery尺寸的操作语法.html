@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            margin: 15px;
+            border: 20px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function () {
+            // 1.width()/height()获取匹配元素的宽高度 ，不包含padding、border、margin
+            console.log($("div").width()); // 返回 200  数字型
+            // console.log($("div").width(300)); // 宽度改为300  不加引号 不跟单位
+
+
+            // 2.innerWidth()/innerHeight()获取匹配元素的包含padding的宽高度
+            console.log($("div").innerWidth()); // 220 数字型
+
+            // 3.outerWidth()/outerHeight()获取匹配元素的包含padding和border的宽高度
+            console.log($("div").outerWidth()); // 260 数字型
+
+            // 4.outerWidth(true)/outerHeight(true)获取匹配元素的包含padding和border还有margin的宽高度
+            console.log($("div").outerWidth(true)); // 290 数字型
+
+        })
+    </script>
+</body>
+
+</html>

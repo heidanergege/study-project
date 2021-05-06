@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            margin: 100px;
+
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        $(function () {
+            // 1.offset() 获取和设置匹配元素距离文档的位置(偏移)
+            console.log($(".son").offset()); //获取元素距离文档的上边距和 左边距
+            console.log($(".son").offset().top); //获取元素距离文档的上边距
+            $(".son").offset({ // 设置元素距离文档的上边距 和 左边距
+                top: 200,
+                left: 200
+            });
+            console.log($(".son").offset());
+
+            // 2.position() 获取匹配元素距离带有定位父级元素的位置(偏移) 如果没有带有定位的父级，则以文档为准，这个方法只能获取不能设置
+            console.log($(".son").position());
+        })
+    </script>
+</body>
+
+</html>
