@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 常规写法
+            console.log($("div"));
+
+            // 1. 如果$符号冲突 就用jQuery
+            console.log(jQuery("span"));
+
+            // 2.更甚至 用 jQuery 释放 的 $ 的控制权 让我们自己决定
+            var suibian = $.noConflict();
+            console.log(suibian("div"));
+            //   或
+            var suiyi = jQuery.noConflict();
+            console.log(suiyi("span"));
+            suiyi.each();
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+</body>
+
+</html>

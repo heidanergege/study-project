@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 764px;
+            height: 282px;
+            margin: 100px auto;
+            border: 1px solid #aaa;
+        }
+
+        ul {
+            list-style: none;
+            width: 100%;
+            height: 100%;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+
+        .box li {
+            position: relative;
+            float: left;
+            width: 25%;
+            height: 50%;
+            border-left: 10px solid #fff;
+            border-top: 10px solid #fff;
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        .box li span,
+        .box li p {
+            position: absolute;
+            bottom: -26px;
+            left: 0;
+            width: 100%;
+            height: 25px;
+            color: white;
+            font-size: 14px;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        .box li p {
+            background-color: #000;
+        }
+
+        .box li span {
+            background: url(images/bg.png) no-repeat 6px 1px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            var p = $("<p></p>"); //建立一个标签用作半透明遮罩层
+            $(".box li span").before(p);
+            $(".box li p").fadeTo(0, 0.5); //给后来创建的p 设置透明度
+
+            $(".box li span").each(function (index, ele) { //遍历所有的span
+                // console.log(index);
+                // console.log(ele);
+                var y = index * 25; //得到动态的数值 用于y 的坐标值
+                //给每个span元素的背景图片 赋予 不同的 坐标值 
+                $(ele).css("background-position", "5px -" + y + "px");
+            });
+            // 注册鼠标经过离开事件
+            $(".box li").hover(function () {
+                $(this).children("span,p").stop().animate({
+                    bottom: 0
+                });
+            }, function () {
+                $(this).children("span,p").stop().animate({
+                    bottom: -26
+                });
+
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="images/01.JPG" alt=""><span>百度一下，你就知道</span></li>
+            <li><img src="images/02.JPG" alt=""><span>百度一下，你就知道</span></li>
+            <li><img src="images/03.JPG" alt=""><span>百度一下，你就知道</span></li>
+            <li><img src="images/04.JPG" alt=""><span>百度一下，你就知道</span></li>
+            <li><img src="images/05.JPG" alt=""><span>百度一下，你就知道</span></li>
+            <li><img src="images/06.JPG" alt=""><span>百度一下，你就知道</span></li>
+            <li><img src="images/07.JPG" alt=""><span>百度一下，你就知道</span></li>
+            <li><img src="images/08.JPG" alt=""><span>百度一下，你就知道</span></li>
+
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        div {
+            width: 500px;
+            height: 300px;
+            margin: 100px auto;
+            padding-top: 20px;
+            border: 1px solid #000;
+        }
+
+        textarea {
+            width: 350px;
+            height: 180px;
+            line-height: 22px;
+            padding: 10px;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            width: 400px;
+            padding-left: 80px;
+        }
+
+        ul li {
+            line-height: 26px;
+            border-bottom: 1px dashed #ccc;
+            display: none;
+        }
+
+        ul li a {
+            float: right;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            // 1.点击发布按钮，动态创建一个li，li中放入 文本框的内容和删除的按钮，并添加到ul中
+            $("button").on("click", function () {
+                var li = $("<li></li>");
+                li.html($("textarea").val() + '<a href = " javascript: ;">删除</a>');
+                $("ul").prepend(li);
+                li.slideDown();
+                $("textarea").val("");
+            })
+            // 2.点击删除按钮，可以删除当前的留言
+            $("ul").on("click", "a", function () {
+                $(this).parent().slideUp(function () {
+                    $(this).remove();
+                });
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <span>发布留言</span>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>发布</button>
+        <ul>
+            <li>我是li <a href="javascript:;">删除</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.当用户按下enter键时把用户输入的内容存储到本地存储中
+        var todolist = [{
+            title: '我是第一个待办事项',
+            done: false
+        }, {
+            title: '我是第二个待办事项',
+            done: false
+        }];
+
+        localStorage.setItem("todo", JSON.stringify(todolist));
+        var data = localStorage.getItem("todo");
+        console.log(typeof data);
+        data = JSON.parse(data);
+        console.log(data.title);
+    </script>
+</body>
+
+</html>

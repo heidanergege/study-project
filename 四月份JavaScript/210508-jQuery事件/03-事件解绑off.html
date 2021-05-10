@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("div").on({
+                "click": function () {
+                    console.log("我点击了");
+                },
+                mouseover: function () {
+                    console.log("我鼠标经过了");
+                }
+            });
+            $("ul").on("click", "li", function () {
+                alert(11);
+            })
+            // 1.事件解绑 off 
+            // $("div").off(); //解除了div 身上的所有事件
+            $("div").off("click"); //解除了div 身上的点击事件
+            $("ul").off("click", "li"); //解除了ul 事件委托 中 小li的点击事件
+
+            // 2.one() 解绑事件 一次性 只能触发事件一次
+            $("p").one("click", function () {
+                alert(22);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我是小li</li>
+        <li>我是小li</li>
+        <li>我是小li</li>
+        <li>我是小li</li>
+        <li>我是小li</li>
+    </ul>
+    <p>我是p标签</p>
+</body>
+
+</html>

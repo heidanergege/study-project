@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .current {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>我是ul里的小li1</li>
+        <li>我是ul里的小li2</li>
+        <li>我是ul里的小li3</li>
+        <li>我是ul里的小li4</li>
+        <li>我是ul里的小li5</li>
+        <li>我是ul里的小li6</li>
+    </ul>
+    <ol>
+
+    </ol>
+    <script>
+        $(function () {
+            // 1.同一元素注册多个事件 on
+            // $("div").on({
+            //     mouseenter: function () {
+            //         $(this).css("backgroundColor", "skyblue");
+            //     },
+            //     mouseleave: function () {
+            //         $(this).css("background", "purple");
+            //     },
+            //     click: function () {
+            //         $(this).css("background", "green");
+            //     }
+            // });
+            // 2.如果凑巧 两个事件执行同一句代码，可以如下写法：
+            $("div").on("mouseenter mouseleave", function () {
+                $(this).toggleClass("current");
+            })
+
+            // 3.on 可以实现事件的委托 委派
+            // click 是绑定在ul 身上的 但触发点击事件的是ul 里面的 li 
+            $("ul").on("click", "li", function () {
+                alert(111);
+            });
+            // 也可以给后创建的元素绑定事件
+            $("ol").on("click", "li", function () {
+                alert(222);
+            });
+            var li = $("<li>我是后来创建的</li>");
+            $("ol").append(li);
+        })
+    </script>
+</body>
+
+</html>
