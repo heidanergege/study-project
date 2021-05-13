@@ -1,0 +1,467 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e33333;
+}
+
+h3 {
+    color: #fff;
+    font-size: .25rem;
+    font-weight: normal;
+}
+
+
+body {
+    background: url(../images/bg.jpg) repeat 0 0 /cover;
+    background-size: cover;
+}
+
+/* rem 适配方案 */
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 42.66px !important;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    html {
+        font-size: 80px !important;
+    }
+}
+
+.viewport {
+    display: flex;
+    min-width: 1024px;
+    max-width: 1920px;
+    min-height: 768px;
+    max-height: 1028px;
+    margin: 0 auto;
+    padding: 1.3rem .25rem 0;
+    background: url(../images/logo.png) no-repeat 0 0 /contain;
+}
+
+.viewport .column {
+    flex: 3;
+    /* background-color: pink; */
+}
+
+.viewport .column:nth-child(2) {
+    flex: 4;
+    margin: .4rem .25rem 0;
+
+}
+
+
+/* 公共面板样式 */
+.panel {
+    position: relative;
+    border: 15px solid transparent;
+    border-width: .6375rem .475rem .25rem 1.65rem;
+    border-image-source: url(../images/border.png);
+    border-image-slice: 51 38 20 132;
+    margin-bottom: .25rem;
+}
+
+.inner {
+    position: absolute;
+    top: -.6375rem;
+    left: -1.65rem;
+    right: -.475rem;
+    bottom: -.25rem;
+    padding: .3rem .45rem;
+}
+
+.inner h3 {
+    color: #fff;
+    font-size: .225rem;
+    font-weight: normal;
+}
+
+.inner h4 {
+    font-weight: normal;
+    font-size: .35rem;
+    color: #fff;
+    margin-bottom: 0.15rem;
+}
+
+/* 概览区域模块制作 */
+.overview {
+    height: 1.375rem;
+}
+
+.overview ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.overview ul li h4 {
+
+    margin: 0 0 .1rem .06rem;
+}
+
+.overview ul li span {
+    font-size: .2rem;
+    color: #4c9bfd;
+}
+
+/* 监控区域模块 */
+.monitor {
+    height: 6rem;
+}
+
+.monitor .inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0.3rem 0;
+}
+
+.monitor .tabs {
+    padding: 0 0.45rem;
+    display: flex;
+    margin-bottom: .225rem;
+}
+
+.monitor .tabs a {
+    color: #1950c4;
+    font-size: .225rem;
+    padding: 0 .3375rem;
+}
+
+.monitor .tabs a:nth-child(1) {
+    padding-left: 0;
+    border-right: .025rem solid #00f2f1;
+
+}
+
+.monitor .tabs a.active {
+    color: #fff;
+}
+
+.monitor .content {
+    flex: 1;
+    position: relative;
+    display: none;
+}
+
+.monitor .head {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.05;
+    background-color: rgba(255, 255, 255, .1);
+    color: #68d8fe;
+    font-size: 0.175rem;
+    padding: 0.15rem 0.45rem;
+
+}
+
+/* // 2.向上循环滚动效果
+// 实现思路：
+// js 部分
+// 先克隆列表，然后追加到后面
+// css 部分：
+// marquee - view 占满剩余高度 溢出隐藏
+// 绝对定位， top 1.6rem bottom 0
+// 宽度100 % 溢出隐藏
+// 使用animation 实现动画
+// 使用translateY 向上位移 50 %
+// 动画时间 15s 匀速播放 循环执行   */
+
+.monitor .marquee-view {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.monitor .marquee-view .marquee {
+    animation: move 15s linear infinite;
+}
+
+@keyframes move {
+    0% {}
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+.monitor .marquee-view .marquee:hover {
+    animation-play-state: paused;
+}
+
+.monitor .row {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.05;
+    font-size: 0.15rem;
+    color: #61a8ff;
+    padding: 0.15rem 0.45rem;
+}
+
+.monitor .row .icon-dot {
+    position: absolute;
+    left: .2rem;
+    opacity: 0;
+}
+
+.monitor .row:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #68d8fe;
+}
+
+.monitor .row:hover .icon-dot {
+    opacity: 1;
+}
+
+.monitor .col:first-child {
+    width: 1rem;
+}
+
+.monitor .col:nth-child(2) {
+    width: 2.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.monitor .col:nth-child(3) {
+    width: 1rem;
+}
+
+/* 点位区域模块 */
+.point {
+    height: 4.25rem;
+}
+
+.point .chart {
+    display: flex;
+
+    margin-top: 0.3rem;
+    justify-content: space-between;
+}
+
+.point .pie {
+    /* flex: 2.8; */
+    width: 3.9rem;
+    height: 3rem;
+    /* margin-right: .20rem; */
+    margin-left: -0.125rem;
+}
+
+.point .data {
+    display: flex;
+    /* flex: 1; */
+    width: 2.1rem;
+    height: 3rem;
+
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.45rem 0.275rem;
+    background-image: url(../images/rect.png);
+    background-size: cover;
+}
+
+.point span {
+    font-size: 0.2rem;
+
+}
+
+/* 中间地图模块 */
+.viewport .map {
+    height: 7.225rem;
+    margin-bottom: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.map .chart {
+    flex: 1;
+    background-color: rgba(255, 255, 255, .08);
+
+}
+
+.map .icon-cube {
+    color: #68d8fe;
+}
+
+.map .geo {
+    width: 100%;
+    height: 100%;
+}
+
+/* 用户统计模块 */
+.users {
+    height: 4.25rem;
+    display: flex;
+}
+
+.users .chart {
+    display: flex;
+    margin-top: 0.3rem;
+    justify-content: space-between;
+}
+
+.users .bar {
+    width: 6.35rem;
+    height: 3rem;
+    margin-left: -0.125rem;
+
+}
+
+.users .data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.1rem;
+    height: 3rem;
+    padding: 0.45rem 0.275rem;
+    /* box-sizing: border-box; */
+    background-image: url(../images/rect.png);
+    background-size: cover;
+}
+
+.users span {
+    font-size: 0.2rem;
+}
+
+/* 右边列  */
+/* 订单数据模块 */
+.order {
+    height: 1.875rem;
+    /* overflow: hidden; */
+}
+
+.order .inner {
+    overflow: hidden;
+}
+
+.order .filter {
+    display: flex;
+}
+
+.order .filter a {
+    display: block;
+    padding: 0 .225rem;
+    font-size: .225rem;
+    color: #1950c4;
+    line-height: 1;
+    height: .225rem;
+    border-right: .025rem solid #9ec8ef;
+}
+
+.order .filter a:first-child {
+    padding-left: 0;
+}
+
+.order .filter a:last-child {
+    border-right: none;
+}
+
+.order .data {
+    display: flex;
+    /* display: none; */
+    margin-top: 0.25rem;
+}
+
+.order .item {
+    flex: 1;
+
+}
+
+.order h4 {
+    margin-bottom: 0.08rem;
+}
+
+.order .item span {
+    font-size: .2rem;
+}
+
+.active {
+    color: #fff !important;
+    font-size: 0.25rem;
+}
+
+/* 销售额统计区域模块 */
+.sales {
+    height: 3.1rem;
+}
+
+.sales .inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.sales .caption {
+    display: flex;
+    line-height: 1;
+}
+
+.sales h3 {
+    height: .225rem;
+    padding-right: .225rem;
+    border-right: .025rem solid #00f2f1;
+}
+
+.sales a {
+    padding: .05rem;
+    font-size: .2rem;
+    margin-top: -0.05rem;
+    margin-left: .25rem;
+    border-radius: 0.0375rem;
+    color: #0bace6;
+}
+
+.sales a.active {
+    background-color: #4c9bfd;
+    color: #fff;
+}
+
+.sales .chart {
+    flex: 1;
+    background-color: pink;
+    padding-top: 0.1875rem;
+    position: relative;
+}
+
+.sales .label {
+    position: absolute;
+    left: 0.525rem;
+    top: 0.225rem;
+    color: #4996f5;
+    font-size: 0.175rem;
+}
+
+.sales .line {
+    width: 100%;
+    height: 100%;
+}
