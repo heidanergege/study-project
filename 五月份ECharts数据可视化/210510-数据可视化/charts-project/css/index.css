@@ -448,7 +448,6 @@ body {
 
 .sales .chart {
     flex: 1;
-    background-color: pink;
     padding-top: 0.1875rem;
     position: relative;
 }

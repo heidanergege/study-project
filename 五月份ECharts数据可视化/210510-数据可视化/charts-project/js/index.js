@@ -216,16 +216,15 @@ $(function () {
 
     /* 订单数据模块 */
     (function () {
-
+        var index = 0;
         // 1. 点击实现tab栏切换样式
         // 绑定点击事件
         $(".order .filter").on("click", "a", function () {
             $(this).addClass("active").siblings("a").removeClass("active");
-            $(".order .data").eq($(this).index()).show().siblings(".data").hide();
+            index = $(this).index();
+            $(".order .data").eq(index).show().siblings(".data").hide();
         });
         // 2. 开启定时器动态切换数据内容
-        var index = $(this).index();
-        console.log(index);
         var allTab = $(".order .filter a");
 
         // 3.当鼠标经过时清除定时器
@@ -254,18 +253,25 @@ $(function () {
         var myChart = echarts.init(document.querySelector(".sales .line"));
         // 2.指定配置和数据
         var option = {
+            color: ['#00f2f1', '#ed3f35'],
 
             tooltip: {
                 //通过坐标轴来触发
                 trigger: 'axis'
             },
             legend: {
-                data: ['邮件营销', '联盟广告']
+                // 如果series 里面设置了name，此时图例组件的data 可以省略 否则就要和下面一样
+                // data: ['邮件营销', '联盟广告'],
+                //修改位置
+                right: '10%',
+                textStyle: {
+                    color: '#4c9bfd'
+                }
             },
             grid: {
                 top: '20%',
-                left: '3%',
-                right: '4%',
+                left: 0,
+                right: 0,
                 bottom: '3%',
                 show: true,
                 borderColor: '#012f4a',
@@ -274,27 +280,56 @@ $(function () {
 
             xAxis: {
                 type: 'category',
-                boundaryGap: false,
-                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                boundaryGap: false, // 图线顶到y轴
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                axisTick: {
+                    show: false //去除刻度线
+                },
+                axisLabel: {
+                    color: '#4c9bfd', //修改x轴文本颜色
+                    fontSize: 8
+                },
+                axisLine: {
+                    show: false //去除轴线
+                }
+
             },
             yAxis: {
-                type: 'value'
+                type: 'value',
+                axisTick: {
+                    show: false //去除刻度
+                },
+                axisLabel: {
+                    color: '#4c9bfd'
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#012f4a' // 分割线的颜色z
+                    }
+                }
             },
             series: [{
-                    name: '邮件营销',
+                    name: '预期销售额',
                     type: 'line',
                     stack: '总量',
-                    data: [120, 132, 101, 134, 90, 230, 210]
+                    smooth: true,
+                    data: [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120]
                 },
                 {
-                    name: '联盟广告',
+                    name: '实际销售额',
                     type: 'line',
                     stack: '总量',
-                    data: [220, 182, 191, 234, 290, 330, 310]
+                    smooth: true,
+
+                    data: [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79]
                 }
             ]
         };
         // 3.把配置项和数据给实例化对象
         myChart.setOption(option);
+        // 4.当浏览器窗口大小变化时，图表大小也同步进行变化
+        window.addEventListener("resize", function () {
+            myChart.resize();
+        })
     })();
 })
