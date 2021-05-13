@@ -217,14 +217,17 @@ $(function () {
     /* 订单数据模块 */
     (function () {
 
+           // 2. 开启定时器动态切换数据内容
+           var index = 0;
+
         // 1. 点击实现tab栏切换样式
         // 绑定点击事件
         $(".order .filter").on("click", "a", function () {
             $(this).addClass("active").siblings("a").removeClass("active");
-            $(".order .data").eq($(this).index()).show().siblings(".data").hide();
+            index = $(this).index()
+            $(".order .data").eq(index).show().siblings(".data").hide();
         });
-        // 2. 开启定时器动态切换数据内容
-        var index = $(this).index();
+     
         console.log(index);
         var allTab = $(".order .filter a");
 
