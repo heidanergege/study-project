@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var star = {
+            name: "刘德华",
+            age: "18"
+        };
+        //以前的拼接字符串的写法  
+        console.log("我的名字叫" + star.name + "我的年龄是" + star.age);
+        //ES6模板字符写法
+        console.log(`我的名字叫${star.name}我的年龄是${star.age}`);
+        //ES6模板字符写法支持回车
+        console.log(`我的名字叫${star.name}
+        我的年龄是${star.age}`);
+        console.log(`<span>${star.name}</span><span>${star.age}</span>`);
+    </script>
+</body>
+
+</html>

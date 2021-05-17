@@ -12,6 +12,8 @@
     <script src="js/flexible.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/myMap.js"></script>
 </head>
 
 <body>
@@ -244,6 +246,7 @@
                 </div>
             </div>
         </div>
+        <!-- 右边列 -->
         <div class="column">
             <!-- 订单数据模块  -->
             <div class="order panel">
@@ -320,10 +323,10 @@
                 <div class="inner">
                     <div class="caption">
                         <h3>销售额统计</h3>
-                        <a href="javascript:;" class="active">年</a>
-                        <a href="javascript:;">季</a>
-                        <a href="javascript:;">月</a>
-                        <a href="javascript:;">日</a>
+                        <a href="javascript:;" class="active" data-type="year">年</a>
+                        <a href="javascript:;" data-type="quarter">季</a>
+                        <a href="javascript:;" data-type="month">月</a>
+                        <a href="javascript:;" data-type="week">日</a>
                     </div>
                     <div class="chart">
                         <div class="label">单位：万</div>
@@ -332,7 +335,80 @@
                 </div>
             </div>
             <!-- 渠道分布和销售进度模块 -->
+            <div class="wrap">
+                <!-- 左侧渠道模块 -->
+                <div class="channel panel">
+                    <div class="inner">
+                        <h3>渠道分布</h3>
+                        <div class="data">
+                            <div class="radar"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 右侧销售进度模块 -->
+                <div class="quarter panel">
+                    <div class="inner">
+                        <h3>季度销售进度</h3>
+                        <div class="chart">
+                            <div class="box">
+                                <div class="gauge"></div>
+                                <div class="label">50<small>%</small></div>
+                            </div>
+                            <div class="data">
+                                <div class="item">
+                                    <h4>1,321</h4>
+                                    <span class="icon-dot" style="color: #6acca3;">销售额(万元)</span>
+                                </div>
+                                <div class="item">
+                                    <h4>150%</h4>
+                                    <span class="icon-dot" style="color: #ed3f35;">同比增长</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- 地区排行榜模块 -->
+            <div class="top panel">
+                <div class="inner">
+                    <div class="all">
+                        <h3>全国热榜</h3>
+                        <ul>
+                            <li>
+                                <i class="icon-cup1" style="color: #d93f36;"></i>
+                                可爱多
+                            </li>
+                            <li>
+                                <i class="icon-cup2" style="color: #68d8fe;"></i>
+                                娃哈啥
+                            </li>
+                            <li>
+                                <i class="icon-cup3" style="color: #4c9bfd;"></i>
+                                喜之郎
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="province">
+                        <h3>各省热销 <i class="date">// 近30日 //</i></h3>
+                        <div class="data">
+                            <ul class="sup">
+                                <!-- <li>
+                                    <span>北京</span>
+                                    <span>25,179 <s class="icon-up"></s></span>
+                                </li>
+                                <li>
+                                    <span>河北</span>
+                                    <span>23,252 <s class="icon-down"></s></span>
+                                </li> -->
+
+                            </ul>
+                            <ul class="sub">
+                                <!-- <li><span></span><span> <s class="icon-up"></s></span></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
