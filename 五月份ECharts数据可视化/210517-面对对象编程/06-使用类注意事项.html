@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        var that;
+        class Star {
+            constructor(uname, age) {
+                that = this; // 把这里的this赋值给 that 这个变量
+                this.uname = uname;
+                this.age = age;
+                // this.sing();  直接调用sing
+                this.btn = document.querySelector("button"); // 获取这个按钮 必须加this
+                this.btn.onclick = this.sing; //注意这里的sing不能加小括号 ，否则就是立即调用了
+
+
+            }
+            sing() {
+                console.log(this); // 这里的this 指向的是 btn 这个按钮 ，因为这个按钮调用了这个函数
+                console.log(that.uname, that.age); // that 的里面存储的是constructor 里面的this
+            }
+            dance() {
+                console.log(this); //这里的this 指向的是 实例对象 ldh 因为 ldh 调用了这个函数
+            }
+        }
+        var ldh = new Star('刘德华', 21);
+        // ldh.sing();
+        ldh.dance();
+        // 1.在ES6中类没有变量提升，所以必须先定义类，才能通过类实例化对象
+        // 2.类里面的共有的属性和方法一定要加this使用
+    </script>
+</body>
+
+</html>
