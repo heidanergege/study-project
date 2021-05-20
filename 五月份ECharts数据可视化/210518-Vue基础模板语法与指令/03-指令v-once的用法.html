@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+        <!-- v-once 的应用场景：如果显示的信息后续不需要修改，就可以使用v-once，这样可以提高一定的性能 -->
+        <div v-once>{{info}}</div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello Vue',
+                info: 'nihao'
+            }
+        });
+    </script>
+</body>
+
+</html>

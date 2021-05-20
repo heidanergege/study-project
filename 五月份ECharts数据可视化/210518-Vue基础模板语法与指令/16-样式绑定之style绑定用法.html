@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-bind:style="{border: borderStyle, width: widthStyle,height: heightStyle}"></div>
+        <div v-bind:style="objStyles"></div>
+        <div v-bind:style="[objStyles,overrideStyles]"></div>
+        <button v-on:click="handle">切换</button>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                borderStyle: "1px solid pink",
+                widthStyle: "100px",
+                heightStyle: "100px",
+                objStyles: {
+                    border: "1px solid skyblue",
+                    width: "300px",
+                    height: "300px"
+                },
+                overrideStyles: {
+                    border: '15px solid orange',
+                    backgroundColor: '#aaa'
+                }
+            },
+            methods: {
+                handle: function () {
+                    this.widthStyle = "200px";
+                    this.objStyles.backgroundColor = "pink";
+                    this.objStyles.border = "5px solid skyblue";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

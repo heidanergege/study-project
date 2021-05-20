@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app">
+        <div>{{num}}</div>
+        <div v-on:click='handle0'>
+            <!-- vue模板语法中的阻止冒泡  .stop -->
+            <button @click.stop='handle1'>点击1</button>
+        </div>
+        <div>
+            <a href="http://www.baidu.com" @click.prevent='handle2'>百度一下</a>
+        </div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        // 事件绑定-事件修饰符
+        var vm = new Vue({
+            el: '.app',
+            data: {
+                num: 0
+            },
+            methods: {
+                handle0: function () {
+                    this.num++;
+
+                },
+                handle1: function (event) {
+                    // 传统的方法阻止冒泡
+                    // event.stopPropagation();
+
+                },
+                handle2: function (event) {
+                    //传统的阻止默认行为
+                    // event.preventDefault();
+                }
+
+            }
+        });
+    </script>
+</body>
+
+</html>

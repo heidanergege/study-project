@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            width: 100px;
+            height: 100px;
+            border: 1px solid pink;
+        }
+
+        .error {
+            background-color: skyblue;
+        }
+
+        .test {
+            color: violet;
+        }
+
+        .big {
+            font-size: 28px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 样式绑定三个细节
+         1.对象绑定和数组绑定可以混合结合使用
+         2.class绑定的值可以简化操作
+         3.默认的class 如何处理？
+     -->
+    <div id="app">
+        <!-- 1.对象绑定和数组绑定可以混合结合使用 -->
+        <div v-bind:class="[activeClass,errorClass,{test: isTest}]">测试盒子</div>
+
+        <!-- 2.class绑定的值可以简化操作 -->
+        <div v-bind:class="arrClasses">测试盒子1</div>
+        <div v-bind:class="objClasses">测试盒子2</div>
+
+        <!-- 3.默认的class 如何处理？ 会保留 -->
+        <div class="big" v-bind:class="objClasses">测试盒子3</div>
+
+
+        <button v-on:click="handle">切换</button>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                activeClass: "active", //数组绑定参数
+                errorClass: "error", //数组绑定参数
+                isTest: true, // 对象绑定参数
+                arrClasses: ['active', 'error', 'test'], //数组的简化用法
+
+                objClasses: { // 对象的简化操作
+                    active: true,
+                    error: true,
+                    test: true
+                }
+            },
+            methods: {
+                handle: function () {
+                    this.activeClass = ''; //数组绑定因素
+                    this.errorClass = ''; //数组绑定因素
+                    this.isTest = !this.isTest; //对象绑定因素
+                    this.objClasses.error = false; // 对象简化操作的去除类名
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

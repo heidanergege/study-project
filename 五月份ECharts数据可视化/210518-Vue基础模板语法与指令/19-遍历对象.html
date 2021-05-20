@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if='v==13' v-for='(v,k,i) in obj'>{{v+'---'+k+'---'+i}}</div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        // 原生js遍历对象的方法
+        // var obj = {
+        //     uname: 'xiaopang',
+        //     age: 10,
+        //     gender: 'male'
+        // }
+        // for (var key in obj) {
+        //     console.log(key);
+        //     console.log(obj[key]);
+        //     console.log(key, obj[key]);
+        // }
+
+        // vue 遍历对象的方法
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                obj: {
+                    uname: 'xiaopang',
+                    age: 13,
+                    gender: 'male'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

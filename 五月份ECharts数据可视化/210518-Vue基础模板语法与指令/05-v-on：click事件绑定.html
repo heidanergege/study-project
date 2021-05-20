@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="add">
+        <div>{{num}}</div>
+
+        <!-- 点击事件绑定 -->
+        <button v-on:click='num++'>按钮1</button>
+        <!-- 点击事件绑定的简写方法 -->
+        <button @click='num++'>按钮2</button>
+        <!-- 复杂的情况下的点击事件的写法1 -->
+        <button v-on:click='handle'>按钮3</button>
+        <!-- 复杂的情况下的点击事件的写法2 -->
+        <button v-on:click='handle()'>按钮4</button>
+        <!-- 复杂的情况下的点击事件传递参数的写法3 -->
+        <!-- 事件绑定中的参数传递
+        1.如果事件直接绑定函数名称(没有参数传递)，那么会默认的将事件对象作为事件函数的第一个参数
+        2.如果事件绑定的函数调用，那么事件对象必须作为最后一个参数显示传递，并且事件对象的名称必须是固定的 $event
+        -->
+        <button v-on:click='handle1(123,456,$event)'>按钮5</button>
+
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '.add',
+            data: {
+                msg: 'Hello everyone',
+                num: 0
+            },
+            methods: {
+                handle: function () {
+                    // 这里的this指向的是Vue的实例对象 vm
+                    console.log(this === vm);
+                    this.num++;
+                },
+                handle1: function (a, b, event) {
+                    console.log(a, b);
+                    console.log(event.target); //<button>按钮5</button>
+                    console.log(event.target.innerHTML); //按钮5
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
