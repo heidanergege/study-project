@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+        }
+
+        main {
+            width: 100%;
+            height: 600px;
+        }
+
+        .leftSetting {
+            width: 30%;
+            height: 100%;
+            padding-left: 100px;
+        }
+
+        .leftSetting ul li {
+            height: 50px;
+
+        }
+
+        .leftSetting ul li span:first-child {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>天仁公司全透燕尾榫数控开榫设置</h1>
+    </header>
+    <main>
+        <div class="leftSetting" id="app">
+            <ul>
+                <li v-for='(item,index) in parameter'>
+                    <span>{{item.pname}}</span>
+                    <span>
+                        <input type="number" value="" v-model='item.num'>
+                    </span>
+                    <span>{{item.num}}</span>
+                    <span>mm</span>
+                </li>
+            </ul>
+
+        </div>
+        <div class="rightImg"></div>
+    </main>
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                parameter: [{
+                        pname: '燕尾刀直径',
+                        num: 0
+                    },
+                    {
+                        pname: '燕尾刀斜角',
+                        num: 0
+                    },
+                    {
+                        pname: '直刀直径',
+                        num: 0
+                    },
+                    {
+                        pname: '板材厚度',
+                        num: 0
+                    },
+                    {
+                        pname: '板材高度',
+                        num: 0
+                    },
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

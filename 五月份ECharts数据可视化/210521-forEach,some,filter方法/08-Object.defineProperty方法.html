@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Object.defineProperty() 定义新属性或修改原有的属性
+        var obj = {
+            id: 1,
+            pname: '小米',
+            price: 1999
+        };
+        // 1.以前的对象的修改添加属性的方法
+        obj.num = 1000; //添加对象属性和值
+        obj.price = 999; //修改对象属性和值
+        console.log(obj);
+
+        // 2. Object.defineProperty(obj, prop, descriptor) 新方法定义新属性或修改原有的属性
+        Object.defineProperty(obj, 'number', {
+            value: 1800 // 添加新属性并赋值
+        });
+        console.log(obj);
+        Object.defineProperty(obj, 'price', {
+            value: 99 // 修改属性并赋值
+        });
+        console.log(obj);
+        Object.defineProperty(obj, 'id', {
+            writable: false // 不允许（重写）修改这个值 ，默认的为 false
+        });
+        obj.id = 2;
+        console.log(obj);
+    </script>
+</body>
+
+</html>

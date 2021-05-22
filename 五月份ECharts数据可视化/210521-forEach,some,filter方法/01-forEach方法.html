@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //for-Each迭代（遍历）数组
+        var arr = [1, 2, 3, 4];
+        var sum = 0;
+        arr.forEach(function (value, index, array) {
+            console.log('每个数组元素' + value);
+            console.log('每个数组元素的索引号' + index);
+            console.log('这个数组本身' + array);
+        });
+
+        // var a = [1, 2, 3]
+
+        // a.forEach(function (value, index, array) {
+        //     if (index == 1) return
+        //     console.log(value)
+        // })
+    </script>
+</body>
+
+</html>
