@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+        <!-- // 原生js 翻转字符的写法 -->
+        <div>{{msg.split('').reverse().join('')}}</div>
+        <div>{{reverseString}}</div>
+        <div>{{reverseString}}</div>
+        <div>{{reverseMessage()}}</div>
+        <div>{{reverseMessage()}}</div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        // 计算属性
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'Hello'
+            },
+            computed: { // 有缓存 ，同样的结果之计算一次
+                reverseString: function () {
+                    console.log('computed');
+                    return this.msg.split('').reverse().join('');
+                }
+            },
+            methods: { //没有缓存，调用一次计算一次
+                reverseMessage: function () {
+                    console.log('methods');
+                    return this.msg.split('').reverse().join('');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

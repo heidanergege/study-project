@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model='msg'>
+        <!-- 用法1.差值表达式 -->
+        <div>{{msg | upper}}</div>
+        <!-- 用法2.差值表达式的集联操作 -->
+        <div>{{msg | upper | lower}}</div>
+        <!-- 用法3.属性绑定 -->
+        <div :abc='msg | upper'>测试数据</div>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        //过滤器
+        Vue.filter('upper', function (val) {
+            // 将首字母改为大写
+            // return val.charAt(0).toUpperCase() + val.slice(1);
+        });
+        Vue.filter('lower', function (val) {
+            // 将首字母改为小写
+            return val.charAt(0).toLowerCase() + val.slice(1);
+        })
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: ''
+            },
+            filters: { // 局部过滤器
+                upper: function (val) {
+                    return val.charAt(0).toUpperCase() + val.slice(1);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

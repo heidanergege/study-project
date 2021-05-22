@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <template v-if="list.length">
+            <table>
+                <thead>
+                    <tr>
+                        <td>商品序号</td>
+                        <td>商品名称</td>
+                        <td>商品数量</td>
+                        <td>商品单价</td>
+                        <td>商品总价</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in list">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>
+                            <button @click="reduce(index)">-</button>
+                            {{item.count}}
+                            <button @click="add(index)">+</button>
+                        </td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.count * item.price}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>一共{{totalCount}}件商品总价：{{totalPrice}}</p>
+        </template>
+        <template v-else>很抱歉购物车空空如也！</template>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: '#app',
+            data: {
+                list: [{
+                        id: 001,
+                        name: 'iPhone X',
+                        price: 8100,
+                        count: 2,
+                    },
+                    {
+                        id: 002,
+                        name: 'iPhone 7',
+                        price: 5000,
+                        count: 6,
+                    },
+                    {
+                        id: 003,
+                        name: 'iPhone 6s',
+                        price: 3800,
+                        count: 9,
+                    }
+                ]
+            },
+            methods: {
+                add: function (index) {
+                    //获取当前点击事件上面商品的数量
+                    var buy_num = this.list[index].count;
+                    this.list[index].count++;
+                },
+                reduce: function (index) {
+                    var buy_num = this.list[index].count;
+                    if (buy_num < 1) return;
+                    this.list[index].count--;
+                }
+            },
+            computed: {
+                totalCount: function () {
+                    var totalCount = 0;
+                    for (let i = 0; i < this.list.length; i++) {
+                        totalCount += this.list[i].count;
+                    }
+                    return totalCount;
+                },
+                totalPrice: function () {
+                    var totalPrice = 0;
+                    for (let i = 0; i < this.list.length; i++) {
+                        totalPrice += this.list[i].price * this.list[i].count;
+                    }
+                    return totalPrice;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <span>用户名：</span>
+        <span>
+            <input type="text" v-model.lazy='uname'>
+        </span>
+        <span>{{tip}}</span>
+    </div>
+    <!-- 1.采用侦听器监听用户名的变化、 -->
+    <!-- 2.调用后台接口进行验证 -->
+    <!-- 3.根据验证的结果调整提示信息 -->
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                uname: '',
+                tip: ''
+            },
+            methods: {
+                checkName: function (uname) {
+                    //用定时器的方法来模拟后台接口
+                    var that = this;
+                    setTimeout(function () {
+                        if (uname == 'admin') {
+                            that.tip = '用户名已经存在，请更换一个再试喔'
+                        } else {
+                            that.tip = '该用户名可用使用'
+                        }
+                    }, 2000);
+                }
+            },
+            watch: {
+                uname: function (val) {
+                    //调用后台接口验证用户名的合法性
+                    this.checkName(val);
+                    //修改提示信息
+                    this.tip = '正在验证...';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

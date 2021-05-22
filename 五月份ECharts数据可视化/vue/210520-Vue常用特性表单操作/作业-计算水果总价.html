@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            border: 1px solid #000;
+        }
+
+        li span:first-child {
+            float: left;
+        }
+
+        li span:last-child {
+            float: right;
+        }
+
+        .bd {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in fruits" v-on:click='handle(index)' v-bind:class='{bd:isactive==index }'>
+                <span>{{item.fname}}</span>
+                <span>{{item.price}}</span>
+            </li>
+
+        </ul>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        // 1.当点击当前li时背景颜色变为红色
+        // 2.并拿到当前的水果价格
+        // 3.计算选中状态的价格之和
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                isactive: -1,
+                fruits: [{
+                        fname: '苹果',
+                        price: '¥15'
+                    },
+                    {
+                        fname: '梨子',
+                        price: '¥10'
+                    },
+                    {
+                        fname: '樱桃',
+                        price: '¥22'
+                    },
+                    {
+                        fname: '西瓜',
+                        price: '¥13'
+                    },
+                ]
+            },
+            methods: {
+                handle: function (index) {
+                    // console.log(index);
+                    this.isactive = index;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
