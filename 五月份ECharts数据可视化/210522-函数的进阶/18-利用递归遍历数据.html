@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var data = [{
+                id: 1,
+                name: '家电',
+                goods: [{
+                        id: 11,
+                        gname: '冰箱'
+                    },
+                    {
+                        id: 12,
+                        gname: '洗衣机'
+                    }
+                ]
+            },
+            {
+                id: 2,
+                name: '服饰'
+            }
+        ];
+        // 要求：用户输入 id号，就可以返回数组对象
+        // 1.利用forEach 去遍历里面的每一个对象
+        function getId(json, id) {
+            var o = {};
+            json.forEach(function (item) {
+                // console.log(item); // 2个数组元素
+                if (item.id == id) {
+                    // console.log(item); //得到用户输入id号的元素
+                    o = item;
+                    // 2.我们想要得到里层的数据 11 12 的id号的对象数据 可以利用递归函数
+                } else if (item.goods && item.goods.length > 0) {
+                    o = getId(item.goods, id);
+                }
+            });
+            return o;
+        };
+        // getId(data, 11);
+        console.log(getId(data, 1));
+        console.log(getId(data, 2));
+        console.log(getId(data, 11));
+        console.log(getId(data, 12));
+    </script>
+</body>
+
+</html>

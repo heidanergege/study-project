@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //改变函数内的指向 js 提供了三种方法 call() apply() bind()
+        // 2.apply()
+        var o = {
+            name: 'andy'
+        }
+
+        function fn(a, b) {
+            console.log(this);
+            console.log(a, b); //但是打印出来的是字符串 不是数组
+
+        }
+        fn.apply(o, ['pink', 'skyblue']);
+        //apply 第一个用法：调用函数
+        // 第二个用法：可以改变函数内的this 指向
+        //但是它的参数必须是数组（伪数组）
+        // 3.apply  的主要应用 可以利用apply借助于数学内置对象求最大值
+        // Math.max();
+        var arr = [1, 2, 3, 4, 5, 65, 78, 34];
+        var max = Math.max.apply(Math, arr);
+        var min = Math.min.apply(Math, arr);
+        console.log(max, min);
+    </script>
+</body>
+
+</html>

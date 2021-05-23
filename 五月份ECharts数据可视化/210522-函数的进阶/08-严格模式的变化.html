@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        // 1.变量名必须先声明再使用
+        // num = 10; // 普通模式可用严格模式是错误的
+        // console.log(num);
+        var num1 = 15; // 严格模式下的写法
+        console.log(num1);
+
+        // 2.不能随意删除已经声明好的变量
+        // delete num1;
+        // 3.严格模式下全局作用域中的函数的this 是 undefined
+        function fn() {
+            console.log(this); // undefined
+
+        }
+        fn();
+
+        // 4.严格模式下，如果 构造函数不加 new 调用，this指向的是undefined 如果给他赋值 会报错
+        function Star() {
+            this.sex = '男';
+        };
+        // Star();
+        var ldh = new Star();
+        console.log(ldh.sex);
+
+        // 5.定时器内的this 指向的还是 window
+        setTimeout(function () {
+            console.log(this); // window
+        }, 1000);
+
+        // 6.严格模式下函数里面的参数不允许有重名
+        // function fn(a, a) { //此上下文中不允许重复的参数名称
+        //     console.log(a + a);
+        // };
+        // fn(1, 2);
+    </script>
+</body>
+
+</html>

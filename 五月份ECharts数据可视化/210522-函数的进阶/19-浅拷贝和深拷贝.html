@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.浅拷贝只是拷贝一层，更深层次对象级别的值拷贝引用地址
+        var obj = {
+            id: 1,
+            name: 'andy',
+            msg: {
+                age: 18
+            },
+            color: ['pink', 'blue']
+        }
+
+        // 以前的写法： 遍历对象  for in  
+        var o = {};
+        for (var k in obj) {
+            // k 是属性名   obj[k]属性值
+            o[k] = obj[k];
+        }
+        console.log(o);
+
+        // 现在 ES5 新增的浅拷贝 写法: Object.assign(目标对象，拷贝对象)；
+        var o1 = {};
+        Object.assign(o1, obj);
+        console.log(o1);
+
+
+
+        //2.深拷贝拷贝多层，每一个级别的数据都会拷贝
+        var o2 = {};
+        // 封装深拷贝函数
+        function deepCopy(newobj, oldobj) {
+            for (var k in oldobj) {
+                //判断原来的对象的属性值属于哪种数据类型
+                // 1.获取属性值  oldobj[k]
+                var item = oldobj[k];
+                // 2.判断这个值是否是数组
+                if (item instanceof Array) {
+                    newobj[k] = [];
+                    deepCopy(newobj[k] = item);
+                    // 3.判断这个值是否是对象
+                } else if (item instanceof Object) {
+                    newobj[k] = {};
+                    deepCopy(newobj[k], item);
+                } else {
+                    // 4.最后 ： 属于简单数据类型
+                    newobj[k] = item;
+                }
+            }
+        }
+        deepCopy(o2, obj);
+        console.log(o2);
+    </script>
+</body>
+
+</html>
