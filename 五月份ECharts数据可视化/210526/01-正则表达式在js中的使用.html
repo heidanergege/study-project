@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //正则表达式在js中的使用
+        // 创建方法
+        // 1.利用 RegExp对象来创建 正则表达式
+        var regexp = new RegExp(/123/);
+        console.log(regexp);
+
+        // 2.利用字面量创建 正则表达式
+        var rg = /456/;
+        console.log(rg);
+
+        // test 方法用来检测字符串是否符合正则表达式的要求规范
+        console.log(rg.test(123)); // 返回false
+        console.log(rg.test(456)); // true
+    </script>
+</body>
+
+</html>

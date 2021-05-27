@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //量词符：用来设定某个模式出现的次数
+        //简单理解就是让前面的a字符可以重复多少次
+        var reg = /^a$/;
+
+        // 1. * 相当于 >= 0 可以出现0次 或者更多次
+        var reg1 = /^a*$/;
+        console.log(reg1.test("")); //true
+        console.log(reg1.test("a")); //true
+        console.log(reg1.test("aa")); //true
+        console.log("-----");
+
+        // 2. + 相当于 >= 1 可以出现1次 或者更多次
+        var reg2 = /^a+$/;
+        console.log(reg2.test("")); // false
+        console.log(reg2.test("a")); // true
+        console.log(reg2.test("aa")); // true
+        console.log(reg2.test("aaa")); // true
+        console.log("-----");
+
+        // 3. ? 相当于 1 || 0 次
+        var reg3 = /^a?$/;
+        console.log(reg3.test("")); // true
+        console.log(reg3.test("a")); // true
+        console.log(reg3.test("aa")); // false
+        console.log(reg3.test("aaa")); // false
+        console.log("-----");
+
+        // 4.{3} 就是重复3次
+        var reg4 = /^a{3}$/;
+        console.log(reg4.test("")); // false
+        console.log(reg4.test("a")); // false
+        console.log(reg4.test("aa")); // false
+        console.log(reg4.test("aaa")); // true
+        console.log("-----");
+
+        // 5.{3,} 就是重复3次及3次以上
+        var reg5 = /^a{3,}$/;
+        console.log(reg5.test("")); // false
+        console.log(reg5.test("a")); // false
+        console.log(reg5.test("aa")); // false
+        console.log(reg5.test("aaa")); // true
+        console.log(reg5.test("aaaa")); // true
+        console.log(reg5.test("aaaaa")); // true
+        console.log("-----");
+
+        // 6.{3,6} 就是重复3次以上6次一下
+        var reg6 = /^a{3,6}$/;
+        console.log(reg6.test("")); // false
+        console.log(reg6.test("a")); // false
+        console.log(reg6.test("aa")); // false
+        console.log(reg6.test("aaa")); // true
+        console.log(reg6.test("aaaa")); // true
+        console.log(reg6.test("aaaaa")); // true
+        console.log(reg6.test("aaaaaaa")); // false
+        console.log("-----");
+    </script>
+</body>
+
+</html>

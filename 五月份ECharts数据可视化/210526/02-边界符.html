@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //边界符 ^ $ 的使用
+        var rg = /abc/; //正则表达式里面不需要加引号，不管是字符型的还是字符串型的
+        //1. /abc/ 只要包含有abc这个字符串返回的都是true
+        console.log(rg.test("abc")); //注意这里需要加引号   返回true
+        console.log(rg.test("abcd")); // true
+        console.log(rg.test("aabcd")); //true
+        console.log("-----------------------");
+
+        // 2./^abc/ 必须以abc 开头的字符串才会返回true
+        var rg1 = /^abc/;
+        console.log(rg1.test("abc")); //true
+        console.log(rg1.test("abcd")); // true
+        console.log(rg1.test("aabcd")); //false
+        console.log("-----------------------");
+
+        // 3./^abc$/ //精确匹配 必须是abc这个字符串才符合规范
+        var rg2 = /^abc$/;
+        console.log(rg2.test("abc")); //true
+        console.log(rg2.test("abcd")); // false
+        console.log(rg2.test("aabcd")); //false
+        console.log(rg2.test("abcabc")); //false
+        console.log("-----------------------");
+    </script>
+</body>
+
+</html>

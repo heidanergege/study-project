@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // /abc/ 只要包含abc就可以
+        // 字符类: [] 表示有一系列的字符可供选择，只要匹配其中一个就可以了
+        var rg = /[abc]/; //只要包含有a 或者 b 或者 c 其中一个 就返回 true
+        console.log(rg.test("andy")); //true
+        console.log(rg.test("baby")); //true
+        console.log(rg.test("color")); //true
+        console.log(rg.test("red")); //false
+        console.log("------------");
+
+        var rg1 = /^[abc]$/; //三选一 只有是a 或者b 或者c 这三个字母才返回 true
+        console.log(rg1.test("a")); //true
+        console.log(rg1.test("aa")); //false
+        console.log(rg1.test("b")); //true
+        console.log(rg1.test("c")); //true
+        console.log(rg1.test("abc")); //false
+        console.log("---------");
+
+        var rg2 = /^[a-z]$/; // 只要有26个字母中的任何一个都返回true
+        console.log(rg2.test("a")); // true
+        console.log(rg2.test("z")); // true
+        console.log(rg2.test("A")); // false
+        console.log(rg2.test(1)); // false
+        console.log("-----");
+
+        var reg = /^[a-zA-Z-_]$/; //字符组合 直接写不要加 空格
+        console.log(reg.test("a")); //true
+        console.log(reg.test("B")); //true
+        console.log(reg.test("-")); //true
+        console.log(reg.test("_")); //true
+        console.log(reg.test("@")); //false
+        console.log("-----");
+
+        var reg1 = /^[^a-zA-Z-_]$/; //中括号里面的 ^ 符号是取反的意思 和边界符不能混淆
+        console.log(reg1.test("a")); //false
+        console.log(reg1.test("B")); //false
+        console.log(reg1.test("-")); //false
+        console.log(reg1.test("_")); //false
+        console.log(reg1.test("@")); //true
+        console.log("-----");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>快速替换字符小程序</h1>
+        <p>请输入文本内容：</p>
+        <textarea id="demo" cols="30" rows="10"></textarea>
+    </div>
+
+    <div>
+        <span>请输入被替换的字符：</span>
+        <input type="text" id="replaced">
+    </div>
+    <div>
+        <span>请输入替换后的字符：</span>
+        <input type="text" id="target">
+
+    </div>
+    <button onclick="myFunction()">点击替换</button>
+    <script>
+        function myFunction() {
+            var str = document.getElementById("demo").value;
+            var rep = document.querySelector("#replaced").value;
+            var tar = document.querySelector("#target").value;
+            var n = str.replace(new RegExp(rep, 'gi'), tar);
+            document.getElementById("demo").value = n;
+        }
+    </script>
+
+</body>
+
+</html>
+</body>
+
+</html>

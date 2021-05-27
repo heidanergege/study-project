@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: #aaa;
+        }
+
+        .right {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="demo"> <span> 请输入用户名</span>
+    <script>
+        var reg = /^[a-zA-Z0-9_-]{6,12}$/;
+        var inp = document.querySelector("#demo");
+        var span = document.querySelector("span");
+        inp.onblur = function () {
+            if (reg.test(this.value)) {
+                span.className = "right";
+                span.innerHTML = "您输入的用户名格式正确";
+            } else {
+                span.className = "wrong";
+                span.innerHTML = "您输入的用户名格式不正确";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
