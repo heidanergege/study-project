@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 模板字符串可以解析变量
+        let name = `张小胖`;
+        let say = `hi! my name is ${name}`;
+        console.log(say);
+
+        // 2.模板字符串可以换行
+        let result = {
+            name: "zhangsan",
+            age: 18,
+            sex: "男"
+        };
+        let html = `
+            <div>
+            <span>${result.name}</span>
+            <span>${result.age}</span>
+            <span>${result.sex}</span>
+            </div>
+            `;
+        console.log(html);
+
+        // 3.模板字符串可以调用函数
+        const fn = () => {
+            return "我是fn函数";
+        };
+        let html1 = `我是模板字符串${fn()}`;
+        console.log(html1);
+    </script>
+</body>
+
+</html>

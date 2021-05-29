@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6提供了新的数据结构Set 它类似于数组，但是成员的值都是唯一的，没有重复的值
+        const s1 = new Set();
+        console.log(s1.size); // 0 返回值的个数
+
+        const s2 = new Set(["a", "b"]);
+        console.log(s2.size); // 2
+
+        const s3 = new Set(["a", "a", "b", "b"]);
+        console.log(s3.size); // 2 自动的去掉重复的值 后值的个数
+
+        console.log([...s3]); // ["a", "b"]  生成去掉重复数据后的数组
+
+        //  Set数据结构 实例方法：
+        // 1.add(value) 添加某个值  返回是添加后的Set数据结构本身
+        const s4 = new Set();
+        s4.add("a").add("b");
+        console.log(s4.size); //2
+        console.log(...s4); // a b 
+
+        // 2.delete(value) 删除某个值， 返回一个布尔值，表示删除是否成功
+        const r1 = s4.delete("a");
+        const r2 = s4.delete("c");
+        console.log(s4.size); //1 
+        console.log(r1); // true 
+        console.log(r2); // false
+
+
+        // 3.has(value) 返回布尔值，判断该值是否为该set 成员
+        const r3 = s4.has("b");
+        console.log(r3); //true
+        console.log(s4.size); //1 
+        console.log(...s4); // b
+
+
+        // 4.clear() 清除所有的值，没有返回值
+        s4.clear();
+        console.log(s4.size); // 0
+
+        // 5.遍历Set数据结构方法
+        const s5 = new Set(["a", "b", "c"]);
+        s5.forEach(value => console.log(value)); // a b c 拿到Set数据结构里的每一个值
+    </script>
+</body>
+
+</html>

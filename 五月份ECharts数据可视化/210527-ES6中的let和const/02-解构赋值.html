@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //数组解构允许我们按照一一对应的关系从数组中提取值
+        // 然后将值赋值给变量
+        let ary = [1, 2, 3];
+        let [a, b, c, d, e] = ary;
+        console.log(a); //1
+        console.log(b); //2
+        console.log(c); //3
+        console.log(d); //undefined
+        console.log(e); //undefined
+
+        // 对象解构赋值
+        // 对象解构允许我们使用变量的名字匹配对象的属性 匹配成功将对象属性的值赋值给变量
+        let person = {
+            name: 'zhangsan',
+            age: 34,
+            sex: '男'
+        };
+        let {
+            name,
+            age,
+            sex
+        } = person;
+
+        let {
+            name: myName, //myName属于别名
+            age: myAge, //myAge属于别名
+            sex: mySex //mySex属于别名
+        } = person;
+        console.log(name);
+        console.log(age);
+        console.log(sex);
+        console.log(myName);
+        console.log(myAge);
+        console.log(mySex);
+
+        const node = {
+            loc: {
+                start: {
+                    line: '一条线',
+                    column: '一列列'
+                }
+            }
+        };
+
+        let {
+
+            loc: {
+                start: {
+                    column
+                }
+            }
+        } = node;
+        console.log(column);
+        console.log(column);
+    </script>
+</body>
+
+</html>

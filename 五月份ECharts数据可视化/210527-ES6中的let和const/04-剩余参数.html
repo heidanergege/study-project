@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.当实参的个数多于 形参的个数时 形参的前面加上...就可以以数组的形式接受全部的实参
+        const sum = (...args) => {
+            let total = 0;
+            args.forEach(item => {
+                total += item;
+            });
+            return total;
+
+        };
+        console.log(sum(10, 20));
+        console.log(sum(10, 20, 30));
+
+        // 1.当实参的个数多于 形参的个数时 按顺序对应接受后  后面的形参的前面加上...就可以以数组的形式接受全部的实参
+        let ary1 = ['zhangsan', 'lisi', 'wangwu', 'zhaoliu'];
+        let [s1, s2, ...s3] = ary1;
+        console.log(s1);
+        console.log(s2);
+        console.log(s3);
+    </script>
+</body>
+
+</html>
