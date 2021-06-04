@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- //调用自己封装的template函数 -->
+    <script src="./js/template.js"></script>
+</head>
+
+<body>
+    <div id="user-box"></div>
+
+    <script type="text/html" id="tpl-user">
+        <div>姓名：{{name}}</div>
+        <div>年龄：{{age}}</div>
+        <div>性别：{{sex}}</div>
+        <div>住址：{{address}}</div>
+    </script>
+
+    <script>
+        // 1.定义数据
+        var data = {
+            name: '张三',
+            age: 18,
+            sex: '男',
+            address: '河南新乡'
+        }
+
+        // 2.调用自己封装的模板引擎函数
+        var htmlStr = template('tpl-user', data);
+
+        // 3.渲染HTML结构
+        document.getElementById('user-box').innerHTML = htmlStr;
+    </script>
+</body>
+
+</html>
