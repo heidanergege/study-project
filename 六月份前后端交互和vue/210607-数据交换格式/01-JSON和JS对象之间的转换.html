@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //  1.JSON转换为js对象的方法  JSON.parse()
+        var jsonStr = '{"a": "Hello","b": "world"}'
+        var obj = JSON.parse(jsonStr);
+        console.log(obj);
+
+        // 2.js 对象转换为 JSON 字符串 JSON.stringify();
+        var obj1 = {
+            a: 'hello',
+            b: 'hi'
+        };
+        var jsonStr1 = JSON.stringify(obj1);
+        console.log(jsonStr);
+        console.log(typeof jsonStr);
+    </script>
+</body>
+
+</html>

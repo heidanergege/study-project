@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.创建一个文件选择框 -->
+    <input type="file" id="file1" />
+
+    <!-- 2.上传文件按钮 -->
+    <button id="btnUpload">上传文件</button>
+
+    <!-- 3.img标签 ，来显示上传成功后的图片 -->
+    <img src="" alt="" id="img" width="800" />
+
+    <script>
+        // 1.获取到文件上传的按钮
+        var btn = document.querySelector('#btnUpload')
+        // 2.为按钮绑定单击事件事件函数
+        btn.addEventListener('click', function () {
+            // 3.获取到选择文件的列表
+            var files = document.querySelector('#file1').files
+            if (files.length <= 0) {
+                return alert('请选择要上传的文件')
+            }
+            // console.log('用户选择了要上传的文件');
+            var fd = new FormData()
+            //4.将用户选择的文件追加到formdata中
+            fd.append('avatar', files[0])
+
+            //发起Ajsx请求
+            var xhr = new XMLHttpRequest()
+            xhr.open('POST', 'http://www.liulongbin.top:3006/api/upload/avatar')
+            xhr.send(fd)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText)
+                    // console.log(data);
+                    if (data.status === 200) {
+                        //上传成功
+                        document.querySelector('#img').src = 'http://www.liulongbin.top:3006' + data.url
+                    } else {
+                        //上传失败
+                        alert('图片上传失败' + data.message)
+
+                    }
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
