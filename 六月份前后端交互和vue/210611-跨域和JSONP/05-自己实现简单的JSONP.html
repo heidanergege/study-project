@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 定义一个 success 回调函数 -->
+    <script>
+        function success(data) {
+            console.log('服务器返回的数据是：');
+            console.log(data);
+        }
+    </script>
+
+    <!-- 通过script标签，请求接口数据 -->
+    <script src="http://ajax.frontend.itheima.net:3006/api/jsonp?callback=success&name=zs&age=17"></script>
+</body>
+
+</html>
