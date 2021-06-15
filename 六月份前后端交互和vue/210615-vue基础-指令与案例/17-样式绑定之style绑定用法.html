@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 样式style绑定之对象绑定方法 -->
+        <div v-bind:style='{border: borderStyle,width: widthStyle,height: heightStyle}'></div>
+
+        <!-- 样式style绑定之对象绑定方法 -->
+        <div v-bind:style='objStyles'>样式style绑定之对象绑定简写方法</div>
+        <!-- 样式style绑定之数组或多个style绑定方法 -->
+        <div v-bind:style='[objStyles,newStyle]'>样式style绑定之对象绑定数组多个style方法</div>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                borderStyle: '1px solid orange',
+                widthStyle: '100px',
+                heightStyle: '100px',
+                objStyles: {
+                    border: '1px solid blue',
+                    width: '100px',
+                    height: '100px'
+                },
+                newStyle: {
+                    border: '5px solid orange',
+                    backgroundColor: 'pink'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    v-for 循环遍历 结构
+
+    <div id="app">
+        <ul>
+            <li v-for='item in fruits'>{{item}}</li>
+            <li v-for='(item,index) in fruits'>{{item+'--'+index}}</li>
+            <li :key='item.id' v-for='(item,index) in myFruits'>{{item.ename+'----'+item.cname+'----'+index}}</li>
+        </ul>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fruits: ['orange', 'banana', 'apple'],
+                myFruits: [{
+                    id: 1,
+                    ename: 'apple',
+                    cname: '苹果'
+                }, {
+                    id: 2,
+                    ename: 'banana',
+                    cname: '香蕉'
+                }, {
+                    id: 3,
+                    ename: 'orange',
+                    cname: '橘子'
+                }, ]
+            }
+        })
+    </script>
+</body>
+
+</html>

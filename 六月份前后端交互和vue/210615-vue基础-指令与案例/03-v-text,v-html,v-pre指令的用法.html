@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <!--v-text的用法 ： 纯文本 更简洁 不用差值表达式了 -->
+        <div v-text="msg"></div>
+
+        <!--v-html的用法 : 自动解析带样式 但存在安全问题 容易被攻击-->
+        <div v-html="msg1"></div>
+
+        <!--v-pre的用法 : 不解析{{}}中的内容 显示原始样式-->
+        <div v-pre>{{msg +'----'+ 123}}</div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello vue',
+                msg1: '<h1>HTML</h1>'
+            }
+        })
+    </script>
+
+</body>
+
+</html>

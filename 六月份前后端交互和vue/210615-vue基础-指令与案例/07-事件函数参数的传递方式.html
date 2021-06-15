@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1.事件函数的两种调用方式
+    (1)直接绑定函数的名称 v-on:click='handle'
+    (2)调用函数的方式 v-on:click='handle()' -->
+
+
+    <!-- 2.事件函数的参数的传递方式
+    （1）如果事件函数直接绑定函数名称，那么就会默认传递事件对象作为事件函数的第一个参数  也就是 $event 名字是固定的写法(省略不写)
+    （2）如果事件函数绑定的函数调用，那么事件对象必须作为最后一个参数显示传递，事件对象的名称也必须是 $event  -->
+
+    <div id="app">
+        <div v-cloak>{{num}}</div>
+
+        <button @click='handle1'>点击1</button>
+        <button @click='handle2(123,456,$event)'>点击加1</button>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            // 方法必须定义到methods中
+            methods: {
+                handle1: function (event) {
+                    console.log(event.target.innerHTML);
+                    this.num++
+                },
+                handle2: function (p, p1, event) {
+                    console.log(p, p1);
+                    console.log(event.target.innerHTML);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

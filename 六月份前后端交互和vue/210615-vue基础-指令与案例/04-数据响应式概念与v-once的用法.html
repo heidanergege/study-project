@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- 数据响应式的意思：就是数据的变化导致页面内容的变化-->
+
+
+    <!-- v-once 的应用场景：数据显示后就不再具有响应式的功能 ，如果显示的信息后续不需要再修改，则就可以使用 v-once 指令，这样可以提高性能 -->
+
+    <div id="app">
+
+        <div>{{msg}}</div>
+        <div v-once>{{info}}</div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello vue',
+                msg1: '<h1>HTML</h1>',
+                info: '你好'
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 属性绑定 v-bind:href='url' 的语法 -->
+    <!-- 属性绑定简写语法为  :href='url' -->
+
+    <div id="app">
+        <a v-bind:href="url" v-text='urlName'></a>
+        <button v-on:click='handle'>切换</button>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                urlName: '百度',
+                url: 'http://www.baidu.com'
+            },
+            methods: {
+                handle: function () {
+                    this.urlName = '小米'
+                    this.url = 'http://www.mi.com'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

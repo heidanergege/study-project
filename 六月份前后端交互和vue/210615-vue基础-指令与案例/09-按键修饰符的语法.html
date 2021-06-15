@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 按键修饰符的语法 -->
+    <!-- .enter回车键的写法 v-on:keyup.enter='handleSubmit' -->
+    <!-- .delete删除键的写法 v-on:keyup.delete='handleDelete' -->
+    <div id="app">
+        <form action="">
+            <div>
+                用户名: <input type="text" v-model='uname' v-on:keyup.delete='handleDelete'>
+            </div>
+            <div>
+                密码：<input type="text" v-model='pwd' v-on:keyup.enter='handleSubmit' v-on:keyup.delete='handleDelete'>
+            </div>
+            <div>
+                <input type="button" v-on:click='handleSubmit' value="提交">
+            </div>
+        </form>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                uname: '',
+                pwd: ''
+            },
+            methods: {
+                handleSubmit: function () {
+                    console.log(this.uname, this.pwd);
+                },
+                handleDelete: function (event) {
+                    //当用户按下delete键的时候清空 输入框的内容
+                    this.uname = '';
+                    this.pwd = '';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            border: 1px solid orange;
+            width: 100px;
+            height: 100px;
+        }
+
+        .error {
+            background-color: skyblue;
+        }
+
+        .test {
+            color: red;
+        }
+
+        .base {
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 样式绑定的相关语法细节：
+    1.对象绑定和数组绑定可以混合使用
+    2.class的值可以简化操作
+    3.默认的class如何处理？ -->
+
+    <div id="app">
+        <div v-bind:class='[activeClass,errorClass,{test: isTest}]'>测试样式绑定混合语法</div>
+        <div v-bind:class='arrayClass'>测试样式绑定数组语法的简写方式</div>
+        <div v-bind:class='objectClass'>测试样式绑定对象语法的简写方式</div>
+        <div class="base" v-bind:class='objectClass'>测试样式绑定默认的样式会保留</div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                activeClass: 'active',
+                errorClass: 'error',
+                isTest: true,
+                arrayClass: ['active', 'error', 'test'],
+                objectClass: {
+                    active: true,
+                    error: true,
+                    test: true
+                }
+            },
+            methods: {
+                handle: function () {
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

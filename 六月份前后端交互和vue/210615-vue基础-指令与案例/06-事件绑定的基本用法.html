@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.事件绑定 v-on 指令的基本用法 -->
+    <!-- 标准写法： v-on:click='' -->
+    <!-- 简写方法：@click='' -->
+
+    <!-- 2.事件函数的调用方式
+    (1)直接绑定函数的名称 v-on:click='handle'
+    (2)调用函数的方式 v-on:click='handle()' -->
+    <div id="app">
+        <div>{{num}}</div>
+        <button v-on:click='num++'>点击加1</button>
+        <button @click='num--'>点击减1</button>
+        <button @click='handle'>点击加1</button>
+        <button @click='handle()'>点击加1</button>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            // 方法必须定义到methods中
+            methods: {
+                handle: function () {
+                    // 这里的this 指的就是 Vue的实例对象 VM
+                    console.log(this === vm);
+                    this.num++
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
