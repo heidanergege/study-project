@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 过滤器 的用法-->
+
+    <div id="app">
+        <input type="text" v-model='msg'>
+        <div>{{msg | upper}}</div>
+        <div>{{msg | upper | lower}}</div>
+        <div :abc='msg | upper'>测试</div>
+    </div>
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        // 定义全局过滤器之 首字母大写的 写法：
+        Vue.filter('upper', function (val) {
+            // return val.charAt(0).toUpperCase() + val.slice(1)
+        })
+        // 定义全局过滤器之 首字母小写的 写法：
+        Vue.filter('lower', function (val) {
+            return val.charAt(0).toLowerCase() + val.slice(1)
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: ''
+            },
+            //局部过滤器写法
+            filters: {
+                upper: function (val) {
+                    return val.charAt(0).toUpperCase() + val.slice(1)
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

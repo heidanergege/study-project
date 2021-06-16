@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text">
+        <input type="text" v-focus>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        // 1.自定义指令的语法格式
+        Vue.directive('focus', {
+            inserted: function (el) {
+                //el 表示指令所绑定的元素
+                el.focus();
+            }
+        });
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                handle: function () {
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
