@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--     1.组件的命名两种方式：
+    （1）短横线连接
+    （2）驼峰命名法
+    驼峰命名法组件的使用只能在模板字符串中使用，在普通的环境下必须转换为短横线分割的方式
+    2.字符模板 中只能有一个根元素 可以采取模板字符串的语法
+    3.组件的数据必须是一个函数 这样形成闭包 ， 重复使用时才能 独立维护 互不干扰 -->
+
+
+    <div id="app">
+        <component-name></component-name>
+        <component-name></component-name>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        Vue.component('ComponentName', {
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+
+            template: `<div>
+                <button @click="count++">点击加{{count}}</button>
+                <button>测试</button>
+                
+                </div>`
+
+        })
+
+
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

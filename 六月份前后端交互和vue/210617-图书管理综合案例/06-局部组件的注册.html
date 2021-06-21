@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <component-hello-world></component-hello-world>
+        <component-hello-world_0></component-hello-world_0>
+        <component-hello-world_1></component-hello-world_1>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        //局部组件只能在注册其的父组件中使用
+
+        var HelloWorld = {
+            data: function () {
+                return {
+                    msg: 'HelloWorld'
+                }
+            },
+            template: '<div>{{msg}}</div>'
+        }
+        var HelloWorld_0 = {
+            data: function () {
+                return {
+                    msg: 'HelloWorld_0'
+                }
+            },
+            template: '<div>{{msg}}</div>'
+        }
+        var HelloWorld_1 = {
+            data: function () {
+                return {
+                    msg: 'HelloWorld_1'
+                }
+            },
+            template: '<div>{{msg}}</div>'
+        }
+
+        var vm = new Vue({
+            el: '#app',
+            components: {
+                componentHelloWorld: HelloWorld,
+                componentHelloWorld_0: HelloWorld_0,
+                componentHelloWorld_1: HelloWorld_1
+            }
+        })
+    </script>
+</body>
+
+</html>

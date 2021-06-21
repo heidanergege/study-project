@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--     修改数组的两种方法：
+    1.变异方法（修改原来的数组）
+    方法有：push()
+           pop()
+           shift()
+           unshift()
+           splice()
+           sort()
+           reverse()
+    2.替换数组（生成新的数组）
+           filter()
+           concat()
+           slice()        -->
+
+
+    <div id="app">
+        <div>
+            <div>{{fname}}</div>
+            <input type="text" v-model='fname'>
+            <button @click='add'>添加</button>
+            <button @click='del'>删除</button>
+            <button @click='slice'>替换(截取生成新的数组)</button>
+        </div>
+        <ul>
+            <li :key='index' v-for='(item,index) in fruits'>{{item}}</li>
+        </ul>
+        <ul>
+            <li :key='index' v-for='(item,index) in newFruits'>{{item}}</li>
+        </ul>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fname: '',
+                fruits: ['apple', 'banana', 'orange'],
+                newFruits: []
+            },
+            methods: {
+                add: function () {
+                    // 把 fname 的值 添加到 fruits 里面
+                    this.fruits.push(this.fname)
+                },
+                del: function () {
+                    // 把 fruits 里面的值 删除 一个
+                    this.fruits.pop()
+                },
+                slice: function () {
+                    // 截取数组的一部分生成新的数组 并赋值给原数组或者新数组
+                    this.newFruits = this.fruits.slice(0, 2)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--     修改响应式的数据 的语法：
+    1. Vue.set(vm.items,indexOfitem,newValue)
+    2. vm.$set(vm.items,indexOfitem,newValue)
+    参数1,表示要处理的数据（数组，对象）的名称
+    参数2,表示要处理的数据的索引或者属性名
+    参数3,表示新的值 -->
+
+    <div id="app">
+        <ul>
+            <li :key='index' v-for='(item,index) in fruits'>{{item}}</li>
+        </ul>
+        <div>{{info.uname}}</div>
+        <div>{{info.age}}</div>
+        <div>{{info.sex}}</div>
+    </div>
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fruits: ['apple', 'banana', 'lemon'],
+                info: {
+                    uname: 'zhangsan',
+                    age: 16
+                }
+            }
+        });
+        // 这种方式添加修改的数据不是响应式的，控制台可以看到，但是不能渲染到页面
+        vm.fruits[3] = 'orange'
+
+        // 响应式数据的修改方式如下
+        Vue.set(vm.fruits, 3, 'orange')
+        // 或者
+        vm.$set(vm.fruits, 1, '')
+
+        // 修改对象数据也是如此
+        Vue.set(vm.info, 'age', 88)
+        vm.$set(vm.info, 'sex', '男')
+    </script>
+
+</body>
+
+</html>

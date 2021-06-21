@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            margin: auto;
+            width: 600px;
+            text-align: center;
+        }
+
+        .grid .books div {
+            height: 36px;
+            line-height: 36px;
+            background-color: orange;
+            vertical-align: middle;
+        }
+
+        .grid table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .grid th,
+        td {
+            border: 1px dashed rgb(226, 202, 158);
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .grid thead th {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="grid">
+            <div>
+                <h1>图书管理</h1>
+                <div class="books">
+                    <div>
+                        <label for="id">
+                            编号：
+                        </label>
+                        <input type="text" id="id" v-model='id' :disabled='flag'>
+                        <label for="bname">
+                            名称：
+                        </label>
+                        <input type="text" id="bname" v-model='bname'>
+                        <button @click='add'>添加</button>
+                    </div>
+                </div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>名称</th>
+                        <th>时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr :key='item.id' v-for='item in books'>
+                        <td>{{item.id}}</td>
+                        <td>{{item.bname}}</td>
+                        <td>{{item.date}}</td>
+                        <td>
+                            <a href="" @click.prevent='toEdit(item.id)'>修改</a>
+                            <span>|</span>
+                            <a href="" @click.prevent='del(item.id)'>删除</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                bname: '',
+                date: '',
+                flag: false,
+                books: [{
+                    id: 1,
+                    bname: '西游记',
+                    date: '',
+                }, {
+                    id: 2,
+                    bname: '三国演义',
+                    date: '',
+                }, {
+                    id: 3,
+                    bname: '红楼梦',
+                    date: '',
+                }, {
+                    id: 4,
+                    bname: '水浒传',
+                    date: '',
+                }]
+            },
+            methods: {
+                add: function () {
+                    if (this.flag == true) {
+                        // 编辑图书
+                        //就是根据当前的id去更新数组中对应的数据
+                        this.books.some((item) => {
+                            if (item.id == this.id) {
+                                item.bname = this.bname
+                                //完成更新后要终止循环
+                                return
+                            }
+                        });
+                        this.flag = false
+                    } else {
+                        //添加图书
+                        var book = {};
+                        book.id = this.id
+                        book.bname = this.bname
+                        book.date = this.date
+                        this.books.push(book)
+                    }
+                    //清空表单
+                    this.id = ''
+                    this.bname = ''
+
+                },
+                toEdit: function (id) {
+                    this.flag = true
+                    // console.log(id);
+                    //根据id查询出要编辑的数据
+                    var book = this.books.filter(function (item) {
+                        // console.log(item);
+                        return item.id == id
+                    });
+                    // console.log(book);
+                    //把获取到的信息填充到表单
+                    this.id = book[0].id
+                    this.bname = book[0].bname
+                },
+                //删除图书
+                del: function (id) {
+                    // 根据id从数组中查找元素的索引
+                    // var index = this.books.findIndex(function (item) {
+                    //     return item.id == id
+                    // });
+                    // console.log(index);
+                    // //根据索引删除数组元素
+                    // this.books.splice(index, 1)
+
+                    // 方法二： 通过filter方法进行删除
+                    this.books = this.books.filter(function (item) {
+                        return item.id != id
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

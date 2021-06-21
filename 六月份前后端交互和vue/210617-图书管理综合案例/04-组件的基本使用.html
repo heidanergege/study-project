@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 组件的注册 -->
+    <div id="app">
+        <component-name></component-name>
+        <component-name></component-name>
+        <component-name></component-name>
+    </div>
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        Vue.component('component-name', {
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            template: '<button @click="handle">点击了{{count}}</button>',
+            methods: {
+                handle: function () {
+                    this.count += 3
+                }
+            }
+        });
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>
