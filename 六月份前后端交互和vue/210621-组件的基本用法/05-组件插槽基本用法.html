@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <alert-box></alert-box>
+        <alert-box>侵入失败</alert-box>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        // 组件插槽  名字是固定的 slot
+        // slot标签是个api是专门给子组件使用的标签的内容的预留位置
+
+        Vue.component('alert-box', {
+            template: `
+                <div>
+                     <strong>ERROR:</strong>   
+                     <slot>默认内容</slot> 
+                </div>
+            `
+        })
+
+
+        var vm = new Vue({
+            el: '#app',
+
+        })
+    </script>
+</body>
+
+</html>

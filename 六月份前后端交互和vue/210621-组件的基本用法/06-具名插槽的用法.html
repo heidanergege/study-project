@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.简单的用法 -->
+        <base-layout>
+            <p slot='header'>标题</p>
+            <p>主体信息</p>
+            <p slot='footer'>底部</p>
+        </base-layout>
+        <!-- 2.稍微复杂点的用法，template只是用于临时打包内容，在HTML结构中不显示 -->
+        <base-layout>
+            <template slot='header'>
+                <p>标题1</p>
+                <p>标题2</p>
+                <p>标题3</p>
+            </template>
+            <template>
+                <p>主体信息1</p>
+                <p>主体信息2</p>
+                <p>主体信息3</p>
+            </template>
+            <template slot='footer'>
+                <p>底部1</p>
+                <p>底部2</p>
+                <p>底部3</p>
+            </template>
+        </base-layout>
+
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        Vue.component('base-layout', {
+            template: `
+                <div>
+                    <header>
+                         <slot name='header'></slot>    
+                    </header>
+                    <main>
+                         <slot></slot>    
+                    </main>
+                    <footer>
+                         <slot name='footer'></slot>    
+                    </footer>
+                </div>
+            `
+        });
+        var vm = new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+
+</html>

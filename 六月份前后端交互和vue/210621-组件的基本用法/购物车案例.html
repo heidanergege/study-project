@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container .cart {
+            width: 300px;
+            margin: 10px auto;
+        }
+
+        .container .title {
+            height: 40px;
+            background-color: #a7d3e5;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .container .item {
+            position: relative;
+            height: 50px;
+            border-top: 2px solid #a7d3e5;
+            line-height: 50px;
+
+        }
+
+        .container .item img {
+            float: left;
+            width: 45px;
+            height: 50px;
+            margin: 0 5px;
+        }
+
+        .container .item .name {
+            position: absolute;
+            left: 55px;
+            font-size: 18px;
+
+        }
+
+        .container .item .num {
+            position: absolute;
+            right: 50px;
+            width: 100px;
+        }
+
+        .container .item .num a {
+            width: 30px;
+            font-size: 20px;
+            background-color: #d1d3d0;
+            text-decoration: none;
+            vertical-align: middle;
+        }
+
+        .container .item .num input {
+            width: 40px;
+            height: 25px;
+        }
+
+        .container .item .del {
+            position: absolute;
+            right: 0;
+            width: 40px;
+            font-size: 40px;
+            color: red;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .container .item .del:hover {
+            background-color: orange;
+        }
+
+        .container .total {
+            height: 50px;
+            background-color: orange;
+            text-align: right;
+            line-height: 50px;
+
+        }
+
+        .container .total span {
+            color: red;
+            font-weight: bold;
+
+        }
+
+        .container .total button {
+            width: 80px;
+            height: 35px;
+            background-color: red;
+            border: 0;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <my-cart></my-cart>
+        </div>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+        var CartTitle = {
+            props: ['uname'],
+            template: `
+                <div class="title">{{uname}}的商品</div>            
+            `
+        }
+        var CartList = {
+            props: ['list'],
+            template: `
+                <div>
+                    <div :key='item.id' v-for='item in list' class="item">
+                        <img :src="item.img" alt="">
+                        <div class="name">{{item.name}}</div>
+                        <div class="num">
+                            <a href="" @click.prevent='sub(item.id)'>－</a>
+                            <input type="text" :value='item.num' @blur='changeNum(item.id,$event)'>
+                            <a href="" @click.prevent='add(item.id)'>＋</a>
+                        </div>
+                        <div class="del" @click='del(item.id)'>×</div>
+                    </div>
+                </div>
+            `,
+            methods: {
+                changeNum: function (id, event) {
+                    // 将拿到的id和input的值回传给父组件处理
+                    // console.log(id);
+                    // console.log(event.target.value);
+
+                    this.$emit('change-num', {
+                        id: id,
+                        type: 'change',
+                        num: event.target.value
+                    })
+                },
+                sub: function (id) {
+                    this.$emit('change-num', {
+                        id: id,
+                        type: 'sub'
+                    })
+                },
+                add: function (id) {
+                    this.$emit('change-num', {
+                        id: id,
+                        type: 'add'
+                    })
+                },
+                del: function (id) {
+                    //通常情况下需要在父组件中处理事件，通过自定义事件的方法将id传递给父组件
+                    // console.log(id);
+                    this.$emit('cart-del', id)
+                }
+            }
+        }
+        var CartTotal = {
+            props: ['list'],
+            template: `
+            <div class="total">
+                <span>总价：{{total}}</span>
+                <button>结算</button>
+            </div>
+            `,
+            computed: {
+                total: function () {
+                    //.计算商品的总价
+                    var result = 0
+                    this.list.forEach(item => {
+                        result += item.price * item.num;
+                    });
+                    return result
+                }
+            }
+        }
+
+        Vue.component('my-cart', {
+            data: function () {
+                return {
+                    uname: '张三',
+                    list: [{
+                        id: 1,
+                        name: 'TCL彩电',
+                        price: 1000,
+                        num: 1,
+                        img: 'img/a.jpg'
+                    }, {
+                        id: 2,
+                        name: '机顶盒',
+                        price: 1000,
+                        num: 1,
+                        img: 'img/b.jpg'
+                    }, {
+                        id: 3,
+                        name: '海尔冰箱',
+                        price: 1000,
+                        num: 1,
+                        img: 'img/c.jpg'
+                    }, {
+                        id: 4,
+                        name: '小米手机',
+                        price: 1000,
+                        num: 1,
+                        img: 'img/d.jpg'
+                    }, {
+                        id: 5,
+                        name: 'PPTV电视',
+                        price: 1200,
+                        num: 2,
+                        img: 'img/e.jpg'
+                    }]
+                }
+            },
+            template: `
+            <div class="cart">
+                <cart-title :uname='uname'></cart-title>
+                <cart-list :list='list'@change-num='changeNum($event)' @cart-del='DelCart($event)'></cart-list>
+                <cart-total :list='list'></cart-total>
+            </div>
+           `,
+            components: {
+                'cart-title': CartTitle,
+                'cart-list': CartList,
+                'cart-total': CartTotal
+            },
+            methods: {
+                changeNum: function (val) {
+                    // 由于input 和 加 和减 用的是同一个自定义事件 所以在此要有 区分执行的条件
+                    // 分三种情况处理  input变更处理  加号变更处理 减号变更处理
+                    // console.log(val);
+                    //根据子组件传递过来的数据，更新list中的数据 ，需要遍历list才能知道需要更新哪一条数据
+
+                    if (val.type == 'change') {
+                        this.list.some(item => {
+                            if (item.id == val.id) {
+                                item.num = parseInt(val.num);
+                                //some 的特性 需要 终止遍历
+                                return true
+                            }
+
+                        });
+                    } else if (val.type == 'sub') {
+                        //减一操作
+                        this.list.some(item => {
+                            if (item.id == val.id) {
+                                item.num -= 1
+                                //some 的特性 需要 终止遍历
+                                return true
+                            }
+
+                        });
+                    } else if (val.type == 'add') {
+                        //加一操作
+                        this.list.some(item => {
+                            if (item.id == val.id) {
+                                item.num += 1
+                                //some 的特性 需要 终止遍历
+                                return true
+                            }
+
+                        });
+                    }
+
+                },
+                DelCart: function (id) {
+                    //根据id删除对应list中的数据
+                    // 1.找到对应id的那条数据的索引号
+                    var index = this.list.findIndex(item => {
+                        return item.id == id
+                    })
+                    // console.log(index);
+                    // 2.根据索引号删除数据
+                    this.list.splice(index, 1)
+                }
+            }
+
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

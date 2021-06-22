@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{pmsg}}</div>
+        <button @click='handle'>销毁事件</button>
+        <tom-component></tom-component>
+        <jerry-component></jerry-component>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        // 创建两个兄弟组件
+
+        Vue.component('tom-component', {
+            data: function () {
+                return {
+                    num: 0
+                }
+            },
+            template: `
+                <div>
+                     <div>TOM:{{num}}</div>    
+                     <button @click='handle'>点击jerry加1</button>
+                </div>
+            `,
+            methods: {
+                handle: function () {
+                    //触发兄弟组件中的事件
+                    hub.$emit('jerry-event', 1)
+                }
+            },
+            mounted: function () {
+                //挂载完毕后监听事件
+                hub.$on('tom-event', (val) => {
+                    this.num += val;
+                })
+            }
+        });
+
+
+        Vue.component('jerry-component', {
+            data: function () {
+                return {
+                    num: 0
+                }
+            },
+            template: `
+                <div>
+                     <div>JERRY:{{num}}</div>    
+                     <button @click='handle'>点击tom加2</button>
+                </div>
+            `,
+            methods: {
+                handle: function () {
+                    //触发兄弟组件中的事件
+                    hub.$emit('tom-event', 2)
+
+                }
+            },
+            mounted: function () {
+                //挂载完毕后监听事件
+                hub.$on('jerry-event', (val) => {
+                    this.num += val;
+                })
+            }
+        });
+        // 创建事件中心
+        var hub = new Vue()
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '父组件数据'
+            },
+            methods: {
+                handle: function () {
+                    hub.$off('tom-event')
+                    hub.$off('jerry-event')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

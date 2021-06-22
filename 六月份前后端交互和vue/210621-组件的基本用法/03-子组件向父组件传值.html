@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div :style="{fontSize: fontSize+'px'}">{{pmsg}}</div>
+        <component-name :fruits='fruits' @enlarge-text='handle($event)'></component-name>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        // 子组件向父组件传值基本用法
+        // props传递数据原则：单项数据流
+        // 子组件通过自定义事件向父组件传递信息（同时也可以用把二个参数携带过去，也可以不带）
+        // 父组件监听子组件的自定义事件时传递过来的参数必须用$event接受 ，写法是固定的
+
+        Vue.component('component-name', {
+            props: ['fruits'],
+            template: `
+                <div>    
+                    <ul>
+                        <li :key='index' v-for='(item,index) in fruits'>{{item}}</li>
+                    </ul>
+                    <button @click='fruits.push("lemon")'>点击增加水果</button>
+                    <button @click='$emit("enlarge-text", 20)'>点击增加父组件的文本大小</button>
+                </div>
+            `
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '父组件的数据文本',
+                fruits: ['apple', 'orange', 'banana'],
+                fontSize: 16
+            },
+            methods: {
+                handle: function (val) {
+                    this.fontSize += val;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

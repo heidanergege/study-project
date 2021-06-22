@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .current {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <component-fruits :flist='fruitsList'>
+            <template slot-scope='slotProps'>
+                <strong v-if='slotProps.info.id == 3' class="current">{{slotProps.info.fname}}</strong>
+                <span v-else>{{slotProps.info.fname}}</span>
+
+            </template>
+        </component-fruits>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        Vue.component('component-fruits', {
+            props: ['flist'],
+            template: `
+                <div>
+                    <ul>
+                        <li :key='item.id' v-for='item in flist'>
+                            <slot :info='item'>{{item.fname}}</slot>    
+                        </li>    
+                    </ul>
+                </div>
+            `
+        })
+
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fruitsList: [{
+                    id: 1,
+                    fname: 'apple'
+                }, {
+                    id: 2,
+                    fname: 'banana'
+                }, {
+                    id: 3,
+                    fname: 'orange'
+                }]
+            }
+        })
+    </script>
+</body>
+
+</html>

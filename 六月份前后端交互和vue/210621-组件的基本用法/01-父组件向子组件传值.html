@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>{{pmsg}}</div>
+        <menu-item title="我是父组件传递过去的数据"></menu-item>
+        <menu-item :title="ptitle" con-tent="我是第二个传递的数据"></menu-item>
+    </div>
+
+    <script src="../210615-vue基础-指令与案例/vue.js"></script>
+    <script>
+        //    1.组件内部通过props 以数组的形式 接受传递过来的值
+        //    2.父组件通过属性将值传递给子组件，当然也可以用v-bind的方式传递活的数据
+
+
+        Vue.component('menu-item', {
+            data: function () {
+                return {
+                    smsg: '子组件中的数据'
+                }
+            },
+            props: ['title', 'conTent'],
+            template: '<div>{{smsg+"---"+title+"---"+conTent}}</div>'
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                pmsg: '父组件的数据',
+                ptitle: '我是父组件v-bind传递过去的动态数据'
+            }
+        })
+    </script>
+</body>
+
+</html>
