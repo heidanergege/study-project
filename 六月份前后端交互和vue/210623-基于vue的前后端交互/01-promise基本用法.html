@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var p = new Promise(function (resolve, reject) {
+            // 模拟如下
+            var flag = false
+            if (flag) {
+                //成功时调用 resolve()            
+                resolve('ok')
+            } else {
+                //失败时调用 reject()
+                reject('error')
+            }
+        });
+        p.then(function (res) {
+            //从resolve得到成功结果
+            console.log(res);
+        }, function (res) {
+            //从reject得到错误信息
+            console.log(res);
+        })
+    </script>
+
+</body>
+
+</html>

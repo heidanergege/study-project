@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="js/axios.js"></script>
+    <script>
+        // 1.get传递参数
+        // （1）通过URL传递参数
+        // （2）通过params 选项传递参数
+
+        axios.get('http://localhost:3000/axios?id=1234')
+            .then((result) => {
+                console.log(result.data);
+            });
+        axios.get('http://localhost:3000/axios/123467890')
+            .then((result) => {
+                console.log(result.data);
+            });
+        axios.get('http://localhost:3000/axios', {
+                params: {
+                    id: '001'
+
+                }
+            })
+            .then((result) => {
+                console.log(result.data);
+            });
+
+
+        // 2.delete传递参数
+        /*         axios.delete('http://localhost:3000/axios/988')
+                    .then((result) => {
+                        console.log(result.data);
+                    });
+                axios.delete('http://localhost:3000/axios?id=123')
+                    .then((result) => {
+                        console.log(result.data);
+                    });
+                axios.delete('http://localhost:3000/axios', {
+                        params: {
+                            id: '001'
+
+                        }
+                    })
+                    .then((result) => {
+                        console.log(result.data);
+                    }); */
+
+
+        // 3.post传递参数
+
+        var params = new URLSearchParams();
+        params.append('uname', 'zhangsan');
+        params.append('pwd', '999');
+        axios.post('http://localhost:3000/axios', params).then((result) => {
+            console.log(result.data);
+        });
+
+        // 4.put传递参数
+        var params = new URLSearchParams();
+        params.append('uname', 'zhangsan');
+        params.append('pwd', '999');
+        axios.put('http://localhost:3000/axios/888', params).then((result) => {
+            console.log(result.data);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function queryData() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    // resolve('123')
+                    reject('error')
+                }, 100)
+            })
+
+        }
+        queryData()
+            //得到异步任务的正确结果
+            .then(function (data) {
+                console.log(data);
+            })
+            //获取异常信息
+            .catch(function (data) {
+                console.log(data);
+            })
+            // 无论成功与否都会执行（还不是正式的标准）
+            .finally(function () {
+                console.log('finished');
+            })
+    </script>
+</body>
+
+</html>

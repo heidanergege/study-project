@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="js/axios.js"></script>
+    <script>
+        // 1.响应结果
+        axios.get('http://localhost:3000/axios-json')
+            .then((result) => {
+                console.log(result.data.age);
+            }).catch((err) => {
+
+            });
+
+        // 2.全局配置
+        axios.defaults.timeout = 1000; //配置响应时间
+        axios.defaults.baseURL = 'http://localhost:3000/'; // 配置默认地址
+        axios.defaults.headers['mytoken'] = 'hello' //配置请求头
+
+        //发起请求
+        axios.get('axios-json').then((result) => {
+            console.log(result.data.uname);
+        }).catch((err) => {
+
+        });
+    </script>
+</body>
+
+</html>

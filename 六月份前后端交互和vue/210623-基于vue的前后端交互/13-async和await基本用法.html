@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="js/axios.js"></script>
+    <script>
+        // 1.async和await是ES7 引入的新语法，可以方便的进行异步操作
+        // async用于函数上 （async函数返回的是一个 Promise 实例对象）
+        // await 关键字用于 async 函数当中 （await可以得到异步的结果）
+
+        axios.defaults.baseURL = 'http://localhost:3000/';
+
+        // 1.axios 的方式 进行数据请求的写法
+        axios.get('adata').then((result) => {
+            console.log(result.data);
+        }).catch((err) => {
+
+        });
+
+        // 2.用async和 await 的写法
+        // (1).封装一个函数
+        async function queryData() {
+            const res = await axios.get('adata');
+            return res
+        }
+
+        // (2) 调用函数
+        queryData().then((result) => {
+            console.log(result.data);
+        }).catch((err) => {
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //封装一个函数来 处理Ajax请求
+        function queryData(url) {
+            var p = new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState !== 4) return;
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        //处理正常的情况
+                        resolve(xhr.responseText);
+                    } else {
+                        //处理错误情况
+                        reject('服务器出错了');
+                    }
+                };
+                xhr.open('get', url);
+                xhr.send();
+            });
+            return p
+        }
+
+        //2.调用这个函数并传递URL
+        queryData('http://localhost:3000/data')
+            .then(function (data) {
+                console.log(data);
+                return queryData('http://localhost:3000/data')
+            })
+            .then(function (data) {
+                console.log(data);
+                return queryData('http://localhost:3000/data1')
+            })
+            .then(function (data) {
+                console.log(data);
+                return queryData('http://localhost:3000/data2')
+            })
+    </script>
+</body>
+
+</html>
